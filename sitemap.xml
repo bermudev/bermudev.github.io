@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bermudev.github.io/about/</loc>
+    <lastmod>2023-01-14T00:13:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/categories/blogging/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/categories/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/tags/introduction/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/categories/personal-project/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/posts/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/tags/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url><url>
+    <loc>https://bermudev.github.io/posts/my-first-post/</loc>
+    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
+  </url>
+</urlset>

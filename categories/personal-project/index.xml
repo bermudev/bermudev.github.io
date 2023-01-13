@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>personal project on ~/bermudev/blog</title>
+    <link>https://bermudev.github.io/categories/personal-project/</link>
+    <description>Recent content in personal project on ~/bermudev/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Carlos Bermúdez</copyright>
+    <lastBuildDate>Fri, 13 Jan 2023 23:37:58 +0100</lastBuildDate><atom:link href="https://bermudev.github.io/categories/personal-project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to My Software Development Blog</title>
+      <link>https://bermudev.github.io/posts/my-first-post/</link>
+      <pubDate>Fri, 13 Jan 2023 23:37:58 +0100</pubDate>
+      
+      <guid>https://bermudev.github.io/posts/my-first-post/</guid>
+      <description>Hello and welcome to my personal blog about software development! My name is Carlos, and I am excited to share my thoughts, tutorials, and experiences with you.
+I have always been passionate about technology and software development, and I have decided to start this blog as a personal project for the new year. I have always enjoyed writing and wanted to share my knowledge and experience with others who are interested in the same topics.</description>
+    </item>
+    
+  </channel>
+</rss>
