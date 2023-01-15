@@ -7,13 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 23:37:58 +0100</lastBuildDate><atom:link href="https://bermudev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 19:08:16 +0100</lastBuildDate><atom:link href="https://bermudev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>blogging</title>
       <link>https://bermudev.github.io/categories/blogging/</link>
-      <pubDate>Fri, 13 Jan 2023 23:37:58 +0100</pubDate>
+      <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
       <guid>https://bermudev.github.io/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comments</title>
+      <link>https://bermudev.github.io/categories/comments/</link>
+      <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
+      
+      <guid>https://bermudev.github.io/categories/comments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>https://bermudev.github.io/categories/open-source/</link>
+      <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
+      
+      <guid>https://bermudev.github.io/categories/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>privacy</title>
+      <link>https://bermudev.github.io/categories/privacy/</link>
+      <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
+      
+      <guid>https://bermudev.github.io/categories/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://bermudev.github.io/categories/website/</link>
+      <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
+      
+      <guid>https://bermudev.github.io/categories/website/</guid>
       <description></description>
     </item>
     
