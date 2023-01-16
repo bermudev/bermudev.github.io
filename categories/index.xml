@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ~/bermudev/blog</title>
-    <link>https://bermudev.github.io/categories/</link>
+    <link>https://bermu.dev/categories/</link>
     <description>Recent content in Categories on ~/bermudev/blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 15 Jan 2023 19:08:16 +0100</lastBuildDate><atom:link href="https://bermudev.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 19:08:16 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>blogging</title>
-      <link>https://bermudev.github.io/categories/blogging/</link>
+      <link>https://bermu.dev/categories/blogging/</link>
       <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/categories/blogging/</guid>
+      <guid>https://bermu.dev/categories/blogging/</guid>
       <description></description>
     </item>
     
     <item>
       <title>comments</title>
-      <link>https://bermudev.github.io/categories/comments/</link>
+      <link>https://bermu.dev/categories/comments/</link>
       <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/categories/comments/</guid>
+      <guid>https://bermu.dev/categories/comments/</guid>
       <description></description>
     </item>
     
     <item>
       <title>open-source</title>
-      <link>https://bermudev.github.io/categories/open-source/</link>
+      <link>https://bermu.dev/categories/open-source/</link>
       <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/categories/open-source/</guid>
+      <guid>https://bermu.dev/categories/open-source/</guid>
       <description></description>
     </item>
     
     <item>
       <title>privacy</title>
-      <link>https://bermudev.github.io/categories/privacy/</link>
+      <link>https://bermu.dev/categories/privacy/</link>
       <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/categories/privacy/</guid>
+      <guid>https://bermu.dev/categories/privacy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>website</title>
-      <link>https://bermudev.github.io/categories/website/</link>
+      <link>https://bermu.dev/categories/website/</link>
       <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/categories/website/</guid>
+      <guid>https://bermu.dev/categories/website/</guid>
       <description></description>
     </item>
     
     <item>
       <title>personal project</title>
-      <link>https://bermudev.github.io/categories/personal-project/</link>
+      <link>https://bermu.dev/categories/personal-project/</link>
       <pubDate>Fri, 13 Jan 2023 23:37:58 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/categories/personal-project/</guid>
+      <guid>https://bermu.dev/categories/personal-project/</guid>
       <description></description>
     </item>
     

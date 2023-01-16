@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ~/bermudev/blog</title>
-    <link>https://bermudev.github.io/posts/</link>
+    <link>https://bermu.dev/posts/</link>
     <description>Recent content in Posts on ~/bermudev/blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 15 Jan 2023 19:08:16 +0100</lastBuildDate><atom:link href="https://bermudev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 19:08:16 +0100</lastBuildDate><atom:link href="https://bermu.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Added Utterances comments for the articles</title>
-      <link>https://bermudev.github.io/posts/added-utterances-comments/</link>
+      <link>https://bermu.dev/posts/added-utterances-comments/</link>
       <pubDate>Sun, 15 Jan 2023 19:08:16 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/posts/added-utterances-comments/</guid>
+      <guid>https://bermu.dev/posts/added-utterances-comments/</guid>
       <description>I am excited to announce that comments have been enabled on the articles! For me, one of the main features I like most about blogs is being able to comment and share knowledge. After studying several options I have decided that Utterances is the best option and the one I like the most for the cause.
 Utterances is a lightweight and fast commenting system that integrates with GitHub Issues. I believe that Utterances is a great choice for the website and want to share why I consider it better than other commenting systems like Disqus and Cactus Comments.</description>
     </item>
     
     <item>
       <title>Welcome to my software development blog</title>
-      <link>https://bermudev.github.io/posts/my-first-post/</link>
+      <link>https://bermu.dev/posts/my-first-post/</link>
       <pubDate>Fri, 13 Jan 2023 23:37:58 +0100</pubDate>
       
-      <guid>https://bermudev.github.io/posts/my-first-post/</guid>
+      <guid>https://bermu.dev/posts/my-first-post/</guid>
       <description>Hello and welcome! I have always been passionate about technology and software development, and I have decided to start this blog as a personal project for the new year.
 Why writing a blog? As a software developer, I know how important it is to continuously learn and grow. I believe that blogging is a great way to do that as it allows me to reflect on what I have learned, share my knowledge with others, and learn from others in the community.</description>
     </item>
