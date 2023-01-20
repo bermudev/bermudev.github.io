@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Tue, 17 Jan 2023 17:50:46 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/backup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Jan 2023 17:50:46 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/backup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up backups with Restic</title>
       <link>https://bermu.dev/posts/setting-up-backups-with-restic/</link>
-      <pubDate>Tue, 17 Jan 2023 17:50:46 +0100</pubDate>
+      <pubDate>Fri, 20 Jan 2023 17:50:46 +0100</pubDate>
       
       <guid>https://bermu.dev/posts/setting-up-backups-with-restic/</guid>
       <description>As a software developer, data protection is a crucial aspect of our daily work. The ability to recover from data loss or hardware failures is a must-have for any serious software development project. One of the best ways to ensure data protection is by using backup software like Restic. In this article, I will show you how to set up backups with Restic, and why it&amp;rsquo;s a great choice for your data protection needs.</description>
