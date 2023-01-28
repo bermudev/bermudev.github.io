@@ -7,7 +7,97 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Fri, 20 Jan 2023 17:50:46 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 22:33:32 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cassandra</title>
+      <link>https://bermu.dev/tags/cassandra/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/cassandra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>couchbase</title>
+      <link>https://bermu.dev/tags/couchbase/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/couchbase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://bermu.dev/tags/database/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://bermu.dev/tags/mongodb/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>neo4j</title>
+      <link>https://bermu.dev/tags/neo4j/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/neo4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>non-relational</title>
+      <link>https://bermu.dev/tags/non-relational/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/non-relational/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nosql</title>
+      <link>https://bermu.dev/tags/nosql/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/nosql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>orientdb</title>
+      <link>https://bermu.dev/tags/orientdb/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/orientdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://bermu.dev/tags/redis/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>riak</title>
+      <link>https://bermu.dev/tags/riak/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/riak/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>automation</title>
       <link>https://bermu.dev/tags/automation/</link>

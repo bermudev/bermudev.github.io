@@ -3,7 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-01-20T17:50:46+01:00</lastmod>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/cassandra/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/couchbase/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/data-management/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/database/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/database/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/mongodb/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/neo4j/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/non-relational/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/nosql/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/orientdb/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/redis/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/riak/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/understanding-nosql-databases/</loc>
+    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/automation/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>
@@ -17,25 +65,16 @@
     <loc>https://bermu.dev/categories/backup/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/categories/</loc>
-    <lastmod>2023-01-20T17:50:46+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/data-recovery/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/data-recovery/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-01-20T17:50:46+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/restic/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/setting-up-backups-with-restic/</loc>
-    <lastmod>2023-01-20T17:50:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/added-utterances-comments/</loc>

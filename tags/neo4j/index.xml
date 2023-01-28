@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>neo4j on ~/bermudev/blog</title>
+    <link>https://bermu.dev/tags/neo4j/</link>
+    <description>Recent content in neo4j on ~/bermudev/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Carlos Bermúdez</copyright>
+    <lastBuildDate>Sat, 28 Jan 2023 22:33:32 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/neo4j/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding NoSQL databases</title>
+      <link>https://bermu.dev/posts/understanding-nosql-databases/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/posts/understanding-nosql-databases/</guid>
+      <description>The first thing I remember when I started to understand databases is that I thought there was only one type of non-relational database. Wrong! It&amp;rsquo;s important to understand that NoSQL databases are not a single type of database, but rather a category that encompasses several different types of databases.
+Some of the most popular types of NoSQL databases include:
+Document databases: These databases store data in the form of documents, such as JSON or XML.</description>
+    </item>
+    
+  </channel>
+</rss>

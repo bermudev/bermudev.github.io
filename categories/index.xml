@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Fri, 20 Jan 2023 17:50:46 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 22:33:32 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data management</title>
+      <link>https://bermu.dev/categories/data-management/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/data-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://bermu.dev/categories/database/</link>
+      <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/database/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>automation</title>
       <link>https://bermu.dev/categories/automation/</link>
