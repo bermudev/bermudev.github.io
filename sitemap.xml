@@ -3,12 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/cassandra/</loc>
-    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/data-analysis/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/data-analysis/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/data-science/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/data-science/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/dataframe/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/pandas/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/pandas-for-data-analisys/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/python/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/python-libraries/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/cassandra/</loc>
     <lastmod>2023-01-28T22:33:32+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/couchbase/</loc>
@@ -38,16 +71,10 @@
     <loc>https://bermu.dev/tags/orientdb/</loc>
     <lastmod>2023-01-28T22:33:32+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/redis/</loc>
     <lastmod>2023-01-28T22:33:32+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/riak/</loc>
-    <lastmod>2023-01-28T22:33:32+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-01-28T22:33:32+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/understanding-nosql-databases/</loc>
