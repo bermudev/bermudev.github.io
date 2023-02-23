@@ -3,10 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/api/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/api-development/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/building-a-dog-shelter-api-with-flask-and-python/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/</loc>
-    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/development/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/dog-shelter/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/flask/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/personal-project/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/python/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/web-development/</loc>
+    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/data-analysis/</loc>
     <lastmod>2023-02-11T12:06:02+01:00</lastmod>
@@ -29,16 +62,7 @@
     <loc>https://bermu.dev/posts/pandas-for-data-analisys/</loc>
     <lastmod>2023-02-11T12:06:02+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/python/</loc>
-    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/categories/python-libraries/</loc>
-    <lastmod>2023-02-11T12:06:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-02-11T12:06:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/cassandra/</loc>
@@ -141,9 +165,6 @@
     <lastmod>2023-01-14T00:13:32+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/introduction/</loc>
-    <lastmod>2023-01-13T23:37:58+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/categories/personal-project/</loc>
     <lastmod>2023-01-13T23:37:58+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/my-first-post/</loc>

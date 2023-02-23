@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sat, 11 Feb 2023 12:06:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Feb 2023 16:21:22 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>api development</title>
+      <link>https://bermu.dev/tags/api-development/</link>
+      <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/api-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dog shelter</title>
+      <link>https://bermu.dev/tags/dog-shelter/</link>
+      <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/dog-shelter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flask</title>
+      <link>https://bermu.dev/tags/flask/</link>
+      <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://bermu.dev/tags/python/</link>
+      <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web development</title>
+      <link>https://bermu.dev/tags/web-development/</link>
+      <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>data analysis</title>
       <link>https://bermu.dev/tags/data-analysis/</link>
@@ -41,15 +86,6 @@
       <pubDate>Sat, 11 Feb 2023 12:06:02 +0100</pubDate>
       
       <guid>https://bermu.dev/tags/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://bermu.dev/tags/python/</link>
-      <pubDate>Sat, 11 Feb 2023 12:06:02 +0100</pubDate>
-      
-      <guid>https://bermu.dev/tags/python/</guid>
       <description></description>
     </item>
     

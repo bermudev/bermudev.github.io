@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on ~/bermudev/blog</title>
-    <link>https://bermu.dev/tags/python/</link>
-    <description>Recent content in python on ~/bermudev/blog</description>
+    <title>api on ~/bermudev/blog</title>
+    <link>https://bermu.dev/categories/api/</link>
+    <description>Recent content in api on ~/bermudev/blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sat, 18 Feb 2023 16:21:22 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Feb 2023 16:21:22 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Dog Shelter API with Flask and Python</title>
       <link>https://bermu.dev/posts/building-a-dog-shelter-api-with-flask-and-python/</link>
@@ -16,16 +16,6 @@
       <guid>https://bermu.dev/posts/building-a-dog-shelter-api-with-flask-and-python/</guid>
       <description>One of the first projects I did when I started in the world of backend development was an API for a dog shelter using Django REST Framework, it is one of my first projects and although I remember it fondly I have learned a lot since then.
 So I thought, why not try doing something similar using another framework? This way I can take the opportunity to dive more into API development, learn about a different framework and revisit an old project that I&amp;rsquo;m so close to.</description>
-    </item>
-    
-    <item>
-      <title>Pandas for Data Analisys</title>
-      <link>https://bermu.dev/posts/pandas-for-data-analisys/</link>
-      <pubDate>Sat, 11 Feb 2023 12:06:02 +0100</pubDate>
-      
-      <guid>https://bermu.dev/posts/pandas-for-data-analisys/</guid>
-      <description>In my professional career I have had to work with large amounts of data and I have been able to learn how to use some analysis tools, one of them is Pandas. So, why don&amp;rsquo;t we take a look at what Pandas is and what it offers us?
-What is Pandas? Pandas is a library for data analysis and data manipulation in Python. It provides data structures and functions needed to work on structured data seamlessly.</description>
     </item>
     
   </channel>
