@@ -2,7 +2,7 @@
  * Sets up Justified Gallery.
  */
 if (!!$.prototype.justifiedGallery) {
-  var options = {
+  let options = {
     rowHeight: 140,
     margins: 4,
     lastRow: "justify"
@@ -10,24 +10,26 @@ if (!!$.prototype.justifiedGallery) {
   $(".article-gallery").justifiedGallery(options);
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   /**
    * Shows the responsive navigation menu on mobile.
    */
-  $("#header > #nav > ul > .icon").click(function() {
+  $("#header > #nav > ul > .icon").click(function () {
     $("#header > #nav > ul").toggleClass("responsive");
   });
 
 
   /**
-   * Controls the different versions of  the menu in blog post articles 
+   * Controls the different versions of  the menu in blog post articles
    * for Desktop, tablet and mobile.
    */
   if ($(".post").length) {
-    var menu = $("#menu");
-    var nav = $("#menu > #nav");
-    var menuIcon = $("#menu-icon, #menu-icon-tablet");
+    const menu = $("#menu");
+    const nav = $("#menu > #nav");
+    const menuIcon = $("#menu-icon, #menu-icon-tablet");
+
+    const menuStartingTopOffset = menu.offset().top;
 
     /**
      * Display the menu on hi-res laptops and desktops.
@@ -40,7 +42,7 @@ $(document).ready(function() {
     /**
      * Display the menu if the menu icon is clicked.
      */
-    menuIcon.click(function() {
+    menuIcon.click(function () {
       if (menu.css("visibility") === "hidden") {
         menu.css("visibility", "visible");
         menuIcon.addClass("active");
@@ -55,8 +57,8 @@ $(document).ready(function() {
      * Add a scroll listener to the menu to hide/show the navigation links.
      */
     if (menu.length) {
-      $(window).on("scroll", function() {
-        var topDistance = menu.offset().top;
+      $(window).on("scroll", function () {
+        let topDistance = menu.offset().top - menuStartingTopOffset;
 
         // hide only the navigation links on desktop
         if (!nav.is(":visible") && topDistance <= 100) {
@@ -67,10 +69,10 @@ $(document).ready(function() {
 
         // on tablet, hide the navigation icon as well and show a "scroll to top
         // icon" instead
-        if ( ! $( "#menu-icon" ).is(":visible") && topDistance <= 100 ) {
+        if (!$("#menu-icon").is(":visible") && topDistance <= 10) {
           $("#menu-icon-tablet").show();
           $("#top-icon-tablet").hide();
-        } else if (! $( "#menu-icon" ).is(":visible") && topDistance > 100) {
+        } else if (!$("#menu-icon").is(":visible") && topDistance > 10) {
           $("#menu-icon-tablet").hide();
           $("#top-icon-tablet").show();
         }
@@ -81,12 +83,12 @@ $(document).ready(function() {
      * Show mobile navigation menu after scrolling upwards,
      * hide it again after scrolling downwards.
      */
-    if ($( "#footer-post").length) {
-      var lastScrollTop = 0;
-      $(window).on("scroll", function() {
-        var topDistance = $(window).scrollTop();
+    if ($("#footer-post").length) {
+      let lastScrollTop = 0;
+      $(window).on("scroll", function () {
+        let topDistance = $(window).scrollTop();
 
-        if (topDistance > lastScrollTop){
+        if (topDistance > lastScrollTop) {
           // downscroll -> show menu
           $("#footer-post").hide();
         } else {
