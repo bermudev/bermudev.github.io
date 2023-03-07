@@ -7,7 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sat, 18 Feb 2023 16:21:22 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Mar 2023 16:59:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>font</title>
+      <link>https://bermu.dev/tags/font/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/font/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nerd font</title>
+      <link>https://bermu.dev/tags/nerd-font/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/nerd-font/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>promt</title>
+      <link>https://bermu.dev/tags/promt/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/promt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>starship</title>
+      <link>https://bermu.dev/tags/starship/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/starship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>https://bermu.dev/tags/terminal/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>theme</title>
+      <link>https://bermu.dev/tags/theme/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/theme/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>api development</title>
       <link>https://bermu.dev/tags/api-development/</link>

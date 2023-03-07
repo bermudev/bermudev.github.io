@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>starship on ~/bermudev/blog</title>
+    <link>https://bermu.dev/tags/starship/</link>
+    <description>Recent content in starship on ~/bermudev/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Carlos Bermúdez</copyright>
+    <lastBuildDate>Tue, 07 Mar 2023 16:59:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/starship/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Personal Setup for the Terminal</title>
+      <link>https://bermu.dev/posts/my-personal-setup-for-the-terminal/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/posts/my-personal-setup-for-the-terminal/</guid>
+      <description>Hello everyone! It&amp;rsquo;s been a busy few weeks, I&amp;rsquo;m studying a lot about Machine Learning and I don&amp;rsquo;t have too much time to write or share my progress. However, I had to set up a new development environment and I thought, why not share a bit of my setup?
+So here&amp;rsquo;s how to set up my favorite prompt and font!
+The Starship Prompt The first tool I want to introduce is the Starship prompt.</description>
+    </item>
+    
+  </channel>
+</rss>

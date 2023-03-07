@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sat, 18 Feb 2023 16:21:22 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Mar 2023 16:59:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fira code</title>
+      <link>https://bermu.dev/categories/fira-code/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/fira-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nerd font</title>
+      <link>https://bermu.dev/categories/nerd-font/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/nerd-font/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>https://bermu.dev/categories/setup/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>starship</title>
+      <link>https://bermu.dev/categories/starship/</link>
+      <pubDate>Tue, 07 Mar 2023 16:59:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/starship/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>api</title>
       <link>https://bermu.dev/categories/api/</link>

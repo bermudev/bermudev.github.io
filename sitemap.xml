@@ -3,7 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/fira-code/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/font/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/my-personal-setup-for-the-terminal/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/nerd-font/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/nerd-font/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/promt/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/setup/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/starship/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/starship/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/terminal/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/theme/</loc>
+    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/api/</loc>
     <lastmod>2023-02-18T16:21:22+01:00</lastmod>
@@ -12,9 +54,6 @@
     <lastmod>2023-02-18T16:21:22+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/building-a-dog-shelter-api-with-flask-and-python/</loc>
-    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/categories/</loc>
     <lastmod>2023-02-18T16:21:22+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/development/</loc>
@@ -29,13 +68,7 @@
     <loc>https://bermu.dev/categories/personal-project/</loc>
     <lastmod>2023-02-18T16:21:22+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/python/</loc>
-    <lastmod>2023-02-18T16:21:22+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-02-18T16:21:22+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/web-development/</loc>
