@@ -15,8 +15,7 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="My Personal Setup for the Terminal" />
 <meta property="og:description" content="Hello everyone! It&rsquo;s been a busy few weeks, I&rsquo;m studying a lot about Machine Learning and I don&rsquo;t have too much time to write or share my progress. However, I had to set up a new development environment and I thought, why not share a bit of my setup?
-So here&rsquo;s how to set up my favorite prompt and font!
-The Starship Prompt The first tool I want to introduce is the Starship prompt." />
+So here&rsquo;s how to choose a shell, how to set up my favorite prompt, font and some personal aliases I commonly use!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bermu.dev/posts/my-personal-setup-for-the-terminal/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-07T16:59:02+01:00" />
@@ -25,8 +24,7 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt." 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My Personal Setup for the Terminal"/>
 <meta name="twitter:description" content="Hello everyone! It&rsquo;s been a busy few weeks, I&rsquo;m studying a lot about Machine Learning and I don&rsquo;t have too much time to write or share my progress. However, I had to set up a new development environment and I thought, why not share a bit of my setup?
-So here&rsquo;s how to set up my favorite prompt and font!
-The Starship Prompt The first tool I want to introduce is the Starship prompt."/>
+So here&rsquo;s how to choose a shell, how to set up my favorite prompt, font and some personal aliases I commonly use!"/>
 
   
   
@@ -151,7 +149,7 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt."/
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fmy-personal-setup-for-the-terminal%2f&name=My%20Personal%20Setup%20for%20the%20Terminal&description=Hello%20everyone%21%20It%26rsquo%3bs%20been%20a%20busy%20few%20weeks%2c%20I%26rsquo%3bm%20studying%20a%20lot%20about%20Machine%20Learning%20and%20I%20don%26rsquo%3bt%20have%20too%20much%20time%20to%20write%20or%20share%20my%20progress.%20However%2c%20I%20had%20to%20set%20up%20a%20new%20development%20environment%20and%20I%20thought%2c%20why%20not%20share%20a%20bit%20of%20my%20setup%3f%0aSo%20here%26rsquo%3bs%20how%20to%20set%20up%20my%20favorite%20prompt%20and%20font%21%0aThe%20Starship%20Prompt%20The%20first%20tool%20I%20want%20to%20introduce%20is%20the%20Starship%20prompt." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fmy-personal-setup-for-the-terminal%2f&name=My%20Personal%20Setup%20for%20the%20Terminal&description=Hello%20everyone%21%20It%26rsquo%3bs%20been%20a%20busy%20few%20weeks%2c%20I%26rsquo%3bm%20studying%20a%20lot%20about%20Machine%20Learning%20and%20I%20don%26rsquo%3bt%20have%20too%20much%20time%20to%20write%20or%20share%20my%20progress.%20However%2c%20I%20had%20to%20set%20up%20a%20new%20development%20environment%20and%20I%20thought%2c%20why%20not%20share%20a%20bit%20of%20my%20setup%3f%0aSo%20here%26rsquo%3bs%20how%20to%20choose%20a%20shell%2c%20how%20to%20set%20up%20my%20favorite%20prompt%2c%20font%20and%20some%20personal%20aliases%20I%20commonly%20use%21" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -167,6 +165,7 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt."/
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#choosing-a-shell">Choosing a Shell</a></li>
     <li><a href="#the-starship-prompt">The Starship Prompt</a></li>
     <li><a href="#installing-fira-code-font">Installing Fira Code font</a></li>
   </ul>
@@ -240,7 +239,21 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt."/
     
     <div class="content" itemprop="articleBody">
       <p>Hello everyone! It&rsquo;s been a busy few weeks, I&rsquo;m studying a lot about Machine Learning and I don&rsquo;t have too much time to write or share my progress. However, I had to set up a new development environment and I thought, why not share a bit of my setup?</p>
-<p>So here&rsquo;s how to set up my favorite prompt and font!</p>
+<p>So here&rsquo;s how to choose a shell, how to set up my favorite prompt, font and some personal aliases I commonly use!</p>
+<h2 id="choosing-a-shell">Choosing a Shell</h2>
+<p>The first thing to do is to choose a shell for our terminal. The three most common Linux shells that I have been able to test are:</p>
+<ul>
+<li>
+<p><a href="https://www.gnu.org/software/bash/">Bash</a> (Bourne-Again SHell): This is the default shell for most Linux distributions. It is a powerful and versatile shell with a wide range of features and capabilities.</p>
+</li>
+<li>
+<p><a href="https://www.zsh.org/">Zsh</a> (Z Shell): This is a highly customizable shell that is popular among power users. It offers advanced features like tab completion and spelling correction.</p>
+</li>
+<li>
+<p><a href="https://fishshell.com/">Fish</a> (Friendly Interactive SHell): This is a user-friendly shell that is designed to be easy to use and intuitive. It has a simple syntax and offers many helpful features like syntax highlighting.</p>
+</li>
+</ul>
+<p>In this case, I have chosen to stay with bash because it is the most widely used shell and is therefore well-supported by the Linux community, but mostly, because bash is the default shell for most Linux distributions, so it is already installed on the system and suits my needs for this project.</p>
 <h2 id="the-starship-prompt">The Starship Prompt</h2>
 <p>The first tool I want to introduce is the <strong><a href="https://starship.rs/">Starship</a></strong> prompt. This is a customizable and fast shell prompt written in <a href="https://www.rust-lang.org/">Rust</a> that displays useful information in the terminal, like useful system information, Git repository or virtual environment.</p>
 <figure><img src="/images/starship.svg"
@@ -253,10 +266,11 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt."/
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://starship.rs/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div><ol start="2">
-<li>Add the following line to your shell&rsquo;s configuration file (e.g., <code>~/.bashrc</code>, <code>~/.zshrc</code>). Don&rsquo;t forget to replace <code>&lt;shell&gt;</code> with the name of your shell (e.g., <code>bash</code>, <code>zsh</code>):</li>
+<li>Add the following line to your shell&rsquo;s configuration file (e.g., <code>~/.bashrc</code> for bash):</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>starship init &lt;shell&gt;<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><p>Easy, right? Now you can customize the Starship prompt by editing the <code>~/.config/starship.toml</code> file. This file contains a number of settings that you can tweak to your liking, you can learn more about it <a href="https://starship.rs/config/">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>starship init bash<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>That&rsquo;s it! Easy, right?</p>
+<p>Now you can customize the Starship prompt by editing the <code>~/.config/starship.toml</code> file. This file contains a number of settings that you can tweak to your liking, you can learn more about it <a href="https://starship.rs/config/">here</a>.</p>
 <h2 id="installing-fira-code-font">Installing Fira Code font</h2>
 <p>You have installed Starship correctly and you have set the prompt you liked but now you see that the icons are not displayed correctly? That is probably because the font you are using does not support those icons. To fix that I always install my favorite <a href="https://www.nerdfonts.com/">Nerd Font</a>: Fira Code.</p>
 <figure><img src="/images/firacode.png"
@@ -318,6 +332,7 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt."/
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#choosing-a-shell">Choosing a Shell</a></li>
     <li><a href="#the-starship-prompt">The Starship Prompt</a></li>
     <li><a href="#installing-fira-code-font">Installing Fira Code font</a></li>
   </ul>
@@ -369,7 +384,7 @@ The Starship Prompt The first tool I want to introduce is the Starship prompt."/
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fmy-personal-setup-for-the-terminal%2f&name=My%20Personal%20Setup%20for%20the%20Terminal&description=Hello%20everyone%21%20It%26rsquo%3bs%20been%20a%20busy%20few%20weeks%2c%20I%26rsquo%3bm%20studying%20a%20lot%20about%20Machine%20Learning%20and%20I%20don%26rsquo%3bt%20have%20too%20much%20time%20to%20write%20or%20share%20my%20progress.%20However%2c%20I%20had%20to%20set%20up%20a%20new%20development%20environment%20and%20I%20thought%2c%20why%20not%20share%20a%20bit%20of%20my%20setup%3f%0aSo%20here%26rsquo%3bs%20how%20to%20set%20up%20my%20favorite%20prompt%20and%20font%21%0aThe%20Starship%20Prompt%20The%20first%20tool%20I%20want%20to%20introduce%20is%20the%20Starship%20prompt." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fmy-personal-setup-for-the-terminal%2f&name=My%20Personal%20Setup%20for%20the%20Terminal&description=Hello%20everyone%21%20It%26rsquo%3bs%20been%20a%20busy%20few%20weeks%2c%20I%26rsquo%3bm%20studying%20a%20lot%20about%20Machine%20Learning%20and%20I%20don%26rsquo%3bt%20have%20too%20much%20time%20to%20write%20or%20share%20my%20progress.%20However%2c%20I%20had%20to%20set%20up%20a%20new%20development%20environment%20and%20I%20thought%2c%20why%20not%20share%20a%20bit%20of%20my%20setup%3f%0aSo%20here%26rsquo%3bs%20how%20to%20choose%20a%20shell%2c%20how%20to%20set%20up%20my%20favorite%20prompt%2c%20font%20and%20some%20personal%20aliases%20I%20commonly%20use%21" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
