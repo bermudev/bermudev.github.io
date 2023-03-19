@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code analisys on ~/bermudev/blog</title>
+    <link>https://bermu.dev/tags/code-analisys/</link>
+    <description>Recent content in code analisys on ~/bermudev/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Carlos Bermúdez</copyright>
+    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/code-analisys/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruff: A Fast Rust-based Python Linter</title>
+      <link>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</guid>
+      <description>In recent weeks there has been considerable talk in the Python community about a new linter that may come to replace the already more than consolidated Flake8 or Pylint. This new linter is called Ruff.
+What is Ruff? Ruff is a linting tool for Python, that like all other linters, analyzes your code for potential errors, style violations, and other issues that could impact the quality and readability of your code.</description>
+    </item>
+    
+  </channel>
+</rss>

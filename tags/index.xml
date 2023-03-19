@@ -7,7 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Tue, 07 Mar 2023 16:59:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>code analisys</title>
+      <link>https://bermu.dev/tags/code-analisys/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/code-analisys/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code review</title>
+      <link>https://bermu.dev/tags/code-review/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/code-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flake8</title>
+      <link>https://bermu.dev/tags/flake8/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/flake8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pylint</title>
+      <link>https://bermu.dev/tags/pylint/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/pylint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python linter</title>
+      <link>https://bermu.dev/tags/python-linter/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/python-linter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruff</title>
+      <link>https://bermu.dev/tags/ruff/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/ruff/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>font</title>
       <link>https://bermu.dev/tags/font/</link>

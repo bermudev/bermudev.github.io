@@ -3,10 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/</loc>
-    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/code-analisys/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/code-quality/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/code-review/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/flake8/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/linter/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/pylint/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/python/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/python-linter/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/ruff/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/fira-code/</loc>
     <lastmod>2023-03-07T16:59:02+01:00</lastmod>
@@ -23,9 +59,6 @@
     <loc>https://bermu.dev/categories/nerd-font/</loc>
     <lastmod>2023-03-07T16:59:02+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/promt/</loc>
     <lastmod>2023-03-07T16:59:02+01:00</lastmod>
   </url><url>
@@ -36,9 +69,6 @@
     <lastmod>2023-03-07T16:59:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/starship/</loc>
-    <lastmod>2023-03-07T16:59:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-03-07T16:59:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/terminal/</loc>
