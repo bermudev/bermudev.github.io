@@ -36,6 +36,15 @@
     </item>
     
     <item>
+      <title>linter</title>
+      <link>https://bermu.dev/tags/linter/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/linter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>pylint</title>
       <link>https://bermu.dev/tags/pylint/</link>
       <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
@@ -45,11 +54,11 @@
     </item>
     
     <item>
-      <title>python linter</title>
-      <link>https://bermu.dev/tags/python-linter/</link>
+      <title>python</title>
+      <link>https://bermu.dev/tags/python/</link>
       <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
       
-      <guid>https://bermu.dev/tags/python-linter/</guid>
+      <guid>https://bermu.dev/tags/python/</guid>
       <description></description>
     </item>
     
@@ -140,15 +149,6 @@
       <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
       
       <guid>https://bermu.dev/tags/flask/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://bermu.dev/tags/python/</link>
-      <pubDate>Sat, 18 Feb 2023 16:21:22 +0100</pubDate>
-      
-      <guid>https://bermu.dev/tags/python/</guid>
       <description></description>
     </item>
     

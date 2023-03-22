@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sat, 18 Feb 2023 16:21:22 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruff: A Fast Rust-based Python Linter</title>
+      <link>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</link>
+      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      
+      <guid>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</guid>
+      <description>In recent weeks there has been considerable talk in the Python community about a new linter that may come to replace the already more than consolidated Flake8 or Pylint. This new linter is called Ruff.
+What is Ruff? Ruff is a linting tool for Python, that like all other linters, analyzes your code for potential errors, style violations, and other issues that could impact the quality and readability of your code.</description>
+    </item>
+    
     <item>
       <title>Building a Dog Shelter API with Flask and Python</title>
       <link>https://bermu.dev/posts/building-a-dog-shelter-api-with-flask-and-python/</link>
