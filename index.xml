@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Apr 2023 13:34:15 +0200</lastBuildDate><atom:link href="https://bermu.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using yt-dlp to Download YouTube Videos</title>
+      <link>https://bermu.dev/posts/using-yt-dlp-to-download-youtube-videos/</link>
+      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/using-yt-dlp-to-download-youtube-videos/</guid>
+      <description>These past few days that I have been studying and learning a lot about Artificial Intelligence and Machine Learning, I have been able to read a lot of documentation, but I have also come across some interesting videos on YouTube.
+What is the problem with this? The main problem is that YouTube is known for having certain ease in deleting videos. That is why I have decided to use one of my favorite tools to save a local copy of these videos (just in case).</description>
+    </item>
+    
     <item>
       <title>Ruff: A Fast Rust-based Python Linter</title>
       <link>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</link>

@@ -3,10 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/command-line-tool/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/technology/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/tutorial/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/using-yt-dlp-to-download-youtube-videos/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/video-download/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/youtube/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/yt-dlp/</loc>
+    <lastmod>2023-04-02T13:34:15+02:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/code-analisys/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
@@ -26,9 +53,6 @@
     <loc>https://bermu.dev/categories/linter/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/pylint/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
@@ -42,9 +66,6 @@
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/fira-code/</loc>
