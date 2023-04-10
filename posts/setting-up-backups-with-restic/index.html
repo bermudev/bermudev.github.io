@@ -237,9 +237,9 @@
          alt="Restic logo" width="150px"/>
 </figure>
 
-<p>As a software developer, data protection is a crucial aspect of our daily work. The ability to recover from data loss or hardware failures is a must-have for any serious software development project. One of the best ways to ensure data protection is by using backup software like Restic. In this article, I will show you how to set up backups with Restic, and why it&rsquo;s a great choice for your data protection needs.</p>
+<p>As a software developer, data protection is a crucial aspect of our daily work. The ability to recover from data loss or hardware failures is a must-have for any serious software development project. One of the best ways to ensure data protection is by using backup software like <a href="https://restic.net/">Restic</a>. In this article, I will show you how to set up backups with <a href="https://restic.net/">Restic</a>, and why it&rsquo;s a great choice for your data protection needs.</p>
 <h2 id="what-is-restic">What is Restic?</h2>
-<p>Restic is a command-line backup program that is designed to be fast, efficient, and easy to use. It is written in Go (like Hugo!) and it&rsquo;s completely open-source. Some of the main features of Restic include:</p>
+<p><a href="https://restic.net/">Restic</a> is a command-line backup program that is designed to be fast, efficient, and easy to use. It is written in Go (like <a href="https://gohugo.io/">Hugo</a>!) and it&rsquo;s completely open-source. Some of the main features of <a href="https://restic.net/">Restic</a> include:</p>
 <ul>
 <li>
 <p><strong>Deduplication</strong>: Restic uses a content-defined chunking algorithm to split files into chunks, and it only stores unique chunks, this allows you to save a lot of storage space.</p>
@@ -255,12 +255,12 @@
 </li>
 </ul>
 <h2 id="restic-has-been-audited-by-a-google-employee">Restic has been audited by a Google employee</h2>
-<p>Restic has been audited by Filippo Valsorda, a Google cryptography engineer, you can read more about it <a href="https://words.filippo.io/restic-cryptography/">here</a> in his personal blog . The auditing process focused on the core functionality of Restic and its cryptographic implementation, and it found that Restic is secure and well-designed.</p>
+<p><a href="https://restic.net/">Restic</a> has been audited by Filippo Valsorda, a Google cryptography engineer, you can read more about it <a href="https://words.filippo.io/restic-cryptography/">here</a> in his personal blog . The auditing process focused on the core functionality of <a href="https://restic.net/">Restic</a> and its cryptographic implementation, and it found that <a href="https://restic.net/">Restic</a> is secure and well-designed.</p>
 <h2 id="setting-up-backups-with-restic">Setting up Backups with Restic</h2>
-<p>In this case, it is assumed that the system already has Restic installed, since in each system it is done in a different way, in case you do not know how to do it, you can check it <a href="https://restic.readthedocs.io/en/latest/020_installation.html">here</a>.</p>
-<p>In addition, the example considers a local copy, however Restic stands out for its great compatibility with other cloud systems such as AWS, Azure or GCP. Again, consult the <a href="https://restic.readthedocs.io/en/latest/030_preparing_a_new_repo.html">documentation</a>!</p>
+<p>In this case, it is assumed that the system already has <a href="https://restic.net/">Restic</a> installed, since in each system it is done in a different way, in case you do not know how to do it, you can check it <a href="https://restic.readthedocs.io/en/latest/020_installation.html">here</a>.</p>
+<p>In addition, the example considers a local copy, however <a href="https://restic.net/">Restic</a> stands out for its great compatibility with other cloud systems such as <a href="https://aws.amazon.com/">AWS</a>, <a href="https://azure.microsoft.com/">Azure</a> or <a href="https://cloud.google.com/">GCP</a>. Again, consult the <a href="https://restic.readthedocs.io/en/latest/030_preparing_a_new_repo.html">documentation</a>!</p>
 <ol>
-<li>Once you have Restic installed, you will need to create a new repository for your backups. This can be done by running the following command:</li>
+<li>Once you have <a href="https://restic.net/">Restic</a> installed, you will need to create a new repository for your backups. This can be done by running the following command:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>restic init --repo /path/to/repo
 </span></span></code></pre></div><ol start="2">
