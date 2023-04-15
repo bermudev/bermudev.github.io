@@ -7,25 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 02 Apr 2023 13:34:15 +0200</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>technology</title>
-      <link>https://bermu.dev/categories/technology/</link>
-      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
-      
-      <guid>https://bermu.dev/categories/technology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tutorial</title>
-      <link>https://bermu.dev/categories/tutorial/</link>
-      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
-      
-      <guid>https://bermu.dev/categories/tutorial/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>code quality</title>
       <link>https://bermu.dev/categories/code-quality/</link>

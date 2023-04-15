@@ -7,43 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 02 Apr 2023 13:34:15 +0200</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>command line tool</title>
-      <link>https://bermu.dev/tags/command-line-tool/</link>
-      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
-      
-      <guid>https://bermu.dev/tags/command-line-tool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>video download</title>
-      <link>https://bermu.dev/tags/video-download/</link>
-      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
-      
-      <guid>https://bermu.dev/tags/video-download/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>YouTube</title>
-      <link>https://bermu.dev/tags/youtube/</link>
-      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
-      
-      <guid>https://bermu.dev/tags/youtube/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>yt-dlp</title>
-      <link>https://bermu.dev/tags/yt-dlp/</link>
-      <pubDate>Sun, 02 Apr 2023 13:34:15 +0200</pubDate>
-      
-      <guid>https://bermu.dev/tags/yt-dlp/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>code analisys</title>
       <link>https://bermu.dev/tags/code-analisys/</link>
