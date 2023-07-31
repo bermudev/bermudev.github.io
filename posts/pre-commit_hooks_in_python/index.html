@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Pre-commit Hooks in Python | ~/bermudev/blog</title>
+  <link rel = 'canonical' href = 'https://bermu.dev/posts/pre-commit_hooks_in_python/'>
+  <meta name="description" content="Welcome to my personal blog about software development! My name is Carlos and I am passionate about writing code and solving problems. I love  Python, Linux, and AI/ML. Here you&#39;ll find my thoughts, tutorials and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Pre-commit Hooks in Python" />
+<meta property="og:description" content="Last month I was talking about code formatters, tools that help to unify styles in our code, making it cleaner, unified, and helping when working in a team.
+Now, I&rsquo;m going to talk about how to integrate those tools into our workflow, so that we make sure we always use them. For this we will use what is known as Pre-commit hooks.
+What are Pre-commit Hooks? Pre-commit hooks are scripts or tools that run automatically before each commit is made in a version control system, such as Git." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bermu.dev/posts/pre-commit_hooks_in_python/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-10T19:32:59+02:00" />
+<meta property="article:modified_time" content="2023-05-10T19:32:59+02:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pre-commit Hooks in Python"/>
+<meta name="twitter:description" content="Last month I was talking about code formatters, tools that help to unify styles in our code, making it cleaner, unified, and helping when working in a team.
+Now, I&rsquo;m going to talk about how to integrate those tools into our workflow, so that we make sure we always use them. For this we will use what is known as Pre-commit hooks.
+What are Pre-commit Hooks? Pre-commit hooks are scripts or tools that run automatically before each commit is made in a version control system, such as Git."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://bermu.dev/css/styles.09e94e87600e032e70785f5adcd01eda4228bb067720a0b352d0a40f172442d31f767e96f39df062ccb2c78d924c12460849323d03c4732934689df8fd713a27.css" integrity="sha512-CelOh2AOAy5weF9a3NAe2kIouwZ3IKCzUtCkDxckQtMfdn6W853wYsyyx42STBJGCEkyPQPEcyk0aJ34/XE6Jw=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://bermu.dev/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">home</a></li>
+         
+        <li><a href="/posts">all writings</a></li>
+         
+        <li><a href="/about">about me</a></li>
+         
+        <li><a href="/categories">categories</a></li>
+         
+        <li><a href="/tags">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://bermu.dev/posts/a_quick_overview_of_test_driven_development/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="/" aria-label="Home">
+            <i class="fas fa-home" aria-hidden="true" onmouseover="$('#i-home').toggle();" onmouseout="$('#i-home').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&text=Pre-commit%20Hooks%20in%20Python" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&title=Pre-commit%20Hooks%20in%20Python" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&is_video=false&description=Pre-commit%20Hooks%20in%20Python" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Pre-commit%20Hooks%20in%20Python&body=Check out this article: https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&title=Pre-commit%20Hooks%20in%20Python" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&title=Pre-commit%20Hooks%20in%20Python" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&name=Pre-commit%20Hooks%20in%20Python&description=Last%20month%20I%20was%20talking%20about%20code%20formatters%2c%20tools%20that%20help%20to%20unify%20styles%20in%20our%20code%2c%20making%20it%20cleaner%2c%20unified%2c%20and%20helping%20when%20working%20in%20a%20team.%0aNow%2c%20I%26rsquo%3bm%20going%20to%20talk%20about%20how%20to%20integrate%20those%20tools%20into%20our%20workflow%2c%20so%20that%20we%20make%20sure%20we%20always%20use%20them.%20For%20this%20we%20will%20use%20what%20is%20known%20as%20Pre-commit%20hooks.%0aWhat%20are%20Pre-commit%20Hooks%3f%20Pre-commit%20hooks%20are%20scripts%20or%20tools%20that%20run%20automatically%20before%20each%20commit%20is%20made%20in%20a%20version%20control%20system%2c%20such%20as%20Git." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&t=Pre-commit%20Hooks%20in%20Python" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-pre-commit-hooks">What are Pre-commit Hooks?</a></li>
+    <li><a href="#how-do-they-work">How do they work?</a></li>
+    <li><a href="#what-are-the-benefits-of-pre-commit-hooks">What are the benefits of Pre-commit Hooks?</a></li>
+    <li><a href="#setting-up-pre-commit-hooks-in-python">Setting Up Pre-commit Hooks in Python</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Pre-commit Hooks in Python
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-05-10 19:32:59 &#43;0200 CEST" itemprop="datePublished">2023-05-10</time>
+          
+        </div>
+        
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/development-tools">development tools</a>
+            
+             ,  
+            <a class="category-link" href="/categories/python">python</a>
+            
+             ,  
+            <a class="category-link" href="/categories/software-development">software development</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/pre-commit" rel="tag">pre-commit</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/hooks" rel="tag">hooks</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/code-quality" rel="tag">code quality</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/automation" rel="tag">automation</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/version-control" rel="tag">version control</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/git" rel="tag">git</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+    
+    
+    <div class="content" itemprop="articleBody">
+      <figure><img src="/images/precommit_logo.png"
+         alt="Precommit logo" width="150px"/>
+</figure>
+
+<p>Last month I was talking about code formatters, tools that help to unify styles in our code, making it cleaner, unified, and helping when working in a team.</p>
+<p>Now, I&rsquo;m going to talk about how to integrate those tools into our workflow, so that we make sure we always use them. For this we will use what is known as <strong><a href="https://pre-commit.com/">Pre-commit hooks</a></strong>.</p>
+<h2 id="what-are-pre-commit-hooks">What are Pre-commit Hooks?</h2>
+<p>Pre-commit hooks are scripts or tools that run automatically before each commit is made in a version control system, such as <a href="https://git-scm.com/">Git</a>. These hooks help developers catch potential issues early on, ensuring that code committed to the repository adheres to a set of predefined standards and passes various checks. Sounds familiar?</p>
+<h2 id="how-do-they-work">How do they work?</h2>
+<p>Pre-commit hooks are defined and configured in a file called <code>.pre-commit-config.yaml</code> at the root of your project. This YAML file lists the hooks you want to run and the commands needed to execute them. Each hook can be a linter, code formatter (for example <a href="https://black.readthedocs.io/en/stable/">Black</a> or <a href="https://github.com/google/yapf">YAPF</a>), static code analyzer, or any other tool that helps maintain code quality.</p>
+<p>When you attempt to make a commit, the pre-commit hook is triggered, and the defined checks are performed on the staged files. If any issues are detected, the commit is halted, automatically fixing the problem for you or allowing you to address the problems before finalizing the commit.</p>
+<figure><img src="/images/pre-commit-run.png"
+         alt="Precommit run" width="500px"/>
+</figure>
+
+<h2 id="what-are-the-benefits-of-pre-commit-hooks">What are the benefits of Pre-commit Hooks?</h2>
+<p>Using pre-commit hooks offers several benefits for developers and development teams:</p>
+<ol>
+<li>
+<p><strong>Consistent Code Style</strong>: Enforcing code style guidelines with pre-commit hooks ensures that all team members follow the same coding standards, leading to a more consistent codebase.</p>
+</li>
+<li>
+<p><strong>Early Issue Detection</strong>: Pre-commit hooks catch potential issues, such as formatting errors, linting problems, or security vulnerabilities, before they get into the codebase, preventing future headaches.</p>
+</li>
+<li>
+<p><strong>Improved Code Review Process</strong>: By catching issues early, pre-commit hooks reduce the number of code review comments related to code style or basic mistakes, making the review process more focused on higher-level design and logic.</p>
+</li>
+</ol>
+<h2 id="setting-up-pre-commit-hooks-in-python">Setting Up Pre-commit Hooks in Python</h2>
+<p>Setting up pre-commit hooks in your Python project is really easy, just follow these steps:</p>
+<ol>
+<li><strong>Install pre-commit</strong>: Run <code>pip install pre-commit</code> to install the pre-commit package.</li>
+<li><strong>Create the <em>.pre-commit-config.yaml</em> file</strong>: Define the hooks you want to use and specify the commands for each hook. An example of such a file could be:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">repos</span>:
+</span></span><span style="display:flex;"><span>-   <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/pre-commit/pre-commit-hooks</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rev</span>: <span style="color:#ae81ff">v4.4.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hooks</span>:
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">trailing-whitespace</span>
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">end-of-file-fixer</span>
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">check-yaml</span>
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">debug-statements</span>
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">double-quote-string-fixer</span>
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">name-tests-test</span>
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">requirements-txt-fixer</span>
+</span></span><span style="display:flex;"><span>-   <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/PyCQA/flake8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rev</span>: <span style="color:#ae81ff">6.0.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hooks</span>:
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">flake8</span>
+</span></span><span style="display:flex;"><span>-   <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/psf/black</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rev</span>: <span style="color:#ae81ff">stable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hooks</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">id</span>: <span style="color:#ae81ff">black</span>
+</span></span></code></pre></div><ol start="3">
+<li><strong>Install the hooks</strong>: Run <code>pre-commit install</code> to install the hooks into your Git repository.</li>
+<li><strong>Run the hooks</strong>: Pre-commit hooks will now automatically run before each commit. If any issues are found, you will need to address them before proceeding with the commit.</li>
+</ol>
+<p>That&rsquo;s all, from now on pre-commit will be launched with every commit, and with it all the tools that we have indicated in the configuration file!</p>
+
+    </div>
+  </article>
+
+  
+<div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="bermudev/bermudev.github.io"
+    issue-term="pathname"
+    label="blog comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/posts">all writings</a></li>
+         
+          <li><a href="/about">about me</a></li>
+         
+          <li><a href="/categories">categories</a></li>
+         
+          <li><a href="/tags">tags</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-pre-commit-hooks">What are Pre-commit Hooks?</a></li>
+    <li><a href="#how-do-they-work">How do they work?</a></li>
+    <li><a href="#what-are-the-benefits-of-pre-commit-hooks">What are the benefits of Pre-commit Hooks?</a></li>
+    <li><a href="#setting-up-pre-commit-hooks-in-python">Setting Up Pre-commit Hooks in Python</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&text=Pre-commit%20Hooks%20in%20Python" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&title=Pre-commit%20Hooks%20in%20Python" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&is_video=false&description=Pre-commit%20Hooks%20in%20Python" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Pre-commit%20Hooks%20in%20Python&body=Check out this article: https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&title=Pre-commit%20Hooks%20in%20Python" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&title=Pre-commit%20Hooks%20in%20Python" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&name=Pre-commit%20Hooks%20in%20Python&description=Last%20month%20I%20was%20talking%20about%20code%20formatters%2c%20tools%20that%20help%20to%20unify%20styles%20in%20our%20code%2c%20making%20it%20cleaner%2c%20unified%2c%20and%20helping%20when%20working%20in%20a%20team.%0aNow%2c%20I%26rsquo%3bm%20going%20to%20talk%20about%20how%20to%20integrate%20those%20tools%20into%20our%20workflow%2c%20so%20that%20we%20make%20sure%20we%20always%20use%20them.%20For%20this%20we%20will%20use%20what%20is%20known%20as%20Pre-commit%20hooks.%0aWhat%20are%20Pre-commit%20Hooks%3f%20Pre-commit%20hooks%20are%20scripts%20or%20tools%20that%20run%20automatically%20before%20each%20commit%20is%20made%20in%20a%20version%20control%20system%2c%20such%20as%20Git." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbermu.dev%2fposts%2fpre-commit_hooks_in_python%2f&t=Pre-commit%20Hooks%20in%20Python" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Carlos Bermúdez 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">home</a></li>
+         
+        <li><a href="/posts">all writings</a></li>
+         
+        <li><a href="/about">about me</a></li>
+         
+        <li><a href="/categories">categories</a></li>
+         
+        <li><a href="/tags">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

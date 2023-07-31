@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> A quick overview of Test Driven Development | ~/bermudev/blog</title>
+  <link rel = 'canonical' href = 'https://bermu.dev/posts/a_quick_overview_of_test_driven_development/'>
+  <meta name="description" content="Welcome to my personal blog about software development! My name is Carlos and I am passionate about writing code and solving problems. I love  Python, Linux, and AI/ML. Here you&#39;ll find my thoughts, tutorials and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="A quick overview of Test Driven Development" />
+<meta property="og:description" content="Test-Driven Development (TDD) is a software development practice where developers write tests before writing the implementation code. Yes, I know it sounds a little crazy, but keep reading!
+What is TDD all about? The TDD cycle is really simple and it usually consists of three main steps:
+Write a failing test: First, you write a test that specifies the desired behavior of the code you are about to write. This test is expected to fail initially, as the code to fulfill this behavior has not been implemented yet." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bermu.dev/posts/a_quick_overview_of_test_driven_development/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-17T23:18:57+02:00" />
+<meta property="article:modified_time" content="2023-06-17T23:18:57+02:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A quick overview of Test Driven Development"/>
+<meta name="twitter:description" content="Test-Driven Development (TDD) is a software development practice where developers write tests before writing the implementation code. Yes, I know it sounds a little crazy, but keep reading!
+What is TDD all about? The TDD cycle is really simple and it usually consists of three main steps:
+Write a failing test: First, you write a test that specifies the desired behavior of the code you are about to write. This test is expected to fail initially, as the code to fulfill this behavior has not been implemented yet."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://bermu.dev/css/styles.09e94e87600e032e70785f5adcd01eda4228bb067720a0b352d0a40f172442d31f767e96f39df062ccb2c78d924c12460849323d03c4732934689df8fd713a27.css" integrity="sha512-CelOh2AOAy5weF9a3NAe2kIouwZ3IKCzUtCkDxckQtMfdn6W853wYsyyx42STBJGCEkyPQPEcyk0aJ34/XE6Jw=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://bermu.dev/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">home</a></li>
+         
+        <li><a href="/posts">all writings</a></li>
+         
+        <li><a href="/about">about me</a></li>
+         
+        <li><a href="/categories">categories</a></li>
+         
+        <li><a href="/tags">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://bermu.dev/posts/pre-commit_hooks_in_python/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://bermu.dev/posts/microservices_development_with_devcontainer_in_vscode/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="/" aria-label="Home">
+            <i class="fas fa-home" aria-hidden="true" onmouseover="$('#i-home').toggle();" onmouseout="$('#i-home').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&text=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&title=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&is_video=false&description=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=A%20quick%20overview%20of%20Test%20Driven%20Development&body=Check out this article: https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&title=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&title=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&name=A%20quick%20overview%20of%20Test%20Driven%20Development&description=Test-Driven%20Development%20%28TDD%29%20is%20a%20software%20development%20practice%20where%20developers%20write%20tests%20before%20writing%20the%20implementation%20code.%20Yes%2c%20I%20know%20it%20sounds%20a%20little%20crazy%2c%20but%20keep%20reading%21%0aWhat%20is%20TDD%20all%20about%3f%20The%20TDD%20cycle%20is%20really%20simple%20and%20it%20usually%20consists%20of%20three%20main%20steps%3a%0aWrite%20a%20failing%20test%3a%20First%2c%20you%20write%20a%20test%20that%20specifies%20the%20desired%20behavior%20of%20the%20code%20you%20are%20about%20to%20write.%20This%20test%20is%20expected%20to%20fail%20initially%2c%20as%20the%20code%20to%20fulfill%20this%20behavior%20has%20not%20been%20implemented%20yet." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&t=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-tdd-all-about">What is TDD all about?</a></li>
+    <li><a href="#does-it-work">Does it work?</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        A quick overview of Test Driven Development
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-06-17 23:18:57 &#43;0200 CEST" itemprop="datePublished">2023-06-17</time>
+          
+        </div>
+        
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/software-development">software development</a>
+            
+             ,  
+            <a class="category-link" href="/categories/python">python</a>
+            
+             ,  
+            <a class="category-link" href="/categories/testing">testing</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/tdd" rel="tag">TDD</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/unit-testing" rel="tag">unit testing</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/code-quality" rel="tag">code quality</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+    
+    
+    <div class="content" itemprop="articleBody">
+      <p>Test-Driven Development (TDD) is a software development practice where developers write tests before writing the implementation code. Yes, I know it sounds a little crazy, but keep reading!</p>
+<h2 id="what-is-tdd-all-about">What is TDD all about?</h2>
+<p>The TDD cycle is really simple and it usually consists of three main steps:</p>
+<ol>
+<li>
+<p><strong>Write a failing test</strong>: First, you write a test that specifies the desired behavior of the code you are about to write. This test is expected to fail initially, as the code to fulfill this behavior has not been implemented yet.</p>
+</li>
+<li>
+<p><strong>Make the test pass</strong>: Next, you write the minimal amount of code necessary to make the test pass. The focus here is on just enough code to pass the test, not on implementing the entire feature.</p>
+</li>
+<li>
+<p><strong>Refactor</strong>: Finally, once the test passes, you can refactor the code to improve its design and maintainability. The tests give you the confidence to make changes without introducing regressions.</p>
+</li>
+</ol>
+<figure><img src="/images/TDD.png"
+         alt="TDD" width="400px"/>
+</figure>
+
+<h2 id="does-it-work">Does it work?</h2>
+<p>And now I guess you&rsquo;re wondering&hellip; does this really work? And the answer is clearly yes. Based on a <a href="https://www.computer.org/csdl/magazine/so/2007/03/s3024/13rRUygT7kK">survey carried out by IEEE</a>, Test-Driven Development (TDD) offers numerous advantages, including:</p>
+<ul>
+<li>
+<p><strong>Faster time to market</strong>: TDD projects were completed, on average, 30% faster.</p>
+</li>
+<li>
+<p><strong>Reduced defects</strong>: TDD resulted in code with significantly fewer failures, with bug reduction ranging between 40% and 80%.</p>
+</li>
+<li>
+<p><strong>Enhanced quality</strong>: Some projects experienced an impressive 80% improvement in code readability, understandability, and perceived quality.</p>
+</li>
+</ul>
+<p>So you know, next time, why don&rsquo;t you <em><strong>test</strong></em> this methodology? ;)</p>
+
+    </div>
+  </article>
+
+  
+<div class="blog-post-comments">
+    
+      <div id="disquss_thread">
+  <script src="https://utteranc.es/client.js"
+    repo="bermudev/bermudev.github.io"
+    issue-term="pathname"
+    label="blog comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/posts">all writings</a></li>
+         
+          <li><a href="/about">about me</a></li>
+         
+          <li><a href="/categories">categories</a></li>
+         
+          <li><a href="/tags">tags</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-tdd-all-about">What is TDD all about?</a></li>
+    <li><a href="#does-it-work">Does it work?</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&text=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&title=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&is_video=false&description=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=A%20quick%20overview%20of%20Test%20Driven%20Development&body=Check out this article: https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&title=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&title=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&name=A%20quick%20overview%20of%20Test%20Driven%20Development&description=Test-Driven%20Development%20%28TDD%29%20is%20a%20software%20development%20practice%20where%20developers%20write%20tests%20before%20writing%20the%20implementation%20code.%20Yes%2c%20I%20know%20it%20sounds%20a%20little%20crazy%2c%20but%20keep%20reading%21%0aWhat%20is%20TDD%20all%20about%3f%20The%20TDD%20cycle%20is%20really%20simple%20and%20it%20usually%20consists%20of%20three%20main%20steps%3a%0aWrite%20a%20failing%20test%3a%20First%2c%20you%20write%20a%20test%20that%20specifies%20the%20desired%20behavior%20of%20the%20code%20you%20are%20about%20to%20write.%20This%20test%20is%20expected%20to%20fail%20initially%2c%20as%20the%20code%20to%20fulfill%20this%20behavior%20has%20not%20been%20implemented%20yet." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbermu.dev%2fposts%2fa_quick_overview_of_test_driven_development%2f&t=A%20quick%20overview%20of%20Test%20Driven%20Development" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Carlos Bermúdez 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">home</a></li>
+         
+        <li><a href="/posts">all writings</a></li>
+         
+        <li><a href="/about">about me</a></li>
+         
+        <li><a href="/categories">categories</a></li>
+         
+        <li><a href="/tags">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

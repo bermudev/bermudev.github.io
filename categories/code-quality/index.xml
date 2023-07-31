@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/code-quality/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Apr 2023 18:42:10 +0200</lastBuildDate><atom:link href="https://bermu.dev/categories/code-quality/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing code formatters: Black and YAPF</title>
+      <link>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</link>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</guid>
+      <description>Imagine you are in a development group where you work on common projects, you do tasks on the same files and everyone has their own way of doing things, their own style preference, etc. The amount of noise that is generated in PRs is incredible.
+Thankfully, there are tools available that can automatically format our code according to a defined style guide. I will talk about two of the most popular code formatters for Python: Black and YAPF.</description>
+    </item>
+    
     <item>
       <title>Ruff: A Fast Rust-based Python Linter</title>
       <link>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</link>

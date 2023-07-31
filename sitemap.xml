@@ -3,15 +3,105 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/tags/code-analisys/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
+    <loc>https://bermu.dev/tags/containerization/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/devcontainer/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/development-tools/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/development-tools/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/docker/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/docker/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/microservices/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/microservices/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/microservices_development_with_devcontainer_in_vscode/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/python/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/vscode/</loc>
+    <lastmod>2023-07-21T16:28:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/a_quick_overview_of_test_driven_development/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/code-quality/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/python/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/software-development/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/tdd/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/testing/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/unit-testing/</loc>
+    <lastmod>2023-06-17T23:18:57+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/automation/</loc>
+    <lastmod>2023-05-10T19:32:59+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/git/</loc>
+    <lastmod>2023-05-10T19:32:59+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/hooks/</loc>
+    <lastmod>2023-05-10T19:32:59+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/pre-commit/</loc>
+    <lastmod>2023-05-10T19:32:59+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/pre-commit_hooks_in_python/</loc>
+    <lastmod>2023-05-10T19:32:59+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/version-control/</loc>
+    <lastmod>2023-05-10T19:32:59+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/black/</loc>
+    <lastmod>2023-04-18T18:42:10+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/code-formatting/</loc>
+    <lastmod>2023-04-18T18:42:10+02:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/code-quality/</loc>
+    <lastmod>2023-04-18T18:42:10+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</loc>
+    <lastmod>2023-04-18T18:42:10+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/yapf/</loc>
+    <lastmod>2023-04-18T18:42:10+02:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/code-analisys/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/code-review/</loc>
@@ -26,25 +116,13 @@
     <loc>https://bermu.dev/categories/linter/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/posts/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
-  </url><url>
     <loc>https://bermu.dev/tags/pylint/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/python/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/categories/python/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/ruff/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</loc>
-    <lastmod>2023-03-19T14:46:02+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-03-19T14:46:02+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/fira-code/</loc>
@@ -166,9 +244,6 @@
   </url><url>
     <loc>https://bermu.dev/posts/understanding-nosql-databases/</loc>
     <lastmod>2023-01-28T22:33:32+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/automation/</loc>
-    <lastmod>2023-01-20T17:50:46+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/automation/</loc>
     <lastmod>2023-01-20T17:50:46+01:00</lastmod>

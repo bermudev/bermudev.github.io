@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yapf on ~/bermudev/blog</title>
+    <link>https://bermu.dev/tags/yapf/</link>
+    <description>Recent content in yapf on ~/bermudev/blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Carlos Bermúdez</copyright>
+    <lastBuildDate>Tue, 18 Apr 2023 18:42:10 +0200</lastBuildDate><atom:link href="https://bermu.dev/tags/yapf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing code formatters: Black and YAPF</title>
+      <link>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</link>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</guid>
+      <description>Imagine you are in a development group where you work on common projects, you do tasks on the same files and everyone has their own way of doing things, their own style preference, etc. The amount of noise that is generated in PRs is incredible.
+Thankfully, there are tools available that can automatically format our code according to a defined style guide. I will talk about two of the most popular code formatters for Python: Black and YAPF.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,7 +7,169 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 16:28:17 +0200</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>containerization</title>
+      <link>https://bermu.dev/tags/containerization/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/containerization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devcontainer</title>
+      <link>https://bermu.dev/tags/devcontainer/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/devcontainer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development tools</title>
+      <link>https://bermu.dev/tags/development-tools/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/development-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://bermu.dev/tags/docker/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservices</title>
+      <link>https://bermu.dev/tags/microservices/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://bermu.dev/tags/python/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://bermu.dev/tags/vscode/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code quality</title>
+      <link>https://bermu.dev/tags/code-quality/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/code-quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD</title>
+      <link>https://bermu.dev/tags/tdd/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unit testing</title>
+      <link>https://bermu.dev/tags/unit-testing/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/unit-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://bermu.dev/tags/automation/</link>
+      <pubDate>Wed, 10 May 2023 19:32:59 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://bermu.dev/tags/git/</link>
+      <pubDate>Wed, 10 May 2023 19:32:59 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hooks</title>
+      <link>https://bermu.dev/tags/hooks/</link>
+      <pubDate>Wed, 10 May 2023 19:32:59 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/hooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pre-commit</title>
+      <link>https://bermu.dev/tags/pre-commit/</link>
+      <pubDate>Wed, 10 May 2023 19:32:59 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/pre-commit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>version control</title>
+      <link>https://bermu.dev/tags/version-control/</link>
+      <pubDate>Wed, 10 May 2023 19:32:59 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>black</title>
+      <link>https://bermu.dev/tags/black/</link>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code formatting</title>
+      <link>https://bermu.dev/tags/code-formatting/</link>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/code-formatting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yapf</title>
+      <link>https://bermu.dev/tags/yapf/</link>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/yapf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>code analisys</title>
       <link>https://bermu.dev/tags/code-analisys/</link>
@@ -50,15 +212,6 @@
       <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
       
       <guid>https://bermu.dev/tags/pylint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://bermu.dev/tags/python/</link>
-      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
-      
-      <guid>https://bermu.dev/tags/python/</guid>
       <description></description>
     </item>
     
@@ -284,15 +437,6 @@
       <pubDate>Sat, 28 Jan 2023 22:33:32 +0100</pubDate>
       
       <guid>https://bermu.dev/tags/riak/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>automation</title>
-      <link>https://bermu.dev/tags/automation/</link>
-      <pubDate>Fri, 20 Jan 2023 17:50:46 +0100</pubDate>
-      
-      <guid>https://bermu.dev/tags/automation/</guid>
       <description></description>
     </item>
     

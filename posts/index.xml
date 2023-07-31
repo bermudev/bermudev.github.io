@@ -7,7 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 16:28:17 +0200</lastBuildDate><atom:link href="https://bermu.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices Development with DevContainer in VSCode</title>
+      <link>https://bermu.dev/posts/microservices_development_with_devcontainer_in_vscode/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/microservices_development_with_devcontainer_in_vscode/</guid>
+      <description>I have recently started working on a new project with microservices and I have come across one of the tools that has impressed me the most in this time. This tool is the DevContainer extension in Visual Studio Code (VSCode), and now I will explain why I think it is indispensable for working in microservices development.
+What is DevContainer? DevContainer is an extension provided by VSCode that allows developers to define and manage development environments within a container.</description>
+    </item>
+    
+    <item>
+      <title>A quick overview of Test Driven Development</title>
+      <link>https://bermu.dev/posts/a_quick_overview_of_test_driven_development/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/a_quick_overview_of_test_driven_development/</guid>
+      <description>Test-Driven Development (TDD) is a software development practice where developers write tests before writing the implementation code. Yes, I know it sounds a little crazy, but keep reading!
+What is TDD all about? The TDD cycle is really simple and it usually consists of three main steps:
+Write a failing test: First, you write a test that specifies the desired behavior of the code you are about to write. This test is expected to fail initially, as the code to fulfill this behavior has not been implemented yet.</description>
+    </item>
+    
+    <item>
+      <title>Pre-commit Hooks in Python</title>
+      <link>https://bermu.dev/posts/pre-commit_hooks_in_python/</link>
+      <pubDate>Wed, 10 May 2023 19:32:59 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/pre-commit_hooks_in_python/</guid>
+      <description>Last month I was talking about code formatters, tools that help to unify styles in our code, making it cleaner, unified, and helping when working in a team.
+Now, I&amp;rsquo;m going to talk about how to integrate those tools into our workflow, so that we make sure we always use them. For this we will use what is known as Pre-commit hooks.
+What are Pre-commit Hooks? Pre-commit hooks are scripts or tools that run automatically before each commit is made in a version control system, such as Git.</description>
+    </item>
+    
+    <item>
+      <title>Introducing code formatters: Black and YAPF</title>
+      <link>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</link>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/introducing_code_formatters_black_and_yapf/</guid>
+      <description>Imagine you are in a development group where you work on common projects, you do tasks on the same files and everyone has their own way of doing things, their own style preference, etc. The amount of noise that is generated in PRs is incredible.
+Thankfully, there are tools available that can automatically format our code according to a defined style guide. I will talk about two of the most popular code formatters for Python: Black and YAPF.</description>
+    </item>
+    
     <item>
       <title>Ruff: A Fast Rust-based Python Linter</title>
       <link>https://bermu.dev/posts/ruff-a-fast-rust-based-python-linter/</link>

@@ -7,11 +7,65 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Sun, 19 Mar 2023 14:46:02 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 16:28:17 +0200</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>development tools</title>
+      <link>https://bermu.dev/categories/development-tools/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/categories/development-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://bermu.dev/categories/docker/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservices</title>
+      <link>https://bermu.dev/categories/microservices/</link>
+      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
+      
+      <guid>https://bermu.dev/categories/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://bermu.dev/categories/python/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software development</title>
+      <link>https://bermu.dev/categories/software-development/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/categories/software-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://bermu.dev/categories/testing/</link>
+      <pubDate>Sat, 17 Jun 2023 23:18:57 +0200</pubDate>
+      
+      <guid>https://bermu.dev/categories/testing/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>code quality</title>
       <link>https://bermu.dev/categories/code-quality/</link>
-      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
+      <pubDate>Tue, 18 Apr 2023 18:42:10 +0200</pubDate>
       
       <guid>https://bermu.dev/categories/code-quality/</guid>
       <description></description>
@@ -23,15 +77,6 @@
       <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
       
       <guid>https://bermu.dev/categories/linter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://bermu.dev/categories/python/</link>
-      <pubDate>Sun, 19 Mar 2023 14:46:02 +0100</pubDate>
-      
-      <guid>https://bermu.dev/categories/python/</guid>
       <description></description>
     </item>
     
