@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Fri, 21 Jul 2023 16:28:17 +0200</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 11:41:53 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>development environment</title>
+      <link>https://bermu.dev/tags/development-environment/</link>
+      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/development-environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development tools</title>
+      <link>https://bermu.dev/tags/development-tools/</link>
+      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/development-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pyenv</title>
+      <link>https://bermu.dev/tags/pyenv/</link>
+      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/pyenv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://bermu.dev/tags/python/</link>
+      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtual environments</title>
+      <link>https://bermu.dev/tags/virtual-environments/</link>
+      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/virtual-environments/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>containerization</title>
       <link>https://bermu.dev/tags/containerization/</link>
@@ -27,15 +72,6 @@
     </item>
     
     <item>
-      <title>development tools</title>
-      <link>https://bermu.dev/tags/development-tools/</link>
-      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
-      
-      <guid>https://bermu.dev/tags/development-tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>docker</title>
       <link>https://bermu.dev/tags/docker/</link>
       <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
@@ -50,15 +86,6 @@
       <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
       
       <guid>https://bermu.dev/tags/microservices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://bermu.dev/tags/python/</link>
-      <pubDate>Fri, 21 Jul 2023 16:28:17 +0200</pubDate>
-      
-      <guid>https://bermu.dev/tags/python/</guid>
       <description></description>
     </item>
     
