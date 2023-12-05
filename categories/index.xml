@@ -7,13 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Thu, 19 Oct 2023 11:41:53 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2023 19:15:12 +0100</lastBuildDate><atom:link href="https://bermu.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>development</title>
       <link>https://bermu.dev/categories/development/</link>
-      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
       
       <guid>https://bermu.dev/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux integration</title>
+      <link>https://bermu.dev/categories/linux-integration/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/linux-integration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operating systems</title>
+      <link>https://bermu.dev/categories/operating-systems/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/operating-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows subsystem for linux</title>
+      <link>https://bermu.dev/categories/windows-subsystem-for-linux/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/categories/windows-subsystem-for-linux/</guid>
       <description></description>
     </item>
     

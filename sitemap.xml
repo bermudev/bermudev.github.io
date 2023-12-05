@@ -3,21 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bermu.dev/</loc>
-    <lastmod>2023-10-19T11:41:53+01:00</lastmod>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/</loc>
-    <lastmod>2023-10-19T11:41:53+01:00</lastmod>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/development/</loc>
-    <lastmod>2023-10-19T11:41:53+01:00</lastmod>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/development-environment/</loc>
-    <lastmod>2023-10-19T11:41:53+01:00</lastmod>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
   </url><url>
-    <loc>https://bermu.dev/tags/development-tools/</loc>
-    <lastmod>2023-10-19T11:41:53+01:00</lastmod>
+    <loc>https://bermu.dev/tags/fedora/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/posts/installing_fedora_on_windows_using_wsl/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/linux/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/linux-integration/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/operating-systems/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/posts/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/windows/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/categories/windows-subsystem-for-linux/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/wsl/</loc>
+    <lastmod>2023-11-28T19:15:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bermu.dev/tags/development-tools/</loc>
     <lastmod>2023-10-19T11:41:53+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/tags/pyenv/</loc>
@@ -27,9 +54,6 @@
     <lastmod>2023-10-19T11:41:53+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/python/</loc>
-    <lastmod>2023-10-19T11:41:53+01:00</lastmod>
-  </url><url>
-    <loc>https://bermu.dev/tags/</loc>
     <lastmod>2023-10-19T11:41:53+01:00</lastmod>
   </url><url>
     <loc>https://bermu.dev/categories/tools-and-utilities/</loc>

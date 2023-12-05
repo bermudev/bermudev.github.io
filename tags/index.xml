@@ -7,13 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Thu, 19 Oct 2023 11:41:53 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2023 19:15:12 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>development environment</title>
       <link>https://bermu.dev/tags/development-environment/</link>
-      <pubDate>Thu, 19 Oct 2023 11:41:53 +0100</pubDate>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
       
       <guid>https://bermu.dev/tags/development-environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>https://bermu.dev/tags/fedora/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://bermu.dev/tags/linux/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://bermu.dev/tags/windows/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://bermu.dev/tags/wsl/</link>
+      <pubDate>Tue, 28 Nov 2023 19:15:12 +0100</pubDate>
+      
+      <guid>https://bermu.dev/tags/wsl/</guid>
       <description></description>
     </item>
     
