@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Tue, 28 Nov 2023 19:15:12 +0100</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Dec 2023 13:53:18 +0200</lastBuildDate><atom:link href="https://bermu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>personal growth</title>
+      <link>https://bermu.dev/tags/personal-growth/</link>
+      <pubDate>Sun, 24 Dec 2023 13:53:18 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/personal-growth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>professional development</title>
+      <link>https://bermu.dev/tags/professional-development/</link>
+      <pubDate>Sun, 24 Dec 2023 13:53:18 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/professional-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recap</title>
+      <link>https://bermu.dev/tags/recap/</link>
+      <pubDate>Sun, 24 Dec 2023 13:53:18 +0200</pubDate>
+      
+      <guid>https://bermu.dev/tags/recap/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>development environment</title>
       <link>https://bermu.dev/tags/development-environment/</link>

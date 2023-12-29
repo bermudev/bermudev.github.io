@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Carlos Bermúdez</copyright>
-    <lastBuildDate>Tue, 28 Nov 2023 19:15:12 +0100</lastBuildDate><atom:link href="https://bermu.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Dec 2023 13:53:18 +0200</lastBuildDate><atom:link href="https://bermu.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond the Code: My Journey in 2023</title>
+      <link>https://bermu.dev/posts/beyond-the-code-my-journey-in-2023/</link>
+      <pubDate>Sun, 24 Dec 2023 13:53:18 +0200</pubDate>
+      
+      <guid>https://bermu.dev/posts/beyond-the-code-my-journey-in-2023/</guid>
+      <description>Now that the current year 2023 is coming to an end I think it would be appropriate to make a small comment about my experience this year and my new wishes for next year.
+Professional Milestones Professionally I have been able to work on two different projects within the company where I am working, and thanks to this I have been able to acquire knowledge about many technologies that until then were only known to me in theory.</description>
+    </item>
+    
     <item>
       <title>Installing Fedora on Windows Using WSL</title>
       <link>https://bermu.dev/posts/installing_fedora_on_windows_using_wsl/</link>
