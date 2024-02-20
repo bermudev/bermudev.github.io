@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import fs from "fs";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
@@ -28,6 +29,7 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 		sitemap(),
+		icon(),
 	],
 	image: {
 		domains: ["webmention.io"],
