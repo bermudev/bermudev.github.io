@@ -6,11 +6,18 @@ tags: [personal project, blogging]
 ---
 
 import { Image } from "astro:assets";
+import { rootHasDarkClass } from "@/utils";
 import picture_logo from "./astro.png";
 
-<div className="flex justify-center">
-	<Image src={picture_logo} alt="Astro logo" width="300px" />
+{rootHasDarkClass ? (
+
+<div className="flex justify-center" style="filter: invert(1);">
+	<Image src={picture_logo} alt="Astro logo dark" width="300px" />
 </div>
+) : (<div className="flex justify-center">
+	<Image src={picture_logo} alt="Astro logo light" width="300px" />
+</div>
+)}
 
 ## Hello and welcome!
 

@@ -6,9 +6,9 @@ tags: [ruff, python, linter, code review, code analisys, flake8, pylint]
 ---
 
 import { Image } from "astro:assets";
+import { rootHasDarkClass } from "@/utils";
+import { YouTube } from "astro-embed";
 import ruff_chart from "./ruff-chart.svg";
-import { YouTube } from 'astro-embed';
-
 
 In recent weeks there has been considerable talk in the Python community about a new linter that may come to replace the already more than consolidated [Flake8](https://flake8.pycqa.org/en/latest/) or [Pylint](https://www.pylint.org/). This new linter is called [Ruff](https://beta.ruff.rs/).
 
@@ -20,9 +20,15 @@ In recent weeks there has been considerable talk in the Python community about a
 
 One of the most impressive aspects of [Ruff](https://beta.ruff.rs/) is its speed. Some tests show that it is considerably better than its alternatives.
 
-<div className="flex justify-center">
-	<Image src={ruff_chart} alt="Ruff chart" width="500px" />
+{rootHasDarkClass ? (
+
+<div className="flex justify-center" style="filter: invert(1);">
+	<Image src={ruff_chart} alt="Ruff chart dark" width="500px" />
 </div>
+) : (<div className="flex justify-center">
+	<Image src={ruff_chart} alt="Ruff chart light" width="500px" />
+</div>
+)}
 
 In the following video you can see a comparison in the analysis time of large libraries such as [TensorFlow](https://www.tensorflow.org/), where [Ruff](https://beta.ruff.rs/) is more than 16 times faster than Flake8 (from 56.1 seconds to 3.4 seconds) and more than 69 times faster than Pylint (from 179.8 seconds to 2.5 seconds).
 
