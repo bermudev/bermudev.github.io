@@ -1,0 +1,73 @@
+---
+title: "My Personal Setup for the Terminal"
+publishDate: 2023-03-07
+description: "Here is my configuration for the terminal, including the source, the shell, and how to set it all up"
+tags: ["terminal", "font", "theme", "promt", "starship", "nerd font"]
+---
+
+import { Image } from "astro:assets";
+import starship from "./starship.svg";
+import firacode from "./firacode.png";
+
+
+Hello everyone! It's been a busy few weeks, I'm studying a lot about Machine Learning and I don't have too much time to write or share my progress. However, I had to set up a new development environment and I thought, why not share a bit of my setup?
+
+So here's how to choose a shell, how to set up my favorite prompt, font and some personal aliases I commonly use!
+
+## Choosing a Shell
+
+The first thing to do is to choose a shell for our terminal. The three most common Linux shells that I have been able to test are:
+
+- [Bash](https://www.gnu.org/software/bash/) (Bourne-Again SHell): This is the default shell for most Linux distributions. It is a powerful and versatile shell with a wide range of features and capabilities.
+
+- [Zsh](https://www.zsh.org/) (Z Shell): This is a highly customizable shell that is popular among power users. It offers advanced features like tab completion and spelling correction.
+
+- [Fish](https://fishshell.com/) (Friendly Interactive SHell): This is a user-friendly shell that is designed to be easy to use and intuitive. It has a simple syntax and offers many helpful features like syntax highlighting.
+
+In this case, I have chosen to stay with bash because it is the most widely used shell and is therefore well-supported by the Linux community, but mostly, because bash is the default shell for most Linux distributions, so it is already installed on the system and suits my needs for this project.
+
+## The Starship Prompt
+
+The first tool I want to introduce is the **[Starship](https://starship.rs/)** prompt. This is a customizable and fast shell prompt written in [Rust](https://www.rust-lang.org/) that displays useful information in the terminal, like useful system information, Git repository or virtual environment.
+
+<div className="flex justify-center">
+	<Image src={starship} alt="Starship logo" width="300px" />
+</div>
+
+It can be installed in many ways depending on the operating system and shell. In this case, I will explain the installation of a linux system with a bash or zsh shell, for any other case you can consult the [documentation](https://starship.rs/guide/#%F0%9F%9A%80-installation).
+
+1. Open a terminal and run the following command:
+
+``` bash
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+```
+
+2. Add the following line to your shell's configuration file (e.g., `~/.bashrc` for bash):
+
+``` bash
+eval "$(starship init bash)"
+```
+
+That's it! Easy, right?
+
+Now you can customize the Starship prompt by editing the `~/.config/starship.toml` file. This file contains a number of settings that you can tweak to your liking, you can learn more about it [here](https://starship.rs/config/).
+
+## Installing Fira Code font
+
+You have installed Starship correctly and you have set the prompt you liked but now you see that the icons are not displayed correctly? That is probably because the font you are using does not support those icons. To fix that I always install my favorite [Nerd Font](https://www.nerdfonts.com/): Fira Code.
+
+<div className="flex justify-center">
+	<Image src={firacode} alt="FiraCode font" width="300px" />
+</div>
+
+[Fira Code](https://github.com/tonsky/FiraCode) is a monospaced font that includes programming ligatures, which can make your code more readable. And what is a **Nerd Font**? Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons). Just what we want!
+
+So, to install this font on Linux or Windows, follow these steps:
+
+1. Download the **Patched** Fira Code font from the [official repository](https://www.nerdfonts.com/font-downloads) (or any other that you like more!).
+2. Extract the font files to a folder on your system. Separate those for Windows.
+3. On Linux, copy the font files to the `~/.fonts` folder. On Windows, right-click on each font file and select "Install".
+
+Now you can have a pretty and nice prompt with a lot of information!
+
+In the future, I will dedicate another article to explain how I have configured [VSCode](https://code.visualstudio.com/) with my favorite theme and some useful extensions and settings.

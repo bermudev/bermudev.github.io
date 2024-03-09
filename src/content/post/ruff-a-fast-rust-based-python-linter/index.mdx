@@ -1,0 +1,41 @@
+---
+title: "Ruff: A Fast Rust-based Python Linter"
+publishDate: 2023-03-19
+description: "Introducing a new Python linter that is surprising everyone with its speed"
+tags: [ruff, python, linter, code review, code analisys, flake8, pylint]
+---
+
+import { Image } from "astro:assets";
+import { rootHasDarkClass } from "@/utils";
+import { YouTube } from "astro-embed";
+import ruff_chart from "./ruff-chart.svg";
+
+In recent weeks there has been considerable talk in the Python community about a new linter that may come to replace the already more than consolidated [Flake8](https://flake8.pycqa.org/en/latest/) or [Pylint](https://www.pylint.org/). This new linter is called [Ruff](https://beta.ruff.rs/).
+
+## What is Ruff?
+
+[Ruff](https://beta.ruff.rs/) is a linting tool for Python, that like all other linters, analyzes your code for potential errors, style violations, and other issues that could impact the quality and readability of your code. It provides a comprehensive set of rules that help you maintain consistency and best practices in your codebase, which makes it easier for you and your colleagues to work on and understand the code.
+
+## What makes it so special?
+
+One of the most impressive aspects of [Ruff](https://beta.ruff.rs/) is its speed. Some tests show that it is considerably better than its alternatives.
+
+{rootHasDarkClass ? (
+
+<div className="flex justify-center" style="filter: invert(1);">
+	<Image src={ruff_chart} alt="Ruff chart dark" width="500px" />
+</div>
+) : (<div className="flex justify-center">
+	<Image src={ruff_chart} alt="Ruff chart light" width="500px" />
+</div>
+)}
+
+In the following video you can see a comparison in the analysis time of large libraries such as [TensorFlow](https://www.tensorflow.org/), where [Ruff](https://beta.ruff.rs/) is more than 16 times faster than Flake8 (from 56.1 seconds to 3.4 seconds) and more than 69 times faster than Pylint (from 179.8 seconds to 2.5 seconds).
+
+<YouTube id="https://youtu.be/o57IWZTM6fk" />
+
+## More about Ruff
+
+You can learn more about Ruff on their [website](https://beta.ruff.rs/), in their [repository](https://github.com/charliermarsh/ruff), and watch below an interesting video from the friends at [JetBrains](https://www.jetbrains.com/) where they explain and exemplify in more depth all its features and possibilities.
+
+<YouTube id="https://youtu.be/jeoL4qsSLbE" />
