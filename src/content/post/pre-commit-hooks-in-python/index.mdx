@@ -9,13 +9,14 @@ import { Image } from "astro:assets";
 import picture_logo from "./pre-commit-logo.png";
 import picture_run from "./pre-commit-run.png";
 
+
+Last month I was talking about [code formatters](https://bermu.dev/posts/introducing-code-formatters-black-and-yapf/): tools that help to unify styles in our code, making it cleaner, unified, and helping when working in a team.
+
+Now, I'm going to talk about how to integrate those tools into our workflow, so that we make sure we always use them. For this we will use what is known as **[Pre-commit hooks](https://pre-commit.com/)**.
+
 <div className="flex justify-center">
 	<Image src={picture_logo} alt="Precommit logo" width="150px" />
 </div>
-
-Last month I was talking about code formatters, tools that help to unify styles in our code, making it cleaner, unified, and helping when working in a team.
-
-Now, I'm going to talk about how to integrate those tools into our workflow, so that we make sure we always use them. For this we will use what is known as **[Pre-commit hooks](https://pre-commit.com/)**.
 
 ## What are Pre-commit Hooks?
 
