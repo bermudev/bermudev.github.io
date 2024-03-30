@@ -5,15 +5,17 @@ description: "Manage Python versions easily with Pyenv and virtual environments.
 tags: [pyenv, python, development environment, development tools, virtual environments]
 ---
 
-When working with different projects it is common to have different versions of the same programming language and dependencies for each one of them, so if we had a single installation or global version, this could give constant conflict between different projects.
+When working with different projects it is common to have **different versions** of the same programming language and **dependencies** for each one of them, so if we had a single installation or global version, this could give constant **conflict** between different projects.
 
-To fix that we can use tools like `pyenv` and `virtual environments`. What these tools do is to isolate different versions of python and different installations (environments) of each of these versions.
+To fix that we can use tools like `pyenv` and `virtual environments`. What these tools do is to **isolate** different versions of python and different installations (**environments**) of each of these versions.
 
-Pyenv allows us to have different versions globally, locally, or even for the current shell.
+[Pyenv](https://github.com/pyenv/pyenv) allows us to have different versions **globally**, **locally**, or even for the **current shell**.
 
 ## Installing Pyenv
 
-To learn more about the installation process we can follow the instructions in [its repository](https://github.com/pyenv/pyenv#installation). In general, we can use its installation script:
+To learn more about the installation process we can follow the instructions in [its repository](https://github.com/pyenv/pyenv#installation). 
+
+In general, we can use its installation script:
 
 ```bash
 curl https://pyenv.run | bash
@@ -23,7 +25,7 @@ curl https://pyenv.run | bash
 
 After installation there is an additional step that is supposed to be done automatically, but in my case I have found that sometimes I have to do it mannually. It is really simple: when it is done installing, you have to configure it for the SHELL you are using.
 
-For ZSH, just type each one of these lines (or manually add the quotes inside your `~/.zshrc`):
+For [ZSH](https://www.zsh.org/), just type each one of these lines (or manually add the quotes inside your `~/.zshrc`):
 
 ```bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc

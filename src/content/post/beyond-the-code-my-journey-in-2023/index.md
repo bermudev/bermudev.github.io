@@ -11,11 +11,11 @@ Now that the current year 2023 is coming to an end I think it would be appropria
 
 Professionally I have been able to work on two different projects within the company where I am working, and thanks to this I have been able to acquire knowledge about many technologies that until then were only known to me in theory. 
 
-I have been able to work with microservices, I have acquired even more experience in Docker, API development, working methodologies and so on. But perhaps the most important thing is that I have found a working group that makes work very easy and enjoyable. It is true that there have also been difficulties, since all changes require effort, but there is never growth or development without effort.
+I have been able to work with **microservices**, I have acquired even more experience in **Docker**, **API development**, working **methodologies** and so on. But perhaps the most important thing is that I have found a working group that makes work very easy and enjoyable. It is true that there have also been difficulties, since all changes require effort, but there is never growth or development without effort.
 
 ## Personal Achievements
 
-On a personal level I also have a very positive balance, I have been able to grow personally, making my relationships with friends and family even more rewarding, and in addition to this I have been able to embark on personal projects that have given me very good results, this blog is one of them!
+On a personal level I also have a very positive balance, I have been able to **grow personally**, making my **relationships** with friends and family even more rewarding, and in addition to this I have been able to embark on **personal projects** that have given me very good results, this blog is one of them!
 
 ## Looking Ahead to the New Year
 

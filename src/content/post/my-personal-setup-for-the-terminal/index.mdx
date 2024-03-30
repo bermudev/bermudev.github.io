@@ -12,21 +12,21 @@ import firacode from "./firacode.png";
 
 Hello everyone! It's been a busy few weeks, I'm studying a lot about Machine Learning and I don't have too much time to write or share my progress. However, I had to set up a new development environment and I thought, why not share a bit of my setup?
 
-So here's how to choose a shell, how to set up my favorite prompt and font, and some personal aliases I commonly use!
+So here's how to choose a **shell**, how to set up my favorite **prompt** and **font**, and some more personal **tools** I commonly use!
 
 ## Choosing a Shell
 
 The first thing I like to do is to choose a shell for my terminal. The three most common Linux shells that I have been able to test in the past are:
 
-- [Bash](https://www.gnu.org/software/bash/) (Bourne-Again SHell): This is the default shell for most Linux distributions. It is a powerful and versatile shell with a wide range of features and capabilities.
+- [**Bash**](https://www.gnu.org/software/bash/) (*Bourne-Again SHell*): This is the default shell for most Linux distributions. It is a powerful and versatile shell with a wide range of features and capabilities.
 
-- [Zsh](https://www.zsh.org/) (Z Shell): This is a highly customizable shell that is popular among power users. It offers advanced features like tab completion and spelling correction and has an amazing community.
+- [**Zsh**](https://www.zsh.org/) (*Z Shell*): This is a highly customizable shell that is popular among power users. It offers advanced features like tab completion and spelling correction and has an amazing community.
 
-- [Fish](https://fishshell.com/) (Friendly Interactive SHell): This is a user-friendly shell that is designed to be easy to use and intuitive. It has a simple syntax and offers many helpful features like syntax highlighting.
+- [**Fish**](https://fishshell.com/) (*Friendly Interactive SHell*): This is a user-friendly shell that is designed to be easy to use and intuitive. It has a simple syntax and offers many helpful features like syntax highlighting.
 
-In many cases I have chosen to stay with [Bash](https://www.gnu.org/software/bash/) because it is the most widely used command interpreter and therefore well supported by the Linux community, but also because [Bash](https://www.gnu.org/software/bash/) is the default command interpreter for most Linux distributions, so it is already installed on the system and usually suits my needs for simple projects.
+In many cases I have chosen to stay with [Bash](https://www.gnu.org/software/bash/) because it is the most widely used command interpreter and therefore well supported by the Linux community, but also because [Bash](https://www.gnu.org/software/bash/) is commonly the default command interpreter for most Linux distributions, so it is usually already installed on the system and usually suits my needs for **simple projects**.
 
-However, in most cases and especially in cases where I expect to work long term or make extensive use of the interpreter, I like to choose [Zsh](https://www.zsh.org/) because of the amount of options, plugins, and extensions it offers.
+However, in most cases and especially in cases where I expect to work **long term** or make **extensive use** of the interpreter, I like to choose [Zsh](https://www.zsh.org/) because of the amount of options, plugins, and extensions it offers.
 
 That's why for this post I am going to use [Zsh](https://www.zsh.org/) as an example.
 
@@ -61,7 +61,7 @@ dnf install zsh
 
 ### Zsh on steroids: Zim
 
-[Zim](https://github.com/zimfw/zimfw) is a Zsh configuration framework that bundles a plugin manager, useful modules, and a wide variety of themes, without compromising on speed.
+[Zim](https://github.com/zimfw/zimfw) is a Zsh **configuration framework** that bundles a **plugin manager**, useful **modules**, and a wide variety of **themes**, without compromising on speed.
 
 <div className="flex justify-center">
 	<Image src={zim} alt="Zim logo" width="300px" />
@@ -94,28 +94,28 @@ After setting up the shell and my favorite framework I always install my favorit
 	<Image src={firacode} alt="FiraCode font" width="300px" />
 </div>
 
-There is a wide variety of Nerd Fonts, but my favorite is [Fira Code](https://github.com/tonsky/FiraCode). Fira Code is a monospaced font that includes programming ligatures, which can make your code more readable.
+There is a wide variety of **Nerd Fonts**, but my favorite version is the one that patches the font called [**Fira Code**](https://github.com/tonsky/FiraCode). Fira Code is a monospaced font that includes programming **ligatures**, which can make your code more readable.
 
 So, to install this font on Linux, follow these steps:
 
-1. Download the **Patched** Fira Code font from the [official repository](https://www.nerdfonts.com/font-downloads) (or any other font that you like more!).
+1. Download the **Nerd Font version** of the Fira Code font from the [official repository](https://www.nerdfonts.com/font-downloads) (or any other font that you like more!).
 2. Extract the font files to a folder on your system.
 3. Copy the font files to the `~/.fonts` folder.
 4. Run the command `fc-cache -fv` to manually rebuild the font cache.
 
-Alternatively, you can use [this script](https://github.com/mcarvalho1/Nerd-fonts-Downloader-Script) to install any Nerd Font you liked automatically (or any amount of them if you want more than one for any reason).
+Alternatively, you can use [this script](https://github.com/mcarvalho1/Nerd-fonts-Downloader-Script) to install any **Nerd Font** you like automatically (or any amount of them if you want more than one for any reason, huh).
 
 Now you can have a pretty and nice prompt with a lot of information!
 
 ## The Starship Prompt
 
-Another tool that I want to introduce is the **[Starship](https://starship.rs/)** prompt. This is a customizable and fast shell prompt written in [Rust](https://www.rust-lang.org/) that displays useful information in the terminal, like useful system information, Git repository or virtual environment.
+Another tool that I want to introduce is the [**Starship**](https://starship.rs/) **prompt**. This is a customizable and fast **shell prompt** written in [Rust](https://www.rust-lang.org/) that displays useful information in the terminal, like useful **system information**, **Git repository** or **virtual environment**.
 
 <div className="flex justify-center">
 	<Image src={starship} alt="Starship logo" width="300px" />
 </div>
 
-It can be installed in many ways depending on the operating system and shell. In this case, I will explain the installation as a Zim module and as standalone.
+It can be installed in many ways depending on the operating system and shell. In this case, I will explain the installation as a **Zim module** and as **standalone**.
 
 ### Install as a Zim module
 
@@ -147,4 +147,6 @@ eval "$(starship init zsh)"
 
 That's it! Easy, right?
 
-Now you can have a pretty and nice prompt with a lot of information! If you want more customization you can try to customize the Starship prompt by editing the `~/.config/starship.toml` file. This file contains a number of settings that you can tweak to your liking, you can learn more about it [here](https://starship.rs/config/).
+Now you can have a pretty and nice prompt with a lot of information! 
+
+If you want more customization you can try to customize the Starship prompt by editing the `~/.config/starship.toml` file. This file contains a number of settings that you can tweak to your liking, you can learn more about it [here](https://starship.rs/config/).
