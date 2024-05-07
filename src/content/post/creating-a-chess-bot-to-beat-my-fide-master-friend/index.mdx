@@ -30,9 +30,9 @@ Before I start explaining the code, I would like to clarify that **there are two
 
 ### Identifying the chessboard and reading the position of the chess pieces
 
-To identify the chessboard and read the position of the pieces we can use several techniques, nowadays the one that would attract our attention the most would be to use a trained **deep learning** model to read the pieces on the chessboard. However, given that in our case the board and the pieces are in two dimensions and that they always look the same, it follows, although I have not been able to verify it, that other techniques such as **image comparison** are expected to be **faster**. So in my case, I did so.
+To identify the chessboard and read the position of the pieces we can use several techniques, nowadays the one that would attract our attention the most would be to use a trained **deep learning** model to read the pieces on the chessboard. However, given that in our case the board and the pieces are two-dimensional and that they always look the same, I assume (although I have not been able to verify it) that other techniques such as **image comparison** are expected to be **faster**. So in my case, I did so.
 
-After identifying the area of the screen where the board was located, to read the position of the pieces my approach was to **extract** the images of the pieces of a complete board, **calculate** the position of the squares, create the algorithm to **compare** with **OpenCV** with the extracted images and return a list of lists with the reading of the board, assigning to each piece a corresponding letter.
+After identifying the area of the screen where the board was located, to read the position of the pieces my approach was to **extract** the images of the pieces of a complete board, **calculate** the position of the squares, create the algorithm to **compare** the extracted images with **OpenCV** and return a list of lists with the reading of the board, assigning to each piece a corresponding letter.
 
 Here, the most difficult part for me was to determine the correct value of the image preprocessing variables, in particular thresholding values, as well as the best thresholding type to suit what I wanted to achieve. 
 
@@ -65,7 +65,7 @@ board = [
 
 ### Passing the position to an engine
 
-The next thing we have to do is to have something tell us what is the **best move** to make, for this we will use an open source chess engine called [Stockfish](https://stockfishchess.org/), being the winner of the [Top Chess Engine Championship](<https://en.wikipedia.org/wiki/Stockfish_(chess)#Top_Chess_Engine_Championship>) for the last 7 times.
+Next, we need something to tell us what is the **best move** to make, for this we will use an open source chess engine called [Stockfish](https://stockfishchess.org/), being the winner of the [Top Chess Engine Championship](<https://en.wikipedia.org/wiki/Stockfish_(chess)#Top_Chess_Engine_Championship>) for the last 7 times.
 
 Will this engine be able to beat my friend? Heh.
 
@@ -135,7 +135,7 @@ g5f7
 
 ### Making the move
 
-To make the move we will use a python package called [pyautogui](https://github.com/asweigart/pyautogui), which is the same package that allows us to take screenshots of the board. To make this move the first thing we need to have are the **coordinates** of the squares of our board, in other words, the **centers** of the squares, and finally, translate the algebraic notation to this position.
+To make the move we will use a python package called [pyautogui](https://github.com/asweigart/pyautogui), which is the same package that allows us to take screenshots of the board. To make this move we first need to know the **coordinates** of the squares on our board, in other words, the **centers** of the squares, and finally, translate the algebraic notation to this position.
 
 #### Calculate centers
 
@@ -161,7 +161,7 @@ def calculate_centers(
 
 #### Move the mouse
 
-To move the mouse the first thing to do is to **translate the algebraic notation into a matrix**, the letter is easily translatable and the integer already corresponds as such:
+In order to move the mouse, the first thing to do is to **translate the algebraic notation into a matrix**, the letter is easily translatable and the integer already corresponds as such:
 
 ```python
 def make_move(self, board_coords: list, move: str) -> None:
