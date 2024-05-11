@@ -1,7 +1,7 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": "Bermu.dev blog",
+	"short_name": "bermudev",
+	"description": "Personal blog built with Astro",
 	"icons": [
 		{
 			"src": "/192x192.png",
