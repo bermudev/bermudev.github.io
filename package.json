@@ -18,7 +18,7 @@
 		"@iconify-json/mdi": "^1.1.67",
 		"astro": "4.11.3",
 		"astro-embed": "^0.7.1",
-		"astro-icon": "^1.1.0",
+		"astro-icon": "^1.1.1",
 		"rehype-external-links": "^3.0.0",
 		"satori": "0.10.13",
 		"satori-html": "^0.3.2",
