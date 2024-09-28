@@ -1,0 +1,67 @@
+---
+title: "Setting up backups with Restic"
+publishDate: 2023-01-20
+description: "Automating backups with Restic: advantages, disadvantages, and usage guide"
+tags: [restic, backup, data recovery, automation]
+---
+
+import { Image } from "astro:assets";
+import picture_logo from "./restic.png";
+
+<div className="flex justify-center">
+	<Image src={picture_logo} alt="Restic logo" width="150px" />
+</div>
+
+We all know that **data protection** is a crucial aspect of our daily work. The ability to recover from data loss or hardware failures is a must-have for any serious software development project. 
+
+For me, one of the best ways to ensure data protection is by using backup software like [Restic](https://restic.net/). Restic is my preferred tool and my way of proceeding in these cases, so I am going to show you how to set up backups with it, and why I think it's a great choice for my data protection needs.
+
+## What is Restic?
+
+[Restic](https://restic.net/) is a **command-line** (although you can probably find more than one [GUI](https://github.com/emuell/restic-browser) for it) backup program that is designed to be **fast**, **efficient**, and **easy** to use. It is written in **Go** (like [Hugo](https://gohugo.io/)!) and it's completely **open-source**. 
+
+Some of the main features of Restic include:
+
+- **Deduplication**: it uses a content-defined chunking algorithm to split files into chunks, and it only stores unique chunks, this allows you to save a lot of storage space.
+
+- **Encryption**: Restic obviously supports encryption, which allows you to protect your data from unauthorized access.
+
+- **Compression**: it uses the lz4 compression algorithm to compress data before storing it.
+
+- **Multiple Backends**: it can be used with various storage backends such as local, S3, and SFTP.
+
+## Restic has been audited by a Google employee
+
+[Restic](https://restic.net/) has been audited by **Filippo Valsorda**, a Google cryptography engineer, you can read more about it [in his personal blog](https://words.filippo.io/restic-cryptography/). The auditing process focused on the core functionality of Restic and its cryptographic implementation, and it found that Restic is secure and well-designed.
+
+## Setting up Backups with Restic
+
+So, let's get to work! In this case, it is assumed that the system already has Restic installed since in each system it is done in a different way, in case you do not know how to do it, you can check [the official documentation](https://restic.readthedocs.io/en/latest/020_installation.html).
+
+In addition, the example considers a **local copy**, however Restic stands out for its great compatibility with other **cloud systems** such as [AWS](https://aws.amazon.com/), [Azure](https://azure.microsoft.com/) or [GCP](https://cloud.google.com/). Again, consult the [documentation](https://restic.readthedocs.io/en/latest/030_preparing_a_new_repo.html)!
+
+1. Once you have [Restic](https://restic.net/) installed, you will need to create a new repository for your backups. This can be done by running the following command:
+
+``` sh
+restic init --repo /path/to/repo
+```
+
+2. After creating your repository, you can create a backup of a folder by running the following command:
+
+```sh
+restic backup /path/to/folder --repo /path/to/repo
+```
+
+3. I fyou want to check and view the list of backups in your repository, you can use the following command:
+
+```sh
+restic snapshots --repo
+```
+
+4. And finally, to restore a specific backup, you can use the following command:
+
+```sh
+restic restore ID --target /path/to/restore --repo /path/to/repo
+```
+
+That's the basics of Restic, if you want to know more... you know where to go, [right](https://restic.readthedocs.io/en/stable/)?

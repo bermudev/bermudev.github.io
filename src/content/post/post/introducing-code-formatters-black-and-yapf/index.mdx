@@ -1,0 +1,64 @@
+---
+title: "Introducing code formatters: Black and YAPF"
+publishDate: 2023-04-18
+description: "Define a defined style guide with Black and YAPF formatters for Python and forget about inconsistencies"
+tags: [black, yapf, python, code formatting, development tools]
+---
+
+import { Image } from "astro:assets";
+import black_logo from "./black-logo.png";
+
+<div className="flex justify-center">
+	<Image src={black_logo} alt="Black logo" width="300px" />
+</div>
+
+
+Imagine you are in a development group where you work on common projects, you do tasks on the same files and everyone has their own way of doing things, their own style preference, etc. The amount of **noise** that is generated in PRs is incredible.
+
+Thankfully, there are tools available that can **automatically format** our code according to a defined style guide. I will talk about two of the most popular code formatters for Python: [Black](https://black.readthedocs.io/en/stable/) and [YAPF](https://github.com/google/yapf).
+
+## Introducing Black
+
+[Black](https://black.readthedocs.io/en/stable/) is a **highly opinionated** code formatter for Python. It is made by [Łukasz Langa](https://lukasz.langa.pl/), the Release Manager for Python 3.8 and 3.9. Its primary goal is to provide a **consistent** and **uniform** code style by removing all the debates about formatting. This means that [Black](https://black.readthedocs.io/en/stable/) follows **strict guidelines**, and it (almost) does not provide any configuration options to allow developers to make their own choices (although it supports some options and it is common to change things such as line size), which is why it's often called "**uncompromising**."
+
+## Introducing YAPF
+
+[YAPF](https://github.com/google/yapf), short for "Yet Another Python Formatter," is another popular code formatter for Python. It is **owned by Google** although it is not an official Google product. Unlike [Black](https://black.readthedocs.io/en/stable/), [YAPF](https://github.com/google/yapf) aims to provide a more **configurable** formatting solution. It offers a wide range of **options** that allow developers to **customize** the formatting style to match their preferences.
+
+## How to Use Black and YAPF
+
+Using [Black](https://black.readthedocs.io/en/stable/) and [YAPF](https://github.com/google/yapf) is incredibly straightforward and basically the same for both of them. First, you need to install them using `pip`:
+
+``` bash
+pip install black
+
+pip install yapf
+```
+
+After installing, you can run it on your Python files to format them in place:
+
+``` bash
+black myfile.py
+
+yapf -i myfile.py
+```
+
+Or, if you prefer, you can also format an entire directory:
+
+``` bash
+black myproject/
+
+yapf -i myproject/
+```
+
+With this, [Black](https://black.readthedocs.io/en/stable/) and [YAPF](https://github.com/google/yapf) will automatically detect the Python files in the specified location and format them according to its guidelines.
+
+## Which One to Choose?
+
+Both [Black](https://black.readthedocs.io/en/stable/) and [YAPF](https://github.com/google/yapf) are powerful code formatters that can greatly improve your codebase's consistency and readability. As with any technology, the choice between them ultimately depends on your **preference** and **team requirements**.
+
+The main decision will be whether you want to leave **freedom** for styles or prefer to be **stricter**. If you prefer a strict and opinionated approach with no configuration options, [Black](https://black.readthedocs.io/en/stable/) is the way to go. On the other hand, if you prefer more control over the formatting style, [YAPF](https://github.com/google/yapf)'s configurability will be a better fit.
+
+Personally I think that the main function of these code formatters is to have a unique style, and that is why personally and professionally we have always opted for [Black](https://black.readthedocs.io/en/stable/).
+
+Next month, I will talk about how to integrate these and other similar tools automatically when making a commit, sounds fantastic, don't you think?
