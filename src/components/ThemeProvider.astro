@@ -29,6 +29,20 @@
 		if (typeof localStorage !== "undefined") {
 			localStorage.setItem("theme", newTheme);
 		}
+		
+		// Update images styles when theme changes
+		updateImageStyles(newTheme);
+	}
+
+	function updateImageStyles(theme) {
+		const images = document.querySelectorAll('[data-theme-image]');
+		images.forEach(image => {
+			if (theme === "dark") {
+				image.style.filter = "invert(100%)";
+			} else {
+				image.style.filter = "none";
+			}
+		});
 	}
 
 	// initial setup
