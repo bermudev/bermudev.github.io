@@ -1,0 +1,100 @@
+---
+title: "Programming Principles: YAGNI, KISS, and DRY"
+description: "Discover the essentials of YAGNI, KISS, and DRY to write clean and maintainable code"
+publishDate: 8 April 2024
+tags: [yagni, kiss, dry, best practices, clean code, code optimization, python, programming principles]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import yagnikissdry from "./yagnikissdry.png";
+
+If there is one thing we can agree on, it is that we love acronyms in software development. Today I am going to present three of the most popular basic principles such as **YAGNI**, **KISS** and **DRY**. 
+
+<div className="flex justify-center">
+	<Image src={yagnikissdry} alt="Yagni Kiss Dry graph" width="400px" />
+</div>
+
+Someone may wonder, what about *SOLID*? Well, since each letter of *SOLID* is a principle in itself, it could be enough for a separate post, so maybe later!
+
+It should be noted that sometimes the fact of applying or not these principles is **subordinated** to the project and the code itself, and that sometimes, applying all or some of the principles may be counterproductive, this is why I want to encourage to follow these basics whenever possible but at the same time to have own **criteria** to identify the occasions where their application does more bad than good.
+
+## YAGNI - You Aren't Gonna Need It 
+Let's start with the first of them, YAGNI. This principle proposes that you should not add features to your code until you really **need** them. Instead of speculating about what you might need in the future, focus on what you need **now**.
+
+It is not uncommon to come across situations where **unnecessary features** are implemented that we think will be useful, either because it is easy to implement or in an effort to understand the business and speculate on possible future situations.
+
+This would not be too much of a problem if we were sure that these features stay in the code and will be used not too late, but in many cases they are **removed over time** because in the end they are **never used**.
+
+If we take as an example the case where we need to do a sum, the correct code would be:
+```python
+def addition(a, b):
+	return a + b
+```
+
+Instead of:
+```python
+def operations(a, b):
+    addition = a + b
+    subtraction = a - b
+    multiplication = a * b
+    division = a / b if b != 0 else None
+    return addition, subtraction, multiplication, division
+```
+
+We are still doing the sum, but what is the rest for? Are we sure it will be used later?
+
+## KISS - Keep It Simple Stupid
+Okay, before you accuse me of insults, that's what it's called, I promise. I don't understand this aggressiveness either, but that's how it is.
+
+This principle is very simple (*ba dum tss*): we always have to keep the code **as simple as possible**, avoiding unnecessary complexity. It is easy to understand that simplicity makes the code **easier to read**, **understand** and **maintain**. 
+
+This simplicity can come in many ways, from for example in the **logic** of the code to the way different elements are **named**.
+
+Let's imagine we want to see if a number is even or odd, the KISS way to do it would be:
+```python
+def is_odd(n): 
+	return n % 2 == 0
+```
+
+Instead of:
+```python
+def calculate_if_number_is_odd(n):
+    if n % 2 == 0:
+        answer = True
+    else:
+        answer = False
+    return answer
+```
+
+Which do you think is better? I think we would all think the same,
+
+## DRY - Don't Repeat Yourself
+In this case, this principle tells us that we should **avoid duplication** of code, and that if we find ourselves in situations where we have to repeat code, the best thing to consider is to **refactor** and use reusable and specific functions or classes.
+If we follow this principle, our code will be much **easier to maintain** and will have **fewer errors**. 
+
+The logic behind this is quite simple, if we have to make a change, how many times would you prefer to do it, once or more than once? If this part of the logic were repeated, we would have to go through each **repetition** making the changes, with the consequent cost of maintenance and the possibility of generating human errors.
+
+As an example, let's imagine we are making API requests in various places in your code. We could do it like this:
+```python
+import requests
+
+response1 = requests.get('https://api.example.com/data1')
+data1 = response1.json()
+
+response2 = requests.get('https://api.example.com/data2')
+data2 = response2.json()
+```
+
+Or we could make a function that is in charge of making the request and getting the data:
+```python
+import requests
+
+def get_data(url):
+    response = requests.get(url)
+    return response.json()
+
+data1 = get_data('https://api.example.com/data1')
+data2 = get_data('https://api.example.com/data2')
+```
+That's better, isn't it?

@@ -1,0 +1,198 @@
+---
+title: "Creating a Chess Bot to Beat My FIDE Master Friend"
+publishDate: 2024-05-05
+description: "I created a bot using OpenCV and Stockfish to play chess racing puzzles to beat my FIDE master friend"
+tags: [python, opencv, stockfish, automation, bot, image recognition, project]
+coverImage:
+  src: "./cover.jpg"
+  alt: "A Woman Playing Chess"
+---
+
+import { Image } from "astro:assets";
+import board from "./board.png";
+import board_threshold from "./board_threshold.png";
+import score from "./score.png";
+
+Last week I was able to attend a chess tournament with an old friend from work who has the rank of **FIDE chess master**. It was a great experience, and although my chess level is not the best and nowhere near her level, I was able to experience the feeling, the nerves, and the great atmosphere.
+
+During the tournament we were talking, and I was able to learn how they prepare to compete, how they study the **openings**, how they study ways to **finish**, even how they sometimes do some **puzzles** to speed up and warm up the memory.
+
+It was then that we started to compete by doing puzzles against each other, after all, a normal game between us was pointless because of the big difference in level. We played on a well-known online chess site where it is possible to do ‘races’ of puzzles, it is a kind of game where you are presented with one puzzle after another for 90 seconds, and you get points as you solve them correctly, with extra points after a certain number of consecutive successes. 
+
+Well, to nobody's surprise, I'm no match for her in puzzles either.
+
+So I decided to do what I like the most, programming. My idea was to make a bot ([link to the repository on GitHub](https://github.com/bermudev/chess-autoracer)) that could compete with her and even if I cheated, I could beat her in a puzzle race, even if it was just once.
+
+## Creating the bot
+
+The logic was simple, I had to make a bot that was able to **identify** the chessboard, **read** the position of the pieces, **pass** the position to an engine to find the best move, make the **move** with the keyboard on the screen, and **repeat**.
+
+It didn't seem too difficult, although during the process I encountered some difficulties that I had to overcome.
+
+Before I start explaining the code, I would like to clarify that **there are two functions that are not in the code**, although I am going to explain briefly how I have developed them, this is because I would not like this code to be used for cheating. In my case, it has been for a punctual moment, to update myself on certain techniques and to have a laugh with my friend. These functions are the first two that I am going to discuss: the identification of the chessboard and the reading of the pieces.
+
+### Identifying the chessboard and reading the position of the chess pieces
+
+To identify the chessboard and read the position of the pieces we can use several techniques, nowadays the one that would attract our attention the most would be to use a trained **deep learning** model to read the pieces on the chessboard. However, given that in our case the board and the pieces are two-dimensional and that they always look the same, I assume (although I have not been able to verify it) that other techniques such as **image comparison** are expected to be **faster**. So in my case, I did so.
+
+After identifying the area of the screen where the board was located, to read the position of the pieces my approach was to **extract** the images of the pieces of a complete board, **calculate** the position of the squares, create the algorithm to **compare** the extracted images with **OpenCV** and return a list of lists with the reading of the board, assigning to each piece a corresponding letter.
+
+Here, the most difficult part for me was to determine the correct value of the image preprocessing variables, in particular thresholding values, as well as the best thresholding type to suit what I wanted to achieve. 
+
+<div className="flex justify-center">
+	<Image src={board_threshold} alt="Board threshold comparison" width="392px" />
+</div>
+
+As you can see, different types can lead to very different results which greatly influences the detectability.
+
+Finally, after getting all right, for such a board:
+
+<div className="flex justify-center">
+	<Image src={board} alt="Board" width="300px" />
+</div>
+
+It would return something like this:
+
+```python
+board = [
+            ["R", "-", "B", "K", "-", "-", "-", "R"],
+            ["-", "P", "P", "-", "P", "-", "-", "-"],
+            ["-", "-", "-", "P", "-", "-", "-", "-"],
+            ["P", "b", "-", "-", "-", "-", "n", "-"],
+            ["-", "-", "-", "-", "P", "-", "-", "-"],
+            ["p", "p", "B", "-", "-", "-", "-", "-"],
+            ["-", "-", "-", "-", "-", "-", "p", "p"],
+            ["-", "k", "-", "r", "-", "-", "-", "r"],
+        ]
+```
+
+### Passing the position to an engine
+
+Next, we need something to tell us what is the **best move** to make, for this we will use an open source chess engine called [Stockfish](https://stockfishchess.org/), being the winner of the [Top Chess Engine Championship](<https://en.wikipedia.org/wiki/Stockfish_(chess)#Top_Chess_Engine_Championship>) for the last 7 times.
+
+Will this engine be able to beat my friend? Heh.
+
+#### Converting to FEN notation
+
+The list of lists we have come up with to represent the chessboard is a nice touch, but it is far from standard. Chess engines and related tools usually use a special notation called FEN ([Forsyth-Edwards Notation](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation)).
+
+This notation is not too difficult to implement, but it can be difficult to explain in detail.
+
+Basically we write row by row separated by a ‘/’, assigning each piece its algebraic notation as in our list, and denoting blanks with digits from 1 to 8. Then add certain values to indicate other board state data and move order.
+
+Our code would look like this:
+
+```python
+def board_to_fen(self, board_pieces: list, color_to_move: str) -> str:
+	fen = ""
+	for row in range(8, 0, -1):
+		empty_counter = 0
+		for column in range(1, 9):
+			square = board_pieces[8 - row][column - 1]
+			if square == "-":
+				empty_counter += 1
+			else:
+				if empty_counter > 0:
+					fen += str(empty_counter)
+					empty_counter = 0
+				fen += square
+		if empty_counter > 0:
+			fen += str(empty_counter)
+		fen += "/"
+
+	fen = fen[:-1]
+
+	if color_to_move == "black":
+		fen += " w - - 0 1"
+	else:
+		fen += " b - - 0 1"
+
+	return fen
+```
+
+This would give us a FEN notation:
+
+```
+R1BK3R/1PP1P3/3P4/Pb4n1/4P3/ppB5/6pp/1k1r3r b - - 0 1
+```
+
+#### Using Stockfish
+
+Using the Stockfish engine in Python is quite easy, just **install** the package, **download the engine** from its website and invoke the service. In a very quick way we can indicate the position of the board using the FEN notation and get the result:
+
+```python
+def calculate_stockfish(self, fen: str):
+	if self.stockfish.is_fen_valid(fen):
+		self.stockfish.set_fen_position(fen)
+		return self.stockfish.get_best_move()
+	else:
+		print("Invalid FEN")
+		return None
+```
+
+This gives us back:
+
+```
+g5f7
+```
+
+### Making the move
+
+To make the move we will use a python package called [pyautogui](https://github.com/asweigart/pyautogui), which is the same package that allows us to take screenshots of the board. To make this move we first need to know the **coordinates** of the squares on our board, in other words, the **centers** of the squares, and finally, translate the algebraic notation to this position.
+
+#### Calculate centers
+
+Once we have the coordinates of the board, this calculation is quite trivial, since we know the dimensions of the board and that it contains 8 squares along its length and width:
+
+```python
+def calculate_centers(
+	self, upper_left_corner: Point, lower_right_corner: Point
+) -> list:
+
+	square_width = (lower_right_corner.x - upper_left_corner.x) / 8
+	square_height = (lower_right_corner.y - upper_left_corner.y) / 8
+	centers = []
+	for row in range(8):
+		row_coords = []
+		for col in range(8):
+			x = upper_left_corner.x + (col + 0.5) * square_width
+			y = upper_left_corner.y + (row + 0.5) * square_height
+			row_coords.append(Point(x, y))
+		centers.append(row_coords)
+	return centers
+```
+
+#### Move the mouse
+
+In order to move the mouse, the first thing to do is to **translate the algebraic notation into a matrix**, the letter is easily translatable and the integer already corresponds as such:
+
+```python
+def make_move(self, board_coords: list, move: str) -> None:
+	origin_column = ord(move[0]) - ord("a")
+	origin_row = 8 - int(move[1])
+	dest_column = ord(move[2]) - ord("a")
+	dest_row = 8 - int(move[3])
+
+	origin = board_coords[origin_row][origin_column]
+	destination = board_coords[dest_row][dest_column]
+
+	pyautogui.click(origin.x, origin.y)
+	pyautogui.click(destination.x, destination.y)
+
+```
+
+With this, you can make the mouse move from the initial position to the final position, and make the piece move.
+
+## Does it work?
+
+Yes, we could say that it works **too well**:
+
+<div className="flex justify-center">
+	<Image src={score} alt="Race score" />
+</div>
+
+At the beginning I used to get a **score of 82 points** approximately, but after some **optimizations** in the reading of the pieces' positions, I managed to increase the speed until I could consistently reach a **score of 125 points**.
+
+As far as I can tell, a score of 80 is quite unusual, although feasible for people with a high level. Scores of 125... I don't know if they exist, but if they do, they are within the reach of very very few...
+
+You can check the source code in the ([GitHub repository](https://github.com/bermudev/chess-autoracer)).
