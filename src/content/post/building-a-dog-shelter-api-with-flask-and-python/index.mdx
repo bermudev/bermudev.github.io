@@ -1,0 +1,95 @@
+---
+title: "Building a Dog Shelter API with Flask and Python"
+publishDate: 2023-02-18
+description: "I present you my personal project where I build an API for a dog shelter for a friend, choosing Flask as framework"
+tags: [flask, python, api development, dog shelter, web development]
+---
+
+import { Image } from "astro:assets";
+import picture_logo from "./flasklogo.svg";
+import picture_db from "./api-design.svg";
+
+One of the first projects I did when I started in the world of backend development was an **API** for a dog shelter using **Django REST Framework**, it is one of my first projects and although I remember it fondly I have learned a lot since then.
+
+So I thought, why not try doing something similar using another framework? This way I can take the opportunity to dive more into API development, learn about a different framework and revisit an old project that I'm so close to.
+
+That's how I came to the idea of redoing the project using **Flask** framework, as this framework was unknown to me until now.
+
+<div className="flex justify-center">
+    <Image src={picture_logo} alt="Flask logo" width="250px" data-theme-image />
+</div>
+
+Without further ado, I present the new [Dog Shelter API in Flask](https://github.com/bermudev/dog-shelter-api):
+
+## What does the API do?
+
+Here's a short list explaining what this Flask, updated version of the API does:
+
+- Allows users to **register** for an account and **authenticate** themselves using user and password. Some endpoints are protected after authentication and administration permissions.
+- Allows users to **manage** dogs by adding, retrieving, updating, and deleting **dogs**, as well as adding, retrieving, updating, and deleting information about their **adoption status**, **vaccinations**, and **health status**.
+- Provides API **documentation** in **Swagger** using **Flask-Smorest**.
+- Provides informative **error messages** in case of failed requests.
+- Uses **SQLite** as the database management system to store and manage the data.
+
+## Flask resources and technologies used
+
+Some of the Flask tools used for the creation of this API are:
+
+- **Flask-Smorest** for automatic API documentation, defining serialization and data validation schemes, and for simplified resource definition.
+- **Flask-SQLAlchemy** to define database models, create database connections and execute SQL queries.
+- **Flask-JWT** for authentication and authorization based on JSON Web Tokens (JWT).
+
+## Database design
+
+This is the final design of the project database, I have expanded the original idea and modified some fields with the suggestions of some dog-loving friends. It does not include the user part for login.
+
+<div className="flex justify-center">
+    <Image src={picture_db} alt="DB design" width="500px" data-theme-image />
+</div>
+
+## Endpoints
+
+The API has the following endpoints for each table, those marked with 🔒 require valid authentication and DELETE methods need admin rights:
+
+| Method      | Endpoint         | Description                                      |
+| ----------- | ---------------- | ------------------------------------------------ |
+| GET         | /api/user/\{id\} | Retrieve details of a specific user by ID        |
+| POST        | /api/register/   | Add a new user to the shelter database           |
+| POST        | /api/login/      | Login to the API using the username and password |
+| POST 🔒     | /api/logout/     | Logout from the API                              |
+| POST 🔒     | /api/refresh/    | Get a new token from the API                     |
+| DELETE 🔒🛡️ | /api/user/\{id\} | Delete an user from the shelter database         |
+
+| Method      | Endpoint         | Description                                        |
+| ----------- | ---------------- | -------------------------------------------------- |
+| GET         | /api/dogs/       | Retrieve a list of all dogs available for adoption |
+| GET         | /api/dogs/\{id\} | Retrieve details of a specific dog by ID           |
+| POST 🔒     | /api/dogs/       | Add a new dog to the shelter database              |
+| PUT 🔒      | /api/dogs/\{id\} | Update information for a specific dog by ID        |
+| DELETE 🔒🛡️ | /api/dogs/\{id\} | Remove a specific dog from the shelter database    |
+
+| Method      | Endpoint              | Description                                         |
+| ----------- | --------------------- | --------------------------------------------------- |
+| GET         | /api/adoptions/       | Retrieve a list of all adoption records             |
+| GET         | /api/adoptions/\{id\} | Retrieve details of a specific adoption by ID       |
+| POST 🔒     | /api/adoptions/       | Add a new adoption record to the database           |
+| PUT 🔒      | /api/adoptions/\{id\} | Update information for a specific adoption by ID    |
+| DELETE 🔒🛡️ | /api/adoptions/\{id\} | Remove a specific adoption record from the database |
+
+| Method      | Endpoint             | Description                                                  |
+| ----------- | -------------------- | ------------------------------------------------------------ |
+| GET         | /api/vaccines        | Retrieve a list of all vaccines for a specific dog           |
+| GET         | /api/vaccines/\{id\} | Retrieve details of a specific vaccine for a specific dog    |
+| POST 🔒     | /api/vaccines        | Add a new vaccine for a specific dog                         |
+| PUT 🔒      | /api/vaccines/\{id\} | Update information for a specific vaccine for a specific dog |
+| DELETE 🔒🛡️ | /api/vaccines/\{id\} | Remove a specific vaccine for a specific dog                 |
+
+| Method      | Endpoint           | Description                                                       |
+| ----------- | ------------------ | ----------------------------------------------------------------- |
+| GET         | /api/health        | Retrieve health information for a specific dog                    |
+| GET         | /api/health/\{id\} | Retrieve details of a specific health issue for a specific dog    |
+| POST 🔒     | /api/health        | Add a new health issue for a specific dog                         |
+| PUT 🔒      | /api/health/\{id\} | Update information for a specific health issue for a specific dog |
+| DELETE 🔒🛡️ | /api/health/\{id\} | Remove a specific health issue for a specific dog                 |
+
+Although it is not a big project nor has great complexity, it has helped me to put into practice the theoretical knowledge about Flask and to be able to grow more in other frameworks besides Django, which is still my preferred one.

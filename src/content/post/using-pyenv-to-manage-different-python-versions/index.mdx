@@ -1,0 +1,79 @@
+---
+title: "Using Pyenv to Manage Different Python Versions"
+publishDate: 2023-10-19
+description: "Manage Python versions easily with Pyenv and virtual environments. Avoid conflicts between projects"
+tags: [pyenv, python, development environment, development tools, virtual environments]
+---
+
+When working with different projects it is common to have **different versions** of the same programming language and **dependencies** for each one of them, so if we had a single installation or global version, this could give constant **conflict** between different projects.
+
+To fix that we can use tools like `pyenv` and `virtual environments`. What these tools do is to **isolate** different versions of python and different installations (**environments**) of each of these versions.
+
+[Pyenv](https://github.com/pyenv/pyenv) allows us to have different versions **globally**, **locally**, or even for the **current shell**.
+
+## Installing Pyenv
+
+To learn more about the installation process we can follow the instructions in [its repository](https://github.com/pyenv/pyenv#installation). 
+
+In general, we can use its installation script:
+
+```bash
+curl https://pyenv.run | bash
+```
+
+### Configure shell environment for Pyenv
+
+After installation there is an additional step that is supposed to be done automatically, but in my case I have found that sometimes I have to do it mannually. It is really simple: when it is done installing, you have to configure it for the SHELL you are using.
+
+For [ZSH](https://www.zsh.org/), just type each one of these lines (or manually add the quotes inside your `~/.zshrc`):
+
+```bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+```
+
+You can see the configuration for the other shells in the README of its own [repository](https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv). And don't forget to close and open the terminal to reload the configuration file or update it with `source`!
+
+## Common Pyenv Uses
+
+We can see all available commands with `pyenv --help` or `pyenv`.
+
+- See the available versions to install:
+
+```bash
+# list all versions
+pyenv install -l
+
+# filter versions containing 3.10
+pyenv install -l | grep "3.10"
+```
+
+- Download and install a specific version:
+
+```bash
+pyenv install 3.10.13
+```
+
+- Select a version as global, local directory (perfect for when working with microservices with different versions), or for the current shell:
+
+```bash
+# select globally for your user account
+pyenv global <version>
+
+# automatically select whenever you are in the current directory (or its subdirectories)
+pyenv local <version>
+
+# select just for current shell session
+pyenv shell <version>
+```
+
+Aditionally, to check the version of Python being used and the location:
+
+```bash
+pyenv version
+
+which python
+```
