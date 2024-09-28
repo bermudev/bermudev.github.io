@@ -6,7 +6,6 @@ tags: [flask, python, api development, dog shelter, web development]
 ---
 
 import { Image } from "astro:assets";
-import { rootHasDarkClass } from "@/utils";
 import picture_logo from "./flasklogo.svg";
 import picture_db from "./api-design.svg";
 
@@ -17,7 +16,7 @@ So I thought, why not try doing something similar using another framework? This 
 That's how I came to the idea of redoing the project using **Flask** framework, as this framework was unknown to me until now.
 
 <div className="flex justify-center">
-    <Image src={picture_logo} alt="Flask logo" width="250px" data-theme-image />
+    <Image src={picture_logo} alt="Flask logo" width="250px" />
 </div>
 
 Without further ado, I present the new [Dog Shelter API in Flask](https://github.com/bermudev/dog-shelter-api):
@@ -45,7 +44,7 @@ Some of the Flask tools used for the creation of this API are:
 This is the final design of the project database, I have expanded the original idea and modified some fields with the suggestions of some dog-loving friends. It does not include the user part for login.
 
 <div className="flex justify-center">
-    <Image src={picture_db} alt="DB design" width="500px" data-theme-image />
+    <Image src={picture_db} alt="DB design" width="500px" />
 </div>
 
 ## Endpoints

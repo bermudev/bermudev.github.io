@@ -6,7 +6,6 @@ tags: [ruff, python, linter, code review, code analisys, flake8, pylint]
 ---
 
 import { Image } from "astro:assets";
-import { rootHasDarkClass } from "@/utils";
 import { YouTube } from "astro-embed";
 import ruff_chart from "./ruff-chart.svg";
 
@@ -21,7 +20,7 @@ In recent weeks there has been considerable talk in the Python community about a
 One of the most impressive aspects of [Ruff](https://docs.astral.sh/ruff/) is its **speed**. Some tests show that it is considerably better than its alternatives.
 
 <div className="flex justify-center">
-    <Image src={ruff_chart} alt="Ruff chart" width="500px" data-theme-image />
+    <Image src={ruff_chart} alt="Ruff chart" width="500px"/>
 </div>
 
 In the following video you can see a comparison in the analysis time of large libraries such as [TensorFlow](https://www.tensorflow.org/), where [Ruff](https://docs.astral.sh/ruff/) is more than **16 times faster than Flake8** (from 56.1 seconds to 3.4 seconds) and more than **69 times faster than Pylint** (from 179.8 seconds to 2.5 seconds).
