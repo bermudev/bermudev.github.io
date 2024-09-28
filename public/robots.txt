@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bermu.dev/sitemap-index.xml
