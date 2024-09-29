@@ -1,0 +1,139 @@
+---
+title: First Steps with AWS Cloud Development Kit
+description: 'My impressions, examples, and opinion about my work with AWS Cloud Development Kit'
+publishDate: 10 August 2024
+tags: [aws cdk, cloud development, typescript, python, cloud infrastructure, aws tools, programming, infrastructure as code, devops, software development]
+draft: false
+---
+import { Image } from 'astro:assets';
+import picture from './AppStacks.png';
+import logo from './cdk-logo.png';
+
+<div className="flex justify-center">
+    <Image src={logo} alt="CDK Logo" width="400px"/>
+</div>
+
+These last few months I have had the opportunity to work on a project with **AWS CDK** using **TypeScript**. At the beginning it was quite a challenge, as I didn't have much experience in this field and also this project is not designed with Python, which is the language I feel more comfortable with. 
+
+Despite this, I think that the experience was enlightening, so in this post I'll share what I've learned about AWS CDK and write an example on how to use it, but now, with **Python**.
+
+## First things first, what is AWS CDK?
+
+Well, Amazon describes it as:
+
+> The AWS Cloud Development Kit (AWS CDK) is an open-source software development framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation
+
+In other words, AWS CDK is a **development framework** that allows us to define our **cloud infrastructure** using programming languages. So, instead of writing YAML or JSON for AWS CloudFormation, we can use languages like **Python**, **TypeScript**, **Java**, and **Go** to define your infrastructure as code and implement logic, and then, it will generate the CloudFormation file under the hood.
+
+### The main building blocks of AWS CDK
+
+We can find two main building blocks in AWS CDK (Cloud Development Kit):
+
+- **Constructs**: These are the fundamental building blocks in CDK. Constructs represent cloud components and can be composed together to form more complex architectures. They can be any AWS resource, like an AWS S3, a Lambda function, etc.
+- **Stacks**: We can define the stack as the unit of deployment in CDK. It represents a CloudFormation stack and contains a collection of related resources. Stacks are used to organize and manage the AWS resources.
+
+<div className="flex justify-center">
+    <Image src={picture} alt="App Stack Construct diagram"/>
+</div>
+
+## Some benefits of using the CDK
+
+Personally, some of the benefits I have been able to find working with the CDK in my project are:
+
+1. **Familiar syntax**: If we're already comfortable with any of the supported popular languages we can leverage our existing skills to define infrastructure.
+2. **Code reusability**: Since we are defining the infrastructure using programming languages, we can create reusable components and apply object-oriented principles to the infrastructure.
+3. **Higher-level abstractions**: CDK provides constructs that abstract away many of the low-level details of CloudFormation.
+
+## Let's get our hands dirty: using AWS CDK in Python
+
+As usual, the first thing we have to do is set up our **environment**:
+
+```bash
+# Install AWS CDK CLI
+npm install -g aws-cdk
+
+# Create a new directory for our project and navigate into it
+mkdir my-cdk-project && cd my-cdk-project
+
+# Initialize a new CDK project with the desired language
+cdk init app --language python
+
+# (Only for Python) Activate the virtual environment
+source .venv/bin/activate
+
+# (Only for Python) Install dependencies
+pip install -r requirements.txt
+```
+
+This will create a project with the following structure:
+
+```
+├── app.py
+├── cdk.json
+├── my_cdk_project
+│   ├── __init__.py
+│   └── my_cdk_project_stack.py
+├── README.md
+├── requirements-dev.txt
+├── requirements.txt
+├── source.bat
+└── tests
+    ├── __init__.py
+    └── unit
+        ├── __init__.py
+        └── test_my_cdk_project_stack.py
+```
+
+And an overview of the most relevant files:
+- `app.py`: Entry point for the AWS CDK application, responsible for defining the stacks.
+- `cdk.json`: Configuration file for the AWS CDK CLI that specifies how to run the CDK .
+- `my_cdk_project/my_cdk_project_stack.py`: Defines the stack(s) in the AWS CDK app.
+- `requirements-dev.txt`: Contains the **development** dependencies (e.g., testing libraries, linting tools).
+- `requirements.txt`: Contains the **main** dependencies required by the project.
+- `source.bat`: A batch script, used for setting up the environment on Windows.
+- `tests/test_my_cdk_project_stack.py`: Unit test file for testing the main stack.
+
+Now that we have our environment and framework ready, we are able to start creating the infrastructure using Python. For example, the creation of an **S3 bucket** using CDK with Python would look like this inside our `my_cdk_project_stack.py`:
+
+```python
+from aws_cdk import (
+    Stack,
+    aws_s3 as s3
+)
+from constructs import Construct
+
+class MyFirstCdkStack(Stack):
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+        super().__init__(scope, construct_id, **kwargs)
+
+        # Create an S3 bucket
+        bucket = s3.Bucket(self, "MyFirstCdkBucket",
+            versioned=True,
+            encryption=s3.BucketEncryption.S3_MANAGED,
+            removal_policy=RemovalPolicy.DESTROY
+        )
+```
+
+In this example, we're creating an S3 bucket with ``versioning`` enabled, we are using ``S3-managed encryption`` and we set the `removal_policy` to `DESTROY`, which means the bucket will be deleted when we destroy our stack.
+
+CDK offers almost all the same configuration options of the web, although my experience has shown me that *not exactly* all of them, so be careful. You can always consult their [documentation](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3.Bucket.html) to see them all, check the [community guides](https://community.aws/content/2c0AHVvV6uQC9FY1HJCx8WXU3Ho/deploy-s3-bucket-with-cloudfront-using-aws-cdk) for examples, or ask support if you have any questions.
+
+## Synthesizing and Deploying
+
+Once we've defined our stack we can synthesize it to generate the CloudFormation template. It is as easy as:
+
+```bash
+cdk synth
+```
+
+If our code has no errors, this command will generate a generate a **cdk.out** file with the resulting CloudFormation template. And finally to deploy our stack:
+
+```bash
+cdk deploy
+```
+
+After this, CDK will show us a summary of the changes and ask for confirmation before applying them. More information can be found [here](https://docs.aws.amazon.com/cdk/v2/guide/home.html).
+
+## Did I like the experience?
+
+Honestly, yes. At first I was a bit reluctant as it was a bit out of my comfort zone, but in the end I was able to learn a lot and increase my knowledge about AWS, the infrastructure as code, and the Typescript language, which I could flirt with before in the past with Angular courses and personal projects, but not professionally so far.
