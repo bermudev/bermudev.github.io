@@ -1,0 +1,71 @@
+---
+title: Updating the Blog Theme to the Latest Version
+description: 'My own approach for managing theme updates with Git and Visual Studio Code for my personal blog'
+publishDate: 28 September 2024
+tags: [astro, blog migration, theme customization, git, gitlens, visual studio code, theme update, web development, github]
+draft: false
+---
+import { Image } from 'astro:assets';
+
+When I migrated the blog from Hugo to Astro, I opted for a theme similar to the one I was using. Of course, I modified the theme to my liking, made changes, removed some things, added others.
+
+What I didn't take into account is that this theme was constantly evolving and that if I wanted to incorporate the new changes and improvements, I should come up with a consistent way to update it along with my changes or incorporate the theme changes myself.
+
+Well, today, 9 months later, *this problem was born*.
+
+## Figuring out the best approach to deal with the update
+
+For some time, I have been incorporating **manually** the changes that interested me, but at this point, the structure of the original theme has **diverged** greatly from the one I maintain in my project, so incorporating these changes would entail a great effort and hours of study and testing.
+
+Let's explore our options.
+
+### The recommended approach
+
+If we go to the [theme repository](https://github.com/chrismwilliams/astro-theme-cactus), we see that they recommend adding the repository as a template, as discussed [here](https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository).
+
+This is very simple and only involves the following steps:
+
+```shell
+# Add the template repository as a remote
+git remote add template [URL of the template repo]
+
+# Run git fetch to update the changes
+git fetch --all
+
+# Now it is possible to merge another branch from the new remote to your current one
+git merge template/[branch to merge] --allow-unrelated-histories
+```
+
+However, this brings with it a huge drawback: when we merge, since we do not share change history in this way, it is not possible to determine the changes made differentially, i.e., it counts the modified files in their totality, which makes it very difficult to see the personal changes and reintegrate them in the new version.
+
+That's why I had to think of another way to do it.
+
+### My approach
+
+Finnaly, after some test and error on how to deal with the update I think I have found the best way and I have been able to do the update without too many problems.
+
+The main idea was to find a way to be able to comfortably see the changes of my files with the new version of the theme.
+
+We know that in a simple way we can compare two points of any repository with a `git diff`, but digging around, I found that with a Visual Studio Code extension called [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) it was possible to make a very visual comparison, file by file, and line by line.
+
+So I just had to look up the hash of the first commit of my blog with Astro in January and compare it with the current status. 
+
+This problem was solved.
+
+So now, how do I incorporate these changes to the new update?
+
+At first I was trying a way to use `git merge` and apply those changes that I could already identify to the new state of the blog theme. But with the new structure change and above all the lack of git history, it was impossible for me. 
+
+So accepting that I would have to apply my changes manually, what I came up with was to incorporate the updated theme files, and manually apply the changes on them. In the end I didn't make too many changes to the theme, and it should be fast (and it was, although I did more changes than I thought).
+
+In summary, to make an update what we have to do is:
+1. Clone the **personal blog** repository (in case it is not already cloned for some reason).
+2. Make a new branch of the **personal blog** that we will use for the update.
+3. While in the new branch created, delete everything except the **.git** folder to keep the history.
+4. Clone the **theme** repository outside the blog repository.
+5. Delete the .git from the **theme** repository since we only want the files.
+6. Copy the entire contents of the **theme** repository (with the .git deleted) to our **personal blog** repository folder (it should be empy except for our .git folder).
+7. For convenience for future updates, it's a good idea to commit and already have new commit of this state of the update in a fresh state to be able to make the comparison of the changes in the future.
+8. Finally, what we have to do is to put the changes that we have done in our **personal blog** from the first commit to the present (in this case, with the help of Gitlens).
+
+With this, I was able to have in a relatively easy and simple way the blog theme updated and with my changes incorporated.
