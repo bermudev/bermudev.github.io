@@ -52,3 +52,7 @@ jobs:
         # ensure build works
       - name: Run build
         run: pnpm build
+
+      # run postbuild for pagefind
+      - name: Run postbuild (pagefind)
+        run: pnpm postbuild

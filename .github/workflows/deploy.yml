@@ -26,7 +26,9 @@ jobs:
           path: . # The root location of your Astro project inside the repository. (optional)
           node-version: 18 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
           package-manager: pnpm@8.6.1 # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-
+      # run postbuild for pagefind
+      - name: Run postbuild (pagefind)
+        run: pnpm postbuild
   deploy:
     needs: build
     runs-on: ubuntu-latest
