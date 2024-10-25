@@ -1,0 +1,55 @@
+---
+title: A Presentation of My Self-Hosted Homelab
+description: 'A look at my homelab setup, featuring tools like Nginx Proxy Manager, Jellyfin, and Vaultwarden, all designed for security and privacy'
+publishDate: 19 October 2024
+tags: [self-hosted, homelab, privacy, proxmox, backup, server security, home network, personal cloud, virtualization, server management]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import diagram from "./diagram.png";
+import server from "./server.webp";
+
+If you know me personally or have read some of my personal presentations on this blog or on [GitHub](https://github.com/bermudev), you will have seen that along with programming I also like system administration a lot. I started many years ago with a Raspberry Pi 1, until I got shortly after another Raspberry Pi 3b, going through renting VPS services, or as now, having a local dedicated server. 
+
+<div className="flex justify-center">
+	<Image src={server} alt="A server picture with cables connected" />
+</div>
+
+So I thought it might be interesting to show you the current state of my local server. 
+
+Let's go for it.
+
+## Why selfhost
+
+For me it is very easy; today we are in an era where it is difficult to ensure privacy where all our data are in that term so strange for some called "cloud", and on more than one occasion we have seen [news](https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal) about how companies sell this data or make malicious use of them. For me this is a very important issue and my way to solve it, among other things, is by hosting services on my own infrastructure, that way I gain full control over my data and decide exactly where it resides and who has access to it.
+
+So, my main reasons for self-hosting:
+- **Privacy**: Privacy of my data is my main motivation for setting up a self-hosted homelab. Imagine you want to make some changes to a PDF document with one of the online tools out there. Would you feel safe uploading that PDF with sensitive information? You shouldn't. Or those photos of your daughter's birthday that are stored in the cloud. It is mainly because of cases like these and others that I decided to get into this world.
+- **Customization:** By hosting my own services I can make modifications and tailor the services to my specific needs, gaining full control over the software and giving me the opportunity to tinker with the hardware.
+- **Learning:** And last but not least, the possibility of learning that this offers me. In the end, being passionate about this world, all this kind of situations and the problems that derive from creating local environments like this give me an extra learning that together with my passion for technology, make me increase my knowledge in areas such as networking, server administration, and security, which are very valuable skills in today's IT landscape.
+
+### Advantages of a Self-Hosted Homelab
+
+1. **Cost savings**: Although initially the investment in a server may be expensive, over time a local server will almost certainly be more cost-effective than subscribing to numerous cloud-based services. In fact, many of the services I use are based on or have paid alternatives that I would have to pay for if it weren't for self-hosting. 
+2. **Data sovereignty**: As I explained earlier, I no longer need to rely on cloud providers to keep my data secure and private. With a self-hosted homelab, no external cloud storage is used for sensitive data, everything stays in my local storage.
+3. **Self-sufficiency**: By running my own services, I don't rely on external providers. I control uptime (to some extent), backups and performance.
+
+## My Setup
+
+The following diagram illustrates the different components of my homelab at the time of writing this post. 
+
+Most of the services are dockerized, the icon in front of the name indicates which ones are running under Docker.
+
+<div className="flex justify-center">
+	<Image src={diagram} alt="Diagram showsing my current homelab" />
+</div>
+
+And now a brief explanation of the key elements:
+
+1. **Proxmox (Hypervisor)**: For most of my time with a homelab I have been testing many distributions but they have always been installed directly on the server. It is only recently that I have been able to try **[Proxmox](https://www.proxmox.com/)**, a [Type 1 hypervisor](https://aws.amazon.com/compare/the-difference-between-type-1-and-type-2-hypervisors) that allows me to run multiple virtual machines (VMs) efficiently. This gives me enormous freedom to test new features and modulate my server. In this particular case, I use one VM for my core services and another for [Pi-hole](https://pi-hole.net/), an ad-blocking solution.
+2. **Ubuntu server**: This is where my core services are located. This virtual machine runs 24/7 and hosts all the key services. Exposure to the internet is done through services such as **[Nginx Proxy Manager](https://nginxproxymanager.com/)**, **[Tailscale](https://tailscale.com/)** (for VPN access), and **[Mullvad VPN](https://mullvad.net/)** (for privacy).
+3. **Layer of security**: I prioritize security by adding layers of protection such as **[Authelia](https://www.authelia.com/)** for authentication, **[CrowdSec](https://www.crowdsec.net/)** for security monitoring, and **[Fail2ban](https://github.com/fail2ban/fail2ban)** to prevent brute force attacks. **[Netalertx](https://netalertx.com/)** provides monitoring for my local network, scanning for new devices and logging connection times.
+4. **Flame control panel**: This is my centralized dashboard for accessing all of my homelab's services. It simplifies navigation and facilitates access to multimedia tools and services. [Flame](https://github.com/pawelmalak/flame) is not the most complete or complex, it does not show any internal data about the services but I like it this way, clean and simple.
+5. **Media and backup solutions**: For media, I use **[Jellyfin](https://jellyfin.org/)** to host my media library and stream it locally. I also use **[qBittorrent](https://www.qbittorrent.org/)** and **[Radarr](https://radarr.video/)** for media management. Backup and sync are managed by **[Kopia](https://kopia.io/)** (I have also used [Borg](https://www.borgbackup.org/) and [Restic](https://restic.net/) in the past) and **[Syncthing](https://syncthing.net/)**, this way I make sure my data is securely backed up and synced across all my devices.
+6. **Productivity and tools**: I also host productivity tools like **[Vikunja](https://vikunja.io/)** for a good and comprehensive task management tool, **[Gotify](https://gotify.net/)** for notifications, and **[Librespeed](https://librespeed.org/)** for network speed testing. I run other utilities like **[Vaultwarden](https://github.com/dani-garcia/vaultwarden)** (a self-hosted password manager) and **[Uptime Kuma](https://uptime.kuma.pet/)** (for uptime monitoring) among others. This is the part that changes the most, since except for the permanent ones I am always adding and testing new services.
