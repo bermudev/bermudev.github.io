@@ -20,16 +20,15 @@ jobs:
           submodules: recursive
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 9
           run_install: false
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
 
       - name: Get pnpm store directory
         shell: bash
@@ -41,20 +40,15 @@ jobs:
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile --prefer-offline=false
 
       - name: Type check
         run: pnpm astro check
 
       - name: Build site
         run: pnpm build
-
-      - name: Generate search index
-        run: pnpm postbuild
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
