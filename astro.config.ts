@@ -1,121 +1,75 @@
-import fs from "node:fs";
-import mdx from "@astrojs/mdx";
+import { defineConfig, envField, fontProviders } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import expressiveCode from "astro-expressive-code";
-import icon from "astro-icon";
-import robotsTxt from "astro-robots-txt";
-import webmanifest from "astro-webmanifest";
-import { defineConfig } from "astro/config";
-import { expressiveCodeOptions } from "./src/site.config";
-import { siteConfig } from "./src/site.config";
-
-// Remark plugins
-import remarkDirective from "remark-directive"; /* Handle ::: directives as nodes */
-import remarkUnwrapImages from "remark-unwrap-images";
-import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
-import { remarkReadingTime } from "./src/plugins/remark-reading-time";
-
-// Rehype plugins
-import rehypeExternalLinks from "rehype-external-links";
+import mdx from "@astrojs/mdx";
+import remarkToc from "remark-toc";
+import remarkCollapse from "remark-collapse";
+import {
+  transformerNotationDiff,
+  transformerNotationHighlight,
+  transformerNotationWordHighlight,
+} from "@shikijs/transformers";
+import { transformerFileName } from "./src/utils/transformers/fileName";
+import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
-	image: {
-		domains: ["webmention.io"],
-	},
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		icon(),
-		tailwind({
-			applyBaseStyles: false,
-			nesting: true,
-		}),
-		sitemap(),
-		mdx(),
-		robotsTxt(),
-		webmanifest({
-			// See: https://github.com/alextim/astro-lib/blob/main/packages/astro-webmanifest/README.md
-			/**
-			 * required
-			 **/
-			name: siteConfig.title,
-			/**
-			 * optional
-			 **/
-			// short_name: "Astro_Cactus",
-			description: siteConfig.description,
-			lang: siteConfig.lang,
-			icon: "public/icon.svg", // the source for generating favicon & icons
-			icons: [
-				{
-					src: "icons/apple-touch-icon.png", // used in src/components/BaseHead.astro L:26
-					sizes: "180x180",
-					type: "image/png",
-				},
-				{
-					src: "icons/icon-192.png",
-					sizes: "192x192",
-					type: "image/png",
-				},
-				{
-					src: "icons/icon-512.png",
-					sizes: "512x512",
-					type: "image/png",
-				},
-			],
-			start_url: "/",
-			background_color: "#1d1f21",
-			theme_color: "#2bbc8a",
-			display: "standalone",
-			config: {
-				insertFaviconLinks: false,
-				insertThemeColorMeta: false,
-				insertManifestLink: false,
-			},
-		}),
-	],
-	markdown: {
-		rehypePlugins: [
-			[
-				rehypeExternalLinks,
-				{
-					rel: ["nofollow, noreferrer"],
-					target: "_blank",
-				},
-			],
-		],
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkDirective, remarkAdmonitions],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: [""],
-			},
-		},
-	},
-	// https://docs.astro.build/en/guides/prefetch/
-	prefetch: true,
-	// ! Please remember to replace the following site property with your own domain
-	site: "https://bermu.dev",
-	vite: {
-		optimizeDeps: {
-			exclude: ["@resvg/resvg-js"],
-		},
-		plugins: [rawFonts([".ttf", ".woff"])],
-	},
+  site: SITE.website,
+  integrations: [
+    sitemap({
+      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+    }),
+    mdx(),
+  ],
+  markdown: {
+    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    shikiConfig: {
+      // For more themes, visit https://shiki.style/themes
+      themes: { light: "min-light", dark: "night-owl" },
+      defaultColor: false,
+      wrap: false,
+      transformers: [
+        transformerFileName({ style: "v2", hideDot: false }),
+        transformerNotationHighlight(),
+        transformerNotationWordHighlight(),
+        transformerNotationDiff({ matchAlgorithm: "v3" }),
+      ],
+    },
+  },
+  vite: {
+    // eslint-disable-next-line
+    // @ts-ignore
+    // This will be fixed in Astro 6 with Vite 7 support
+    // See: https://github.com/withastro/astro/issues/14030
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"],
+    },
+  },
+  image: {
+    responsiveStyles: true,
+    layout: "constrained",
+  },
+  env: {
+    schema: {
+      PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+    },
+  },
+  experimental: {
+    preserveScriptOrder: true,
+    fonts: [
+      {
+        name: "Google Sans Code",
+        cssVariable: "--font-google-sans-code",
+        provider: fontProviders.google(),
+        fallbacks: ["monospace"],
+        weights: [300, 400, 500, 600, 700],
+        styles: ["normal", "italic"],
+      },
+    ],
+  },
 });
-
-function rawFonts(ext: string[]) {
-	return {
-		name: "vite-plugin-raw-fonts",
-		// @ts-expect-error:next-line
-		transform(_, id) {
-			if (ext.some((e) => id.endsWith(e))) {
-				const buffer = fs.readFileSync(id);
-				return {
-					code: `export default ${JSON.stringify(buffer)}`,
-					map: null,
-				};
-			}
-		},
-	};
-}
