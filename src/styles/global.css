@@ -68,3 +68,15 @@ html[data-theme="dark"] {
 :target {
   scroll-margin-block: 1rem;
 }
+
+/* Opt-in: invert only the image pixels in dark mode (not wrappers/borders). */
+html[data-theme="dark"] img[data-invert-on-dark],
+html[data-theme="dark"] [data-invert-on-dark] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Opt-in: hide image border when needed on specific images only. */
+.app-prose img[data-transparent-border],
+.app-prose [data-transparent-border] img {
+  border-color: transparent;
+}

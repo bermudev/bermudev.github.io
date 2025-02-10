@@ -1,0 +1,106 @@
+---
+title: "Making Theme-Aware Images Work in Astro"
+featured: false
+pubDatetime: 2025-02-10T00:00:00.000Z
+description: "How I fixed dark-theme logo visibility with opt-in image attributes and global CSS rules."
+tags: [astro, css, dark mode, theming, frontend, astro-paper]
+author: Carlos Bermudez
+slug: making-theme-aware-images-work-in-astro
+---
+import { Image } from "astro:assets";
+import picture_example from "./bermudev.svg";
+
+## Table of contents
+
+## Why this change was needed
+
+Since a while ago, even before the theme change, I noticed a small but common issue: a black logo looked perfect in light mode, but it almost disappeared in dark mode. 
+
+So now that I have a new theme, I had to do something about it. No better time than now to fix it once and for all!
+
+The requirements were simple:
+
+- Keep the same image in the article.
+- Make it readable in dark mode, as I usually put images with dark words on transparent backgrounds fitted for light mode.
+- Ensure the image updates instantly when the user toggles the theme while the article is already open.
+
+An example of the issue can be seen below, where the logo is barely visible in dark mode (toggle the dark mode if you are using white mode to see the difference):
+
+<div className="flex justify-center">
+  <Image src={picture_example} alt="Logo almost invisible in dark mode" width="680px"/>
+</div>
+
+## The approach
+
+This blog theme already uses a theme toggle that updates `html[data-theme]` in real time. This means we can rely on CSS selectors based on `data-theme` and avoid adding JavaScript listeners for every image.
+
+The solution was to introduce a small **opt-in attribute** that applies a CSS filter only when the dark theme is active.
+
+In `global.css` we added the following rules:
+
+```css
+html[data-theme="dark"] img[data-invert-on-dark],
+html[data-theme="dark"] [data-invert-on-dark] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+````
+
+This filter inverts the colors of the image when the dark theme is active, which works well for logos that are primarily dark on transparent backgrounds.
+
+Then in the article itself, the behavior can be enabled only where needed:
+
+```html
+<Image
+  src={picture}
+  alt="Example picture"
+  width="250px"
+  data-invert-on-dark
+/>
+```
+
+This keeps the behavior scoped to specific images instead of affecting every image on the site.
+
+<div className="flex justify-center">
+  <Image src={picture_example} alt="Example logo" width="680px" data-invert-on-dark/>
+</div>
+
+## Optional border control
+
+While I was testing this, I also wanted a way to selectively hide image borders for some images, beacuse let's be honest, sometimes it looks _ugly_.
+
+For that, I added another optional attribute in `global.css`:
+
+```css
+.app-prose img[data-transparent-border],
+.app-prose [data-transparent-border] img {
+  border-color: transparent;
+}
+```
+
+Usage:
+
+```html
+<Image
+  src={picture}
+  alt="Example picture"
+  width="250px"
+  data-transparent-border
+/>
+```
+
+## Final result with both attributes
+
+Now with these changes we have two small reusable controls:
+
+* `data-invert-on-dark` → improves dark-mode visibility for dark assets
+* `data-transparent-border` → hides borders only when needed
+
+Both are completely opt-in and require no additional JavaScript.
+
+And the fix is now reusable across the project and updates immediately when the theme changes, without requiring a page refresh.
+
+<div className="flex justify-center">
+  <Image src={picture_example} alt="Logo clearly visible after dark mode fix" width="680px" data-invert-on-dark data-transparent-border/>
+</div>
+
+This keeps logos readable in both themes while still allowing per-image control when needed — a small improvement that makes the blog feel much more polished!
