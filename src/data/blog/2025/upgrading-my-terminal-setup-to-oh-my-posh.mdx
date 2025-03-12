@@ -1,0 +1,106 @@
+---
+title: "Upgrading My Terminal Setup to Oh My Posh"
+pubDatetime: 2025-03-12T23:00:00.000Z
+description: "Moving from Starship and Zim to Oh My Posh for a simpler and more integrated terminal experience."
+tags: ["terminal", "oh-my-posh", "wsl", "windows", "nerd font"]
+author: Carlos Bermudez
+---
+
+import { Image } from "astro:assets";
+import ohMyPoshWindows from "@/assets/images/oh-my-posh-windows.png";
+import ohMyPoshLinux from "@/assets/images/oh-my-posh-linux.png";
+
+## Table of contents
+
+## A New Discovery
+
+If you've been following my blog, you might remember my [previous setup for the terminal](/posts/2023/my-personal-setup-for-the-terminal), where I explained how to use **Zim** and **Starship** to get a pretty and functional prompt. That setup served me well for a long time, but I recently discovered [**Oh My Posh**](https://ohmyposh.dev/) and it has completely changed how I think about my terminal configuration.
+
+What I love about **Oh My Posh** is how easy it is to set up, especially when it comes to installing **fonts** and **themes**. It feels much simpler and more integrated than my previous setup, and honestly, it's more than enough for what I need.
+
+## Why Oh My Posh?
+
+The main reason for the switch is simplicity. With Starship and Zim, I had to manage several different tools and configurations. Oh My Posh handles the prompt, themes, and even font installation in a very straightforward way.
+
+- **Easy Themes:** Choosing and switching between themes is super simple, just download and change the configuration file.
+- **Font Management:** It has a built-in command to install Nerd Fonts directly from the terminal (I absolutely love this feature!).
+- **Cross-Platform:** It works exactly the same on Linux (WSL) and Windows (PowerShell).
+
+## Installation Guide
+
+Here is how you can set it up for your environment:
+
+### Linux / WSL
+
+1. **Install Oh My Posh:**
+   Open your terminal and run the following command:
+   ```bash
+   curl -s https://ohmyposh.dev/install.sh | bash -s
+   ```
+
+2. **Configure your shell and theme:**
+   Add the following line to your `~/.zshrc` (or `~/.bashrc` if you use Bash). My personal choice for Ubuntu Linux is the **gruvbox** theme:
+   ```bash
+   eval "$(oh-my-posh init zsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/gruvbox.omp.json)"
+   ```
+   *Note: You can also download the theme file locally and point to it with a local path. It will cache it anyway.*
+
+3. **Install a Nerd Font:**
+   This is my favorite part. Just run:
+   ```bash
+   oh-my-posh font install
+   ```
+   And select your favorite font (I still recommend **Fira Code**!).
+
+### Windows (PowerShell)
+
+1. **Install Oh My Posh:**
+   Using **Winget**, run:
+   ```powershell
+   winget install JanDeDobbeleer.OhMyPosh -s winget
+   ```
+
+2. **Configure PowerShell and theme:**
+   Open your PowerShell profile with `notepad $PROFILE` and add this line. For Windows, I really like the **powerlevel10k_rainbow** theme:
+   ```powershell
+   oh-my-posh init pwsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/powerlevel10k_rainbow.omp.json | Invoke-Expression
+   ```
+
+3. **Install a Nerd Font:**
+   Just like in Linux, run:
+   ```powershell
+   oh-my-posh font install
+   ```
+
+4. **Hide the welcome message (Optional):**
+   If you want to hide the "Windows PowerShell" welcome message, you need to launch PowerShell with the `-NoLogo` flag. If you use **Windows Terminal**, go to **Settings** > **PowerShell profile** and change the **Command line** to:
+   ```powershell
+   powershell.exe -NoLogo
+   ```
+
+## Look and Feel
+
+Here is a glimpse of how my terminal looks now with these themes:
+
+### WSL (Ubuntu)
+<div className="flex justify-center">
+  <Image src={ohMyPoshLinux} alt="Oh My Posh Linux Setup"/>
+</div>
+
+### Windows Terminal (PowerShell)
+<div className="flex justify-center">
+  <Image src={ohMyPoshWindows} alt="Oh My Posh Windows Setup"/>
+</div>
+
+## A Final Reminder for WSL Users
+
+If you are using **WSL** within the **Windows Terminal**, remember that installing the font in WSL isn't enough for the icons to show up correctly in your terminal window.
+
+**Don't forget to:**
+1. Install the font on **Windows** as well (Oh My Posh's `font install` usually handles this if run as Admin).
+2. Go to **Windows Terminal Settings**.
+3. Select your **WSL profile**.
+4. Under **Appearance**, change the **Font face** to the Nerd Font you just installed (e.g., *FiraCode Nerd Font*).
+5. (Optional) Change the **Background image** or color scheme to match your new Oh My Posh theme, I personally like the Dark+ theme!
+
+Happy coding with your new, shiny terminal! ✨
