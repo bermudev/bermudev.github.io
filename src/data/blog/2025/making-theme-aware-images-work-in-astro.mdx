@@ -2,6 +2,7 @@
 title: "Making Theme-Aware Images Work in Astro"
 featured: false
 pubDatetime: 2025-02-10T00:00:00.000Z
+modDatetime: 2025-04-20T00:00:00.000Z
 description: "How I fixed dark-theme logo visibility with opt-in image attributes and global CSS rules."
 tags: [astro, css, dark mode, theming, frontend, astro-paper]
 author: Carlos Bermudez
@@ -36,6 +37,8 @@ This blog theme already uses a theme toggle that updates `html[data-theme]` in r
 
 The solution was to introduce a small **opt-in attribute** that applies a CSS filter only when the dark theme is active.
 
+### Option 1: Custom attribute with `invert(1) hue-rotate(180deg)`
+
 In `global.css` we added the following rules:
 
 ```css
@@ -45,7 +48,7 @@ html[data-theme="dark"] [data-invert-on-dark] img {
 }
 ````
 
-This filter inverts the colors of the image when the dark theme is active, which works well for logos that are primarily dark on transparent backgrounds.
+This filter inverts the colors of the image when the dark theme is active, which works well for logos that are primarily dark on transparent backgrounds. The `hue-rotate(180deg)` part rotates the hue wheel after the inversion, which helps compensate the color shift a plain invert would introduce. In other words, it does not magically preserve the original colors, but it can produce a more natural-looking result than using only `invert(1)`.
 
 Then in the article itself, the behavior can be enabled only where needed:
 
@@ -62,6 +65,27 @@ This keeps the behavior scoped to specific images instead of affecting every ima
 
 <div className="flex justify-center">
   <Image src={picture_example} alt="Example logo" width="680px" data-invert-on-dark/>
+</div>
+
+### Option 2: Tailwind class with `dark:invert`
+
+If you want a more direct Tailwind option, you can also use `class="dark:invert"` on the image. That works great for black and white assets, but for colored images it literally inverts the colors, so it is not always the effect I want.
+
+If you want this version instead, we do it like this:
+
+```html
+<Image
+  src={picture}
+  alt="Example picture"
+  width="250px"
+  class="dark:invert"
+/>
+```
+
+This is simpler as we don't create any attribute, but as mentioned above, it performs a straight inversion, so it is better suited for black and white images than for colorful ones.
+
+<div className="flex justify-center">
+  <Image src={picture_example} alt="Example logo using dark:invert" width="680px" class="dark:invert"/>
 </div>
 
 ## Optional border control
@@ -87,6 +111,8 @@ Usage:
   data-transparent-border
 />
 ```
+
+If you prefer, you can also solve this directly with `class="border-0"` or `class="border-transparent"`. I still like the `data-transparent-border` approach because I can keep the intent as an HTML attribute and reuse the same tag pattern wherever I need it.
 
 ## Final result with both attributes
 
