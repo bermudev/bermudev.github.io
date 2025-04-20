@@ -27,11 +27,19 @@ const {
 /* ========== Formatted Datetime ========== */
 const isModified = modDatetime && modDatetime > pubDatetime;
 
+const publishedDatetime = dayjs(pubDatetime).tz(postTimezone || SITE.timezone);
+const modifiedDatetime = isModified
+  ? dayjs(modDatetime).tz(postTimezone || SITE.timezone)
+  : null;
+
 const datetime = dayjs(isModified ? modDatetime : pubDatetime).tz(
   postTimezone || SITE.timezone
 );
 
 const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
+const publishedDate = publishedDatetime.format("D MMM, YYYY");
+const modifiedDate = modifiedDatetime?.format("D MMM, YYYY");
+const modifiedIsoString = modifiedDatetime?.toISOString();
 ---
 
 <div class:list={["flex items-center gap-x-2 opacity-80", className]}>
@@ -42,14 +50,37 @@ const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
     ]}
   />
   {
-    isModified && (
-      <span class:list={["text-sm", { "sm:text-base": size === "lg" }]}>
-        Updated:
-      </span>
+    isModified ? (
+      <>
+        <time
+          class:list={["text-sm", { "sm:text-base": size === "lg" }]}
+          datetime={publishedDatetime.toISOString()}
+        >
+          {publishedDate}
+        </time>
+        <span
+          aria-hidden="true"
+          class:list={["text-sm", { "sm:text-base": size === "lg" }]}
+        >
+          |
+        </span>
+        <span class:list={["text-sm", { "sm:text-base": size === "lg" }]}>
+          Updated:
+        </span>
+        <time
+          class:list={["text-sm", { "sm:text-base": size === "lg" }]}
+          datetime={modifiedIsoString}
+        >
+          {modifiedDate}
+        </time>
+      </>
+    ) : (
+      <time
+        class:list={["text-sm", { "sm:text-base": size === "lg" }]}
+        datetime={datetime.toISOString()}
+      >
+        {date}
+      </time>
     )
   }
-  <time
-    class:list={["text-sm", { "sm:text-base": size === "lg" }]}
-    datetime={datetime.toISOString()}>{date}</time
-  >
 </div>
