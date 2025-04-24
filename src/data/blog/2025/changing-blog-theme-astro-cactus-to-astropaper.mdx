@@ -65,3 +65,21 @@ Well, it provides many things I like right away: A clean reading experience (the
 And more importantly, it requires **far fewer changes** for me to adapt it to what I wanted.
 
 So the goal this time is simple: **modify less and stay closer to the upstream project**, which makes maintenance much easier over time.
+
+---
+
+## Maintenance changelog
+
+If I update AstroPaper again in the future, besides the changes documented in the [official AstroPaper guide](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/), these are the extra custom changes I should keep in mind.
+
+### Changes to reapply after a theme update
+
+- Keep support for YouTube embeds inside posts through `astro-embed` and MDX usage, as preserved in the theme migration commit [312aa1d](https://github.com/bermudev/bermudev.github.io/commit/312aa1dcb10568608dd14b9008671f37a7ffda83).
+- Reapply the custom [`global.css`](https://github.com/bermudev/bermudev.github.io/commit/312aa1dcb10568608dd14b9008671f37a7ffda83#diff-e1f859f79d92d8fd17fc92e8c0f87ad717b6b4069340eb69124f3978fa201c4d) styling changes introduced with the new theme, plus the extra image-related rules added later in [2f9526a](https://github.com/bermudev/bermudev.github.io/commit/2f9526a601ccfaecd4ad7d0afcebdb460cbbaf67).
+- Keep updated posts ordered by their original publication date and display both the original date and the updated date, as implemented in [7f83be0](https://github.com/bermudev/bermudev.github.io/commit/7f83be059b89715a2defe1dbbe95a780d2a37b5e).
+
+### One-time changes that do not need to be repeated
+
+- Reorganized the post structure to fix slug handling in [3d940c8](https://github.com/bermudev/bermudev.github.io/commit/3d940c803888c87d0288de8c576c48e5aeab1962).
+- Moved post images into a shared assets folder for better optimization in [d86f5de](https://github.com/bermudev/bermudev.github.io/commit/d86f5de1a93afa77dbdfd88f6836d41a089c6956).
+- Compressed the image set with `tinypng-cli` in [f2c1e03](https://github.com/bermudev/bermudev.github.io/commit/f2c1e03ac2fbbc2ffb62cae24e58fdfc56529e7b).
