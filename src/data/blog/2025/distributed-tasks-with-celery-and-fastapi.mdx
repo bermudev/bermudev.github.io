@@ -1,0 +1,148 @@
+---
+title: "Celery: Python's Distributed Task Queue"
+pubDatetime: 2025-04-28T00:00:00.000Z
+featured: false
+description: "An introduction to Celery, the distributed task queue for Python, and how to use it with FastAPI and Flower."
+tags: [python, celery, fastapi, backend, redis, rabbitmq, task queue, background jobs, distributed systems, asynchronous processing, flower]
+author: Carlos Bermudez
+slug: distributed-tasks-with-celery-and-fastapi
+---
+import { Image } from "astro:assets";
+import celeryDiagram from "@/assets/images/distributed-tasks-with-celery-and-fastapi.svg";
+import dogWithFlowersImage from "@/assets/images/dog-with-flowers.jpg";
+
+
+## Table of contents
+
+## Introduction
+
+I remember when I first started working as a software developer, one of the senior developers I was working with told me about Celery. I had no idea what it was, and just when I thought I was lost, things got even worse when he told me about Flowers...
+
+"*Flowers? Yes, I like them, they smell good*".
+
+<div className="flex justify-center">
+  <Image src={dogWithFlowersImage} alt="Dog with flowers" width="680px"/>
+</div>
+
+And now, without a doubt, Celery has established itself as one of my favorite options in the Python ecosystem. So let's see a brief introduction to Celery and some of its tools.
+
+
+## What is Celery?
+
+In a nutshell, Celery is a **distributed task queue** manager, focused on real-time processing but also capable of scheduling tasks for future execution. And what is a task queue?
+
+From their documentation we can read:
+
+> Task queues are used as a mechanism to distribute work across threads or machines. A task queue’s input is a unit of work called a task. Dedicated worker processes constantly monitor task queues for new work to perform.
+>
+> Celery communicates via messages, usually using a **broker** to mediate between clients and workers. To initiate a task the client adds a message to the queue, the broker then delivers that message to a **worker**.
+>
+> A Celery system can consist of multiple workers and brokers, giving way to high availability and horizontal scaling.
+
+We can therefore identify three main components:
+
+* The **Client**, which is your backend application and is in charge of sending the tasks to the queue.
+* The **Worker**, which is the process in charge of executing the tasks asynchronously;
+* And the **Broker**, a messaging system (such as RabbitMQ or Redis) that acts as an intermediary between the Client and the Worker, managing the queue of pending tasks.
+
+And in addition, Celery can use a **Backend** to store the results of the tasks, allowing them to be retrieved at a later time.
+
+So an example diagram of how this whole system would be:
+
+<div className="flex justify-center">
+  <Image src={celeryDiagram} alt="Diagram" data-invert-on-dark data-transparent-border/>
+</div>
+
+In production environments, this separation of concerns is extremely powerful: your API remains fast and responsive, while heavy or slow operations are delegated to background workers.
+
+
+# Celery in production with FastAPI
+
+Now let’s move from theory to something closer to what many of us actually run in production: **FastAPI + Celery + Redis**.
+
+When working with FastAPI, the typical pattern is:
+
+1. The API receives a request.
+2. Instead of processing a heavy task inline (sending emails, generating reports, calling third-party APIs, video processing, etc.), it sends a task to Celery.
+3. The API immediately returns a response (usually `202 Accepted`).
+4. The worker processes the task in the background.
+
+This keeps the API latency predictable and avoids blocking the async event loop.
+
+
+## Minimal integration example
+
+Let’s assume we use Redis as broker and backend.
+
+```python file="celery/celery_app.py"
+from celery import Celery
+
+celery_app = Celery(
+    "worker",
+    broker="redis://redis:6379/0",
+    backend="redis://redis:6379/0",
+)
+
+@celery_app.task
+def process_data(data: str) -> str:
+    # Simulate heavy work
+    import time
+    time.sleep(10)
+    return f"Processed: {data}"
+```
+
+```python file="fastapi/main.py"
+from fastapi import FastAPI
+from celery_app import process_data
+
+app = FastAPI()
+
+@app.post("/tasks")
+async def create_task(payload: dict):
+    task = process_data.delay(payload["data"])
+    return {"task_id": task.id}
+```
+
+Here the API is only acting as a **producer** of tasks. The actual execution happens in the worker process.
+
+
+## Installation and basic configuration
+
+In a production-ready setup, we will usually have a set of tools like this:
+
+* FastAPI running with Uvicorn or Gunicorn
+* A Redis or RabbitMQ container
+* One or more Celery workers
+* (Optionally) Flower
+* (Optionally) Celery Beat
+
+
+### Worker execution:
+
+```bash
+celery -A celery_app worker --loglevel=info --concurrency=4
+```
+
+In this case, `--concurrency` defines how many worker processes will run in parallel.
+
+
+## Monitoring and optimization with Flowers
+
+*Okay Carlos but what about the Flowers?* 💐
+
+We all know that a crucial aspect of any system in production is monitoring. For this, Celery offers integration with Flower.
+
+Keeping it short, Flowers is a web-based monitoring tool that allows us to inspect tasks, monitor worker status, view task arguments and results, revoke or retry tasks, check runtime and failure rates... and many more!
+
+And we can start Flower as easy as:
+
+```bash
+celery -A celery_app flower
+```
+
+By default, it runs on `http://localhost:5555`.
+
+![Image](https://flower.readthedocs.io/en/1.0/_images/dashboard.png)
+
+
+And yes… now when someone mentions Flower, I don’t think about roses anymore. 🌹
