@@ -2,7 +2,7 @@
 title: "Beyond the Code II: My Journey in 2024"
 pubDatetime: 2024-12-25T00:00:00.000Z
 description: "A reflective post on professional growth, personal projects, and future goals for the blog's second anniversary"
-tags: ["professional development", "personal growth", "recap", "blog"]
+tags: ["professional development", "personal growth", "recap", "blogging"]
 author: Carlos Bermudez
 slug: beyond-the-code-II-my-journey-in-2024
 ---
