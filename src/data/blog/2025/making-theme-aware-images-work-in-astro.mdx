@@ -35,9 +35,9 @@ An example of the issue can be seen below, where the logo is barely visible in d
 
 This blog theme already uses a theme toggle that updates `html[data-theme]` in real time. This means we can rely on CSS selectors based on `data-theme` and avoid adding JavaScript listeners for every image.
 
-The solution was to introduce a small **opt-in attribute** that applies a CSS filter only when the dark theme is active.
+The solution was to introduce small **opt-in attributes** that apply a CSS filter only when a specific theme is active.
 
-### Option 1: Custom attribute with `invert(1) hue-rotate(180deg)`
+### Option 1: Custom attributes with `invert(1) hue-rotate(180deg)`
 
 In `global.css` we added the following rules:
 
@@ -46,9 +46,16 @@ html[data-theme="dark"] img[data-invert-on-dark],
 html[data-theme="dark"] [data-invert-on-dark] img {
   filter: invert(1) hue-rotate(180deg);
 }
+
+html[data-theme="light"] img[data-invert-on-light],
+html[data-theme="light"] [data-invert-on-light] img {
+  filter: invert(1) hue-rotate(180deg);
+}
 ````
 
-This filter inverts the colors of the image when the dark theme is active, which works well for logos that are primarily dark on transparent backgrounds. The `hue-rotate(180deg)` part rotates the hue wheel after the inversion, which helps compensate the color shift a plain invert would introduce. In other words, it does not magically preserve the original colors, but it can produce a more natural-looking result than using only `invert(1)`.
+This filter inverts the colors of the image only when the matching theme is active. `data-invert-on-dark` works well for logos that are primarily dark on transparent backgrounds and need help in dark mode. `data-invert-on-light` does the opposite: it is useful for light assets that need help in light mode.
+
+The `hue-rotate(180deg)` part rotates the hue wheel after the inversion, which helps compensate the color shift a plain invert would introduce. In other words, it does not magically preserve the original colors, but it can produce a more natural-looking result than using only `invert(1)`.
 
 Then in the article itself, the behavior can be enabled only where needed:
 
@@ -58,6 +65,17 @@ Then in the article itself, the behavior can be enabled only where needed:
   alt="Example picture"
   width="250px"
   data-invert-on-dark
+/>
+```
+
+And for images that need the same treatment in light mode:
+
+```html
+<Image
+  src={picture}
+  alt="Example picture"
+  width="250px"
+  data-invert-on-light
 />
 ```
 
@@ -114,14 +132,15 @@ Usage:
 
 If you prefer, you can also solve this directly with `class="border-0"` or `class="border-transparent"`. I still like the `data-transparent-border` approach because I can keep the intent as an HTML attribute and reuse the same tag pattern wherever I need it.
 
-## Final result with both attributes
+## Final result with the attributes
 
-Now with these changes we have two small reusable controls:
+Now with these changes we have three small reusable controls:
 
 * `data-invert-on-dark` → improves dark-mode visibility for dark assets
+* `data-invert-on-light` → improves light-mode visibility for light assets
 * `data-transparent-border` → hides borders only when needed
 
-Both are completely opt-in and require no additional JavaScript.
+All three are completely opt-in and require no additional JavaScript.
 
 And the fix is now reusable across the project and updates immediately when the theme changes, without requiring a page refresh.
 

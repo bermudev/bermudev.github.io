@@ -75,6 +75,12 @@ html[data-theme="dark"] [data-invert-on-dark] img {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* Opt-in: invert only the image pixels in light mode (not wrappers/borders). */
+html[data-theme="light"] img[data-invert-on-light],
+html[data-theme="light"] [data-invert-on-light] img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* Opt-in: hide image border when needed on specific images only. */
 .app-prose img[data-transparent-border],
 .app-prose [data-transparent-border] img {
