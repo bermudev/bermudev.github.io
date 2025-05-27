@@ -1,0 +1,147 @@
+---
+title: "Poetry and uv as modern alternatives to pip"
+pubDatetime: 2025-05-27T00:00:00.000Z
+description: "A practical comparison between pip, Poetry, and uv for dependency management in modern Python projects."
+tags: [python, pip, poetry, uv, packaging, dependencies]
+author: Carlos Bermudez
+slug: poetry-and-uv-as-modern-alternatives-to-pip
+---
+import { Image } from "astro:assets";
+import uvSpeed from "@/assets/images/uv-speed.svg";
+
+## Table of contents
+
+## Introduction
+
+For many years, **pip** has been the go-to tool to manage dependencies in Python, and it is still working just fine, but as long as you are working in some backend, microservices or big enough projects, you know that **pip** can be a little underperforming.
+
+That's why today I want to show some alternatives that me and my team have been working with in addition to pip, let's talk about **Poetry**, **uv**, and how they compare to **pip**.
+
+---
+
+## The baseline: pip + venv
+
+This is the classic stack:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+This is simple, explicit, and just works. But not without some limitations:
+
+- There is no strong dependency resolution (it depends on how we generate the `requeriments.txt` file).
+- No clear model of dependencies for development or production environments (usually you need to create two different requirement files).
+- There is no version control management for the project (like in `pyproject.toml`).
+
+And the one that worries me the most and took more time for me and my team to fix it:
+
+### Dependency confusion in pip
+
+This problem appears when we have **private dependencies** (for example in an internal registry or private index) that **do not exist on PyPI under the same name**.
+
+If someone publishes a package on PyPI with that exact name, `pip` **may install the public package first** instead of the private one, depending on how `index-url` and `extra-index-url` are configured.
+
+For example, imagine our company has an internal package:
+
+```
+company-utils
+```
+
+If that package name does not exist on PyPI and someone publishes a package with that name there, `pip` could resolve the dependency from PyPI instead of our internal registry.
+
+This issue became widely known a few years ago through several **dependency confusion attacks** affecting large companies.
+
+In practice, common mitigations include:
+
+- Reserving internal package names on PyPI.
+- Using a private index as the only `index-url` (and this is not always possible, especially if the internal package needs external packages).
+- Or using dependency management tools that enforce stricter resolution rules (this is where Poetry or uv come along)
+
+It’s not something we run into every day, but when working with **internal packages**, it’s definitely one of those things you need to consider.
+
+## Poetry: packaging and all-in-one dependency management
+
+[Poetry](https://python-poetry.org/) arrived with a very clear proposal: unify dependency management, lockfiles, and packaging in one modern tool centered around `pyproject.toml`.
+
+Instead of working with `requirements.txt`, `setup.py`, and other extra files, Poetry tries to give us a single and more coherent workflow.
+
+### What it does well
+
+- Robust dependency resolution.
+- A reproducible `poetry.lock` file.
+- Clear separation between main and development dependencies.
+- A natural workflow for publishing packages.
+- A project structure centered around `pyproject.toml`.
+
+Example:
+
+```bash
+poetry init
+poetry add fastapi
+poetry add pytest --group dev
+poetry install
+```
+
+In more structured backend projects, this gives us more order and predictability.
+
+### What does not fully convince us
+
+- Performance: dependency resolution can be slow in large projects, and our project was BIG.
+- Virtual environments are managed automatically, and sometimes we want more control.
+- The learning curve is a bit higher for teams that are already very used to `pip`.
+
+In my experience, Poetry is ideal when we are developing a library or we want something formal and reproducible.
+Or just when we care a lot about project structure.
+
+That said, for day-to-day backend services, sometimes Poetry can feel a bit heavier than what we actually need.
+
+## uv: speed and modern pragmatism
+
+[uv](https://github.com/astral-sh/uv), developed by Astral (the same people behind Ruff), is written in Rust and has the goal to be extremely fast and compatible with the existing ecosystem.
+
+And when I say fast, I really mean fast.
+
+<div className="flex justify-center">
+  <Image src={uvSpeed} alt="uv speed comparison chart" width="680px" data-invert-on-light data-transparent-border/>
+</div>
+
+### What we like about uv
+
+- Much faster installs than `pip` or `Poetry`.
+- Compatibility with `requirements.txt`.
+- Support for lockfiles.
+- It can replace `pip`, `pip-tools`, and `virtualenv`.
+
+Simple example:
+
+```bash
+uv venv
+uv pip install fastapi
+```
+
+Or even:
+
+```bash
+uv pip install -r requirements.txt
+```
+
+Without radically changing our workflow.
+
+
+### A quick comparison
+
+So, if I had to summarize it very simply, I would put it like this:
+
+- **pip** is the standard baseline: universal, familiar, and good enough for many simple cases.
+- **Poetry** is the structured choice: great when packaging, locking, and project organization are your main concerns.
+- **uv** is the pragmatic performance choice right now: fast, modern, and much easier to introduce incrementally.
+
+## Which one would I choose?
+
+For me, the answer usually looks like this:
+
+- If I am working on a small or legacy project and I do not want to change much, `pip` + `venv` is still fine.
+- If I am building a reusable package or I want a more formal workflow, Poetry is still a strong option.
+- If I am working on backend services, CI pipelines, or projects where speed matters a lot, I would probably choose `uv`.
