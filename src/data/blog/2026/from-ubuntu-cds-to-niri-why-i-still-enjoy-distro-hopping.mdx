@@ -1,0 +1,111 @@
+---
+title: "From Ubuntu CDs to Niri: Why I Still Enjoy Distro Hopping"
+pubDatetime: 2026-02-14T22:52:04.000Z
+description: "A personal look at years of hopping from Ubuntu to Arch, Manjaro, Fedora, and now a Niri + Dank Linux setup on Wayland."
+tags: [linux, wayland, hyprland, niri]
+author: Carlos Bermudez
+featured: false
+draft: false
+---
+
+import { Image } from "astro:assets";
+// TODO: Uncomment when the Niri + Dank Linux screenshot is available.
+// import niriDankLinuxDesktop from "@/assets/images/niri-danklinux-desktop.png";
+import ubuntuCdCollection from "@/assets/images/ubuntu-cd-collection.webp";
+
+## Table of contents
+
+## I Have Been Hopping for a Long Time...
+
+Am I addicted to [DistroWatch](https://distrowatch.com/)? Maybe, or maybe not. But for sure I have been messing around with Linux distributions for a very long time.
+
+I started, like many people, with [**Ubuntu**](https://ubuntu.com/). In fact, I still keep some of the old physical [Ubuntu](https://ubuntu.com/) disks I got back in the **Ubuntu 7** days. They are my treasure! (Not my picture, though).
+
+<div className="flex justify-center">
+  <Image
+    src={ubuntuCdCollection}
+    alt="Old physical Ubuntu CDs from the Ubuntu 6 era"
+    width={400}
+  />
+</div>
+
+After that, I spent a long time on [**Arch Linux**](https://archlinux.org/). That was probably the period when I got the most obsessed with tweaking everything. I was very deep into the whole **ricing** rabbit hole. And even I still keep some of those old **dotfiles**, even if I do not use them anymore.
+
+At work I also spent around **four years using [Manjaro Linux](https://manjaro.org/)**, which at the time felt like a practical middle ground. And it wasn't even my choice, which is surprising but great. After that I moved to [**Fedora**](https://fedoraproject.org/), which I also enjoyed a lot. [Fedora](https://fedoraproject.org/) always felt more polished to me, especially when I wanted a modern Linux desktop without having to think too much about every package.
+
+And now, as I get older, I keep orbiting around **tiling setups** in general. I still like [**i3**](https://i3wm.org/), I have spent time with [**Hyprland**](https://hypr.land/), and lately I have been especially interested in [**Niri**](https://github.com/niri-wm/niri).
+
+## Linux in 2026: Trends I See Today
+
+If we talk about the Linux desktop in **2026**, I would say that the hyped thing is clearly **Wayland**, and inside that conversation [**Hyprland**](https://hypr.land/) is usually the first name many people run into.
+
+A lot of the current screenshots, shell projects, and desktop experiments assume a **Wayland-first** world, and in many cases a [**Hyprland**](https://hypr.land/)-shaped one, even if we end up choosing something else later. You can just go to [r/unixporn](https://www.reddit.com/r/unixporn/) and see how many of the top posts are [Hyprland](https://hypr.land/) setups.
+
+And I also think there has been a small but very visible shift in how people talk about the desktop. For a long time, the default conversation was mostly about [**GNOME**](https://www.gnome.org/) vs [**KDE Plasma**](https://kde.org/plasma-desktop/) (not you, _Unity_), maybe with [**Xfce**](https://xfce.org/) around as the lighter option for old machines.
+
+Now there is much more interest in compositors, shells, tiling workflows, and setups that feel more custom and less tied to the old DE model.
+
+I know, I know, you are probably thinking...
+
+### What In The Hell All These Names Mean?
+
+When people talk about their setup, it is easy to mix together the compositor, the shell, and the distro. These projects live at different layers, so it helps to separate them:
+
+```text
+Distro base
+  └── Arch / Fedora / NixOS / Ubuntu / etc.
+        ├── Traditional DEs
+        │     ├── GNOME
+        │     ├── KDE Plasma
+        │     ├── Xfce
+        │     ├── Cinnamon
+        │     └── MATE / Budgie / COSMIC
+        └── Wayland compositor
+              ├── Hyprland
+              └── Niri
+                    └── Shell / UI on top
+                          ├── Noctalia
+                          └── DankMaterialShell / DankLinux suite
+                                └── Configs, widgets, launcher, bar, lockscreen...
+```
+
+It is not a perfect diagram, but it is a useful mental model. It explains why two people can both say they use [**Arch Linux**](https://archlinux.org/) and still have completely different desktop experiences, or why someone can move from [**Hyprland**](https://hypr.land/) to [**Niri**](https://github.com/niri-wm/niri) without changing distro at all.
+
+Taking my current setup as an example, I am using [**Niri**](https://github.com/niri-wm/niri) as the compositor, but I am using [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell) as the shell on top of it. I am not using [**Hyprland**](https://hypr.land/) at all (although I did in the past), but I am still in the Wayland ecosystem. And I am not using a traditional DE like [**GNOME**](https://www.gnome.org/) or [**KDE Plasma**](https://kde.org/plasma-desktop/), but I am still using a Linux distro as the base.
+
+Finally, [**Omarchy**](https://omarchy.org/), which is super super popular right now, is a broader distro-level experience created by [**DHH**](https://dhh.dk/) that currently centers a [**Hyprland**](https://hypr.land/)-based setup.
+
+That distinction matters because saying "I use [Hyprland](https://hypr.land/)" is not the same as saying "I use [Omarchy](https://omarchy.org/)", and it is not the same as saying "I use [Niri](https://github.com/niri-wm/niri) with [Dank Linux](https://danklinux.com/)".
+
+## My Current Setup: Niri + Dank Linux
+
+Like I said, right now, the setup I am actually using is [**Niri**](https://github.com/niri-wm/niri) + [**Dank Linux**](https://danklinux.com/), or more precisely [**Niri**](https://github.com/niri-wm/niri) + [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell).
+
+{/* TODO: Uncomment when the Niri + Dank Linux screenshot is available. */}
+{/* <div className="flex justify-center"> */}
+{/* <Image */}
+{/* src={niriDankLinuxDesktop} */}
+{/* alt="Screenshot of my Niri and DankMaterialShell desktop setup" */}
+{/* /> */}
+{/* </div> */}
+
+### Why Niri Clicked for Me
+
+I understand why [**Hyprland**](https://hypr.land/) is so popular, really, I used it for a long time, but what made me stay with [**Niri**](https://github.com/niri-wm/niri) is that its core workflow feels calmer and more predictable to me.
+
+The idea of **scrollable tiling** is not just a feature, it is the whole point. Instead of constantly resizing old windows to make room for new ones, windows are placed in a horizontal strip and I move across them. That sounds small on paper, but in practice it changes a lot.
+
+### On Top of Niri, Dank Linux
+
+And on top of [**Niri**](https://github.com/niri-wm/niri) I am using [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell), which is part of the broader [**Dank Linux**](https://danklinux.com/) ecosystem. That shell gives me a lot of the pieces I want without forcing me to assemble them myself. Old me ricing Carlos would be disappointed by that, but current me is very happy to have a solid default experience that I can tweak with small plugins instead of having to build everything from scratch.
+
+So, to summarize the stack I am using:
+
+- [**Niri**](https://github.com/niri-wm/niri), which handles the compositor and the tiling model.
+- [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell), which handles the desktop shell around it: bars, launchers, panels, notifications, lock screen, and the other parts we used to glue together manually.
+
+### The Alternatives
+
+One shell that I wanted to try but I have not yet is [**Noctalia**](https://noctalia.dev/). It is a shell that like [**DankMaterialShell**](https://github.com/AvengeMedia/DankMaterialShell), sits on top of [**Niri**](https://github.com/niri-wm/niri), but it has a different design and workflow. I am curious about it, but I have not had the time to test it yet.
+
+On the other hand, [**Omarchy**](https://omarchy.org/) is interesting for a different reason. It is less about "choose your compositor and shell separately" and more about accepting an opinionated full-system experience. That is attractive when we want something cohesive quickly, but I still enjoy mixing pieces myself at some degree.
