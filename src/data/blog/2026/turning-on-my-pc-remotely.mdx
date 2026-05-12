@@ -1,0 +1,203 @@
+---
+title: "Turning On My PC Remotely with Wake-on-LAN and Zigbee"
+pubDatetime: 2026-05-12T23:31:10+02:00
+description: "Configuring Wake-on-LAN through a Raspberry Pi and a Zigbee smart plug to turn on my PC remotely."
+tags: [homelab, wake-on-lan, raspberry-pi, zigbee, networking, troubleshooting]
+---
+
+I mentioned in my 2025 recap that I was going to write more posts about my adventures with hardware, and here I am for the second time this year...
+
+This time, I want to solve a problem I run into when I travel for personal or work reasons. When I travel, I don’t usually take a powerful laptop with me; I prefer my little ThinkPad. It’s tough, it works well, and you could even use it as a soccer ball and it would still work afterward. The only thing is, it doesn’t have much power. That’s where my idea comes in: using my desktop computer at home remotely.
+
+I ended up setting up two ways to do this. The first is to use the Zigbee network I have set up and a Zigbee smart plug. The second (which is the one I wanted to use as my primary method) uses Wake-on-LAN. In theory, it should have been simple, too, but it ended up turning into a little troubleshooting exercise where the problem wasn't what it seemed.
+
+Here’s the process I followed and the two solutions I kept.
+
+## Table of contents
+
+## The goal
+
+My setup was as follows:
+
+- A Raspberry Pi 3 running DietPi, always powered on.
+- A PC with an MSI motherboard and Windows 11.
+- The Raspberry Pi connected via Wi-Fi to the network and via Ethernet directly to the PC.
+- A Zigbee hub connected to my Zigbee2MQTT network.
+
+The goal was to be able to boot the computer remotely even when it was completely turned off, without having to keep it on all the time.
+
+Also, for security reasons, I connect to the Raspberry Pi through Tailscale and send the Magic Packet from there, so I do not have to expose anything directly to the internet.
+
+## The simple option: a Zigbee smart plug
+
+The first solution was to connect the PC to a Zigbee smart plug and configure the BIOS as follows:
+
+```text
+Restore after AC Power Loss = Power On
+```
+
+With this option, the PC turns on automatically when power is restored. If the computer is already off, I can turn the power off via Zigbee2MQTT, turn it back on, and let the BIOS handle the rest.
+
+For safety reasons, I also configured the smart plug to remain off when power is restored after an outage. The name of this option varies by model and Zigbee integration, but it usually refers to the device’s power-on behavior. This prevents the smart plug from turning on and starting the PC unexpectedly after a power outage.
+
+The smart plug remains a simple and useful fallback if Wake-on-LAN fails. Even so, I prefer Wake-on-LAN as my primary method because it lets me turn on the computer without cycling its power.
+
+So let's get started.
+
+## The primary method: Wake-on-LAN
+
+For those who don't know, Wake-on-LAN is a protocol that allows you to turn on a computer by sending a _Magic Packet_ to its network card. To do this, I wanted to put one of the Raspberry Pis I'd had lying around for years to good use and, while I was traveling, keep it turned on and connected directly to my PC via Ethernet.
+
+## Configuring the PC for Wake-on-LAN
+
+The first step was to configure the BIOS.
+
+I enabled the following options:
+
+- `Resume By PCI-E/Networking Device`
+- `ErP Ready = Disabled`
+
+Next, in Windows, I configured my PC’s network adapter, the **Realtek PCIe GbE Family Controller**.
+
+In _Power Management_:
+
+- Allow the device to wake the computer.
+- Allow only a Magic Packet to wake the computer.
+
+And in the advanced options:
+
+- Wake on LAN → Enabled
+- Wake on Magic Packet → Enabled
+- I also disabled all power-saving options (EEE, Green Ethernet, etc.).
+
+I also disabled Windows **Fast Startup**. I wasn’t sure whether it would make a difference, but I wanted to rule it out.
+
+So far, everything seemed fine.
+
+## Initial tests
+
+On the Raspberry Pi, I ran:
+
+```bash
+wakeonlan <PC_MAC_ADDRESS>
+```
+
+The packet was sent successfully, but the PC never booted up.
+
+Thinking the problem might be with sending the packet, I also tried the `etherwake` tool.
+
+However, the following error appeared:
+
+```text
+sendto: Network is down
+```
+
+At that point, it seemed like the problem was still with the PC...
+
+## What I checked
+
+Before continuing, I checked and discarded several possible issues:
+
+- The BIOS was configured correctly.
+- I updated the BIOS to the latest available version.
+- I updated the Realtek driver.
+- I verified that Windows recognized the adapter as capable of waking the computer using:
+
+```powershell
+powercfg /devicequery wake_armed
+```
+
+I also verified that Fast Startup was actually disabled.
+
+None of that solved the problem. It was starting to drive me crazy.
+
+## The decisive clue
+
+Running on the Raspberry Pi:
+
+```bash
+ip link
+```
+
+I got:
+
+```text
+eth0 ... state DOWN
+wlan0 ... state UP
+```
+
+Since the Raspberry Pi was using Wi-Fi, it turned out that DietPi was keeping the Ethernet interface disabled.
+
+When I tried to use `etherwake`, it attempted to send the packet over an interface that was literally turned off.
+
+All I had to do was run:
+
+```bash
+sudo ip link set eth0 up
+```
+
+and the situation changed completely.
+
+After bringing the interface up, `ethtool eth0` reported:
+
+```text
+Link detected: yes
+```
+
+And finally:
+
+```bash
+sudo etherwake -i eth0 <PC_MAC_ADDRESS>
+```
+
+It turned on the computer immediately.
+
+## Final setup and fallback plan
+
+As I had initially planned, I kept both methods available.
+
+For the Zigbee smart plug:
+
+- `Restore after AC Power Loss = Power On` in the BIOS.
+- The smart plug remains off after a power outage.
+- I only cut and restore power when the PC is already off.
+
+For Wake-on-LAN, my primary method:
+
+- Updated BIOS.
+- `Resume By PCI-E/Networking Device` enabled.
+- ErP disabled.
+- Fast startup disabled.
+- Realtek driver updated.
+- Wake-on-Magic-Packet enabled.
+
+And on the Raspberry Pi:
+
+```bash
+sudo ip link set eth0 up
+sudo etherwake -i eth0 <PC_MAC_ADDRESS>
+```
+
+Because the `ip link` command does not persist after a reboot, I also created a small systemd service to bring `eth0` up automatically:
+
+```ini
+[Unit]
+Description=Bring up eth0 for Wake-on-LAN
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/ip link set eth0 up
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+After saving it as `/etc/systemd/system/enable-eth0.service`, I enabled it with:
+
+```bash
+sudo systemctl enable --now enable-eth0.service
+```
+
+With this setup, I can use Wake-on-LAN normally and keep the Zigbee smart plug as a simple alternative if I ever need it.
