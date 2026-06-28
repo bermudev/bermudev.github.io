@@ -10,43 +10,34 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    name: Check for build and type issues
+  build:
+    name: Code standards & build
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
-      - name: checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: install pnpm
+      - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
-          run_install: false
+          version: "11.3.0"
 
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          node-version: "24"
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --prefer-offline=false
+        run: pnpm install --frozen-lockfile
 
-        # use astro check for issues
-      - name: Run check
-        run: pnpm astro check
+      - name: Lint code
+        run: pnpm run lint
 
-        # ensure build works
-      - name: Run build
-        run: pnpm build
+      - name: Check code format
+        run: pnpm run format:check
+
+      - name: Build project
+        run: pnpm run build

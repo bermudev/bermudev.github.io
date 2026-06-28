@@ -1,7 +1,14 @@
 import type { CollectionEntry } from "astro:content";
-import postFilter from "./postFilter";
+import { postFilter } from "./postFilter";
 
-const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
+/**
+ * Returns posts that are eligible to be shown to users, sorted by their
+ * original publication date. Updating an older post must not move it to the
+ * top of the blog index.
+ *
+ * Note: filtering respects drafts and scheduled posts via `postFilter()`.
+ */
+export function getSortedPosts(posts: CollectionEntry<"posts">[]) {
   return posts
     .filter(postFilter)
     .sort(
@@ -9,6 +16,4 @@ const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
         Math.floor(new Date(b.data.pubDatetime).getTime() / 1000) -
         Math.floor(new Date(a.data.pubDatetime).getTime() / 1000)
     );
-};
-
-export default getSortedPosts;
+}

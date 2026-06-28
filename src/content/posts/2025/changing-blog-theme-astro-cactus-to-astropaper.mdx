@@ -1,0 +1,105 @@
+---
+title: "Changing the Blog Theme: From Astro Cactus to AstroPaper"
+featured: false
+pubDatetime: 2025-01-26T00:00:00.000Z
+modDatetime: 2026-06-28T23:30:00.000+02:00
+description: "Why I decided to migrate my blog theme from Astro Cactus to AstroPaper."
+tags: [astro, blogging, frontend, theme customization]
+author: Carlos Bermudez
+slug: changing-blog-theme-astro-cactus-to-astropaper
+---
+
+## Table of contents
+
+## Wait, this blog looks different now!
+
+Okay, you got me. I changed the theme of the blog. And I know it was not even in the new year goals, but I just couldn’t resist the urge to give it a fresh new look and fix a few things.
+
+I have good reasons for that, let me explain...
+
+## The previous theme
+
+For quite a long time the blog was based on the Cactus theme, even when I started this blog using the Hugo framework (old school readers will know!). Then I moved to Astro, and I loved the theme that much that I used the same one based in Astro, named [Astro Cactus](https://github.com/chrismwilliams/astro-theme-cactus). It’s a very clean and minimal theme, which was exactly what I wanted when I started the blog.
+
+And it served me well for a long time, it was a great starting point to build the blog around Hugo and then Astro.
+
+However, as the blog evolved, so did my needs...
+
+## Too many custom changes
+
+Over time I started adding more and more custom modifications to the theme:
+
+- Layout tweaks  
+- Styling changes  
+- Theme adjustments  
+- Small UX improvements
+
+None of these were particularly big on their own, but together they slowly drifted away from the original theme.
+
+At some point I realized something important: **my version of the theme had diverged too much from the upstream project**.
+
+This created a practical problem.
+
+The original theme continued evolving, but merging updates became increasingly difficult because my local changes touched many parts of the codebase. Every update required manual adjustments and conflict resolution, I even wrote an article about that!.
+
+Maintaining that setup started to feel heavier than it should for a personal blog, where I want to focus on writing and sharing content, not on theme maintenance.
+
+## A bit of fresh air
+
+Another important motivation was simply the need for **a bit of fresh air**.
+
+Changing the theme is a good excuse to rethink the structure of the blog, simplify things, and remove accumulated complexity.
+
+Instead of continuing to patch the old theme, I decided it was a good moment to migrate to something that:
+
+- Felt more aligned with what I wanted visually
+- Required fewer modifications
+- Was actively maintained
+- Provided a solid base out of the box
+
+And with this, I found [AstroPaper](https://github.com/satnaing/astro-paper), which checked all those boxes and made the decision easy.
+
+## Why AstroPaper
+
+Well, it provides many things I like right away: A clean reading experience (the most important thing for a blog!), good typography, built-in features for blog, etc.
+
+And more importantly, it requires **far fewer changes** for me to adapt it to what I wanted.
+
+So the goal this time is simple: **modify less and stay closer to the upstream project**, which makes maintenance much easier over time.
+
+---
+
+## Maintenance changelog
+
+If I update AstroPaper again in the future, besides the changes documented in the [official AstroPaper guide](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/), these are the extra custom changes I should keep in mind.
+
+### Changes to reapply after a theme update
+
+- Preserve the personal site metadata, social links, share links, homepage introduction, About page, favicon, social card, and other branding assets. These were local changes that were not included in the original maintenance notes.
+- Keep `astro-embed` for YouTube embeds inside posts. MDX itself is now supported by AstroPaper, but the embed package is still an extra dependency used by existing articles.
+- Preserve the custom light and dark color palette in `theme.css`, including accessible values for the `accent-foreground` and `muted-foreground` tokens introduced in AstroPaper 6.
+- Reapply the opt-in image rules in `global.css`: `data-invert-on-dark`, `data-invert-on-light`, and `data-transparent-border`.
+- Keep updated posts ordered by their original publication date and display both the original and updated dates, as originally implemented in [7f83be0](https://github.com/bermudev/bermudev.github.io/commit/7f83be059b89715a2defe1dbbe95a780d2a37b5e).
+- Keep date coercion in the content schema so ISO timestamps with explicit timezone offsets continue to be accepted consistently.
+- Preserve the GitHub Pages deployment workflow and ensure both CI and deployment use the Node.js and pnpm versions required by the selected AstroPaper release.
+
+### AstroPaper 6.1 migration
+
+The blog was migrated from AstroPaper 5.5.1 to 6.1.0 in June 2026. This was a structural migration rather than a simple dependency update:
+
+- Site configuration moved from `src/config.ts` and `src/constants.ts` to the typed root-level `astro-paper.config.ts` file.
+- All posts moved from `src/data/blog` to `src/content/posts`, while keeping the year-based directories and existing public URLs.
+- The About page moved into the new `pages` content collection.
+- The project adopted Astro 6, TypeScript 6, Node.js 24, pnpm 11, the stable Astro Fonts API, the new layouts, and the reorganized post-specific components.
+- All existing posts, MDX imports, optimized images, dynamic Open Graph images, search, RSS, sitemap, tags, archives, and GitHub Pages deployment were retained and verified after the migration.
+
+The audit performed during this migration also found several local changes that had not been documented here: the personal configuration and branding, homepage and About content, the GitHub Pages workflow, date coercion, Google Sans Code integration, the optimized theme script, Pagefind styling changes, and custom slug/view-transition sanitization.
+
+Some of those changes no longer need to be carried as patches because AstroPaper 6 now provides them upstream: MDX support, Google Sans Code through the Fonts API, the non-blocking theme script, the improved Pagefind implementation, acronym and non-Latin-aware slugification, and safe view-transition names.
+
+### One-time changes that do not need to be repeated
+
+- Reorganized the post structure to fix slug handling in [3d940c8](https://github.com/bermudev/bermudev.github.io/commit/3d940c803888c87d0288de8c576c48e5aeab1962).
+- Moved post images into a shared assets folder for better optimization in [d86f5de](https://github.com/bermudev/bermudev.github.io/commit/d86f5de1a93afa77dbdfd88f6836d41a089c6956).
+- Compressed the image set with `tinypng-cli` in [f2c1e03](https://github.com/bermudev/bermudev.github.io/commit/f2c1e03ac2fbbc2ffb62cae24e58fdfc56529e7b).
+- Migrated the content collections and post routes to the AstroPaper 6 directory structure. Future updates should use the v6 structure as their baseline instead of repeating the move.

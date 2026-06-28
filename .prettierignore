@@ -7,8 +7,13 @@
 !/.github
 !tsconfig.json
 !astro.config.ts
-!.prettierrc.mjs
 !package.json
 !.prettierrc
 !eslint.config.js
 !README.md
+!.vscode
+
+# Preserve hand-formatted article prose and embedded component markup.
+# Source code, configuration, workflows, and standalone pages remain checked.
+src/content/posts/**/*.md
+src/content/posts/**/*.mdx
