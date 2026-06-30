@@ -1,0 +1,52 @@
+---
+title: "Migration to Astro 6 and AstroPaper 6.1 using AI"
+featured: false
+pubDatetime: 2026-06-30T22:38:13+02:00
+description: "Using AI to help me migrate this customized theme blog to Astro 6 and AstroPaper 6.1 while keeping control of the process."
+tags: [ai, blogging, astro, migration, productivity]
+---
+
+I have been checking the [blog theme’s repository](https://github.com/satnaing/astro-paper) these past few days and noticed that recently (a few weeks ago, specifically on June 6) they updated to **version 6.1**, which now uses **version 6 of Astro**. So I thought, “Now’s the time to update.”
+
+The only issue is that, in this case, simply installing a new version of AstroPaper wasn't enough. I've made customizations, including custom colors, changes to the homepage, adjustments to article dates, images that behaved differently depending on the theme, social media links, automations, and many other decisions I've made over time.
+
+So this time, I decided to make use of the IA to help me with the update.
+
+## Table of contents
+
+## First, understanding the problem
+
+The first thing I did was ask whether updating AstroPaper to its latest version was possible **without losing my customizations**.
+
+And honestly, **the AI’s performance was amazing**. It reviewed the blog’s current status, compared it to the new version of the theme, and identified both the changes I had already documented in [my own post about the previous migration](https://bermu.dev/posts/2025/changing-blog-theme-astro-cactus-to-astropaper/) and others I had forgotten to note. Then, it prepared a plan with the steps it would follow to carry out the migration.
+
+## Perform the update
+
+Once the plan was clear and I had reviewed it, I asked it to execute the full migration.
+
+The AI updated AstroPaper **from version 5.5.1 to 6.1.0**, adapted the new project structure, and **preserved the existing content and customizations**. It also updated the article where I had documented the previous migration, adding the custom changes it discovered during the process that hadn’t been documented there yet. To be honest, I don’t really like its writing style, but in the end, it serves as a guide for the future (like a sort of [_changelog_](https://bermu.dev/posts/2025/changing-blog-theme-astro-cactus-to-astropaper/#maintenance-changelog)) so I didn’t make a big deal out of it.
+
+After modifying the code, he verified that the blog could be built correctly, that the posts and their URLs still existed, and that the search function, RSS, images, archives, tags, and auto-display continued to work.
+
+## From several days to a few hours
+
+The last time I did a major update like this, I had to manually compare files, review the history, resolve differences one by one, and remember why I had changed certain parts of the theme. [In 2024 I even wrote a post about it](https://bermu.dev/posts/2024/updating-blog-theme-to-the-latest-version/). If I recall correctly, that task took me **a couple of days** between planning and execution.
+
+This time, much of that mechanical work was completed in minutes, and the entire migration was completed **in a single session lasting just a few hours**, including the final checks.
+
+
+## AI as a tool, not as autopilot
+
+I’d like to mention that, although the results of using AI were very positive, **it wasn’t a matter of pressing a button and accepting everything without looking**. Contrary to what [“Uncle Bob”](https://cleancoder.com/), author of [*Clean Code*](https://www.pearson.com/en-us/subject-catalog/p/clean-code-a-handbook-of-agile-software-craftsmanship/P200000009044), who says he no longer reviews AI-generated code and leaves everything up to the tests, I like to review it myself.
+
+I defined the objective and specified which elements I wanted to keep, requested that an analysis be performed first, and finally reviewed the results before publishing them. But the decision was still mine, and I reviewed the commands and actions being executed.
+
+After all, this isn’t the first time an AI has [deleted a production database and then said it made a mistake and is very sorry](https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database).
+
+For me, this is the best way to use AI in software projects, as a collaborator capable of handling repetitive work, investigating context, and performing thorough checks, while **the person retains control over important decisions**.
+
+---
+
+## Release of Astro 7.0
+
+Ironically, I just saw that [Astro 7 has been released](https://astro.build/blog/astro-7/) just a week ago. As soon as AstroPaper supports it, I'll update the blog again with the help of AI!
