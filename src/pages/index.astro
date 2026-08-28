@@ -23,6 +23,23 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 const homePath = getRelativeLocaleUrl(locale, "");
+
+const blogStartedAt = new Date(2022, 11);
+const today = new Date();
+const elapsedMonths =
+  (today.getFullYear() - blogStartedAt.getFullYear()) * 12 +
+  today.getMonth() -
+  blogStartedAt.getMonth();
+const elapsedYears = Math.floor(elapsedMonths / 12);
+const monthsSinceAnniversary = elapsedMonths % 12;
+const formatYears = (years: number) =>
+  `${years} ${years === 1 ? "year" : "years"}`;
+const blogAge =
+  monthsSinceAnniversary === 0
+    ? formatYears(elapsedYears)
+    : monthsSinceAnniversary >= 9
+      ? `almost ${formatYears(elapsedYears + 1)}`
+      : `over ${formatYears(elapsedYears)}`;
 ---
 
 <Layout>
@@ -52,12 +69,9 @@ const homePath = getRelativeLocaleUrl(locale, "");
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <p>
-        Welcome to my personal blog about software development! My name is
-        Carlos and I am passionate about writing code and solving problems.
-      </p>
+      <p>Welcome to my personal blog!</p>
       <p class="mt-2">
-        I started this blog back in January 2023 as a place to share my
+        I’m Carlos, and for {blogAge}, this has been my place to share my
         thoughts, tutorials, and things I learn along the way. I hope you like
         it!
       </p>
