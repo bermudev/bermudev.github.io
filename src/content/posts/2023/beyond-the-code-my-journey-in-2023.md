@@ -1,7 +1,7 @@
 ---
 title: "Beyond the Code: My Journey in 2023"
 pubDatetime: 2023-12-24T00:00:00.000Z
-description: "Reflecting on a year of growth and the anticipation of new challenges and goals in the coming year"
+description: "Reflecting on a year of growth and the anticipation of new challenges and goals in the coming year."
 tags: ["professional development", "personal growth", "recap"]
 author: Carlos Bermudez
 slug: beyond-the-code-my-journey-in-2023
