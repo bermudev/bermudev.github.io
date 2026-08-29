@@ -2,7 +2,7 @@
 title: "Changing the Blog Theme: From Astro Cactus to AstroPaper"
 featured: false
 pubDatetime: 2025-01-26T00:00:00.000Z
-modDatetime: 2026-08-29T09:31:47.000+02:00
+modDatetime: 2026-08-29T10:25:43.000+02:00
 description: "Why I decided to migrate my blog theme from Astro Cactus to AstroPaper."
 tags: [astro, blogging, frontend, theme customization]
 author: Carlos Bermudez
@@ -78,6 +78,7 @@ If I update AstroPaper again in the future, besides the changes documented in th
 - Preserve the personal site metadata, social links, share links, About page, favicon, social card, and other branding assets. These were local changes that were not included in the original maintenance notes.
 - Preserve the custom homepage introduction and its dynamic blog age, calculated from the blog's start date, as added in [3740ff5](https://github.com/bermudev/bermudev.github.io/commit/3740ff5c7952ddb585a2875dcc17ab040a055f0a).
 - Keep `posts.perIndex` set to `5` in `astro-paper.config.ts` so the homepage shows five recent non-featured posts, as configured in [4c8b5b9](https://github.com/bermudev/bermudev.github.io/commit/4c8b5b906f3014d1b0b0ce21694504493c157208).
+- Preserve the reusable `Figure.astro` component, which wraps Astro's optimized `Image` component in semantic `figure` and `figcaption` markup and adds centered captions to images in MDX posts.
 - Keep `astro-embed` for YouTube embeds inside posts. MDX itself is now supported by AstroPaper, but the embed package is still an extra dependency used by existing articles.
 - Preserve the custom light and dark color palette in `theme.css`, including accessible values for the `accent-foreground` and `muted-foreground` tokens introduced in AstroPaper 6.
 - Reapply the opt-in image rules in `global.css`: `data-invert-on-dark`, `data-invert-on-light`, and `data-transparent-border`.

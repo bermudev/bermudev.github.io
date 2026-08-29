@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import type { ComponentProps } from "astro/types";
+
+type Props = ComponentProps<typeof Image> & {
+  caption: string;
+};
+
+const { caption, ...imageProps } = Astro.props;
+---
+
+<figure>
+  <Image {...imageProps} />
+  <figcaption class="text-center">{caption}</figcaption>
+</figure>
