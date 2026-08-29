@@ -52,6 +52,9 @@ Zellij stores its configuration in `~/.config/zellij/config.kdl`.
 
 The easiest way to start is to dump the default config and edit it:
 
+> [!warning] This command overwrites the configuration
+> The `>` redirection below replaces `config.kdl` if it already exists. Back up your current configuration before running it.
+
 ```bash
 mkdir -p ~/.config/zellij
 zellij setup --dump-config > ~/.config/zellij/config.kdl

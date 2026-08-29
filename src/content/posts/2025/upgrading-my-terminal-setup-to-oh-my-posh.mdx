@@ -78,6 +78,18 @@ Here is how you can set it up for your environment:
    powershell.exe -NoLogo
    ```
 
+
+> [!important] WSL users: install the font on Windows too
+> If you are using **WSL** within **Windows Terminal**, installing the font inside WSL is not enough for the icons to appear correctly.
+>
+> **Don't forget to:**
+>
+> 1. Install the font on **Windows** as well (Oh My Posh's `font install` usually handles this if run as Admin).
+> 2. Go to **Windows Terminal Settings**.
+> 3. Select your **WSL profile**.
+> 4. Under **Appearance**, change the **Font face** to the Nerd Font you just installed (e.g., *FiraCode Nerd Font*).
+> 5. Optionally, change the **background image** or color scheme to match your new Oh My Posh theme. I personally like the Dark+ theme.
+
 ## Look and Feel
 
 Here is a glimpse of how my terminal looks now with these themes:
@@ -91,16 +103,5 @@ Here is a glimpse of how my terminal looks now with these themes:
 <div className="flex justify-center">
   <Image src={ohMyPoshWindows} alt="Oh My Posh Windows Setup"/>
 </div>
-
-## A Final Reminder for WSL Users
-
-If you are using **WSL** within the **Windows Terminal**, remember that installing the font in WSL isn't enough for the icons to show up correctly in your terminal window.
-
-**Don't forget to:**
-1. Install the font on **Windows** as well (Oh My Posh's `font install` usually handles this if run as Admin).
-2. Go to **Windows Terminal Settings**.
-3. Select your **WSL profile**.
-4. Under **Appearance**, change the **Font face** to the Nerd Font you just installed (e.g., *FiraCode Nerd Font*).
-5. (Optional) Change the **Background image** or color scheme to match your new Oh My Posh theme, I personally like the Dark+ theme!
 
 Happy coding with your new, shiny terminal! ✨

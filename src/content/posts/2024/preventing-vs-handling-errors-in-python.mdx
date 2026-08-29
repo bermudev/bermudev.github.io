@@ -39,6 +39,9 @@ except:
     clean_up()  
 ```
 
+> [!warning] Catch specific exceptions
+> The bare `except:` above is only a conceptual example. In real Python code, catch the specific exceptions you expect so that unrelated failures are not silently hidden.
+
 ## Pros and cons of LBYL vs EAFP
 
 The advantages and disadvantages of one style or the other will vary greatly depending on our **code**, the way the **language** handles errors, or even personal **preference**.

@@ -38,7 +38,8 @@ Restore after AC Power Loss = Power On
 
 With this option, the PC turns on automatically when power is restored. If the computer is already off, I can turn the power off via Zigbee2MQTT, turn it back on, and let the BIOS handle the rest.
 
-For safety reasons, I also configured the smart plug to remain off when power is restored after an outage. The name of this option varies by model and Zigbee integration, but it usually refers to the device’s power-on behavior. This prevents the smart plug from turning on and starting the PC unexpectedly after a power outage.
+> [!warning] Avoid unexpected power cycles
+> For safety reasons, I also configured the smart plug to remain off when power is restored after an outage. The name of this option varies by model and Zigbee integration, but it usually refers to the device’s power-on behavior. This prevents the smart plug from turning on and starting the PC unexpectedly after a power outage.
 
 The smart plug remains a simple and useful fallback if Wake-on-LAN fails. Even so, I prefer Wake-on-LAN as my primary method because it lets me turn on the computer without cycling its power.
 

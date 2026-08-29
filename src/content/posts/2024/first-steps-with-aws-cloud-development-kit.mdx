@@ -119,7 +119,8 @@ class MyFirstCdkStack(Stack):
         )
 ```
 
-In this example, we're creating an S3 bucket with ``versioning`` enabled, we are using ``S3-managed encryption`` and we set the `removal_policy` to `DESTROY`, which means the bucket will be deleted when we destroy our stack.
+> [!danger] Destructive removal policy
+> This example creates a versioned S3 bucket with S3-managed encryption, but it also sets `removal_policy` to `DESTROY`. Destroying the stack can therefore delete the bucket and its data. Use this setting only when that behavior is intentional and the data is disposable or safely backed up.
 
 CDK offers almost all the same configuration options of the web, although my experience has shown me that *not exactly* all of them, so be careful. You can always consult their [documentation](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3.Bucket.html) to see them all, check the [community guides](https://community.aws/content/2c0AHVvV6uQC9FY1HJCx8WXU3Ho/deploy-s3-bucket-with-cloudfront-using-aws-cdk) for examples, or ask support if you have any questions.
 

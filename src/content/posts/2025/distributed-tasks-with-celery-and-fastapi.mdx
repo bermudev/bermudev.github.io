@@ -145,7 +145,8 @@ celery -A celery_app:celery_app worker --loglevel=info --concurrency=4
 
 In this case, `--concurrency` sets the number of execution slots. With Celery's default `prefork` pool, those slots are worker processes; other pools can use threads or greenlets instead.
 
-This intentionally small example is a starting point, not a complete production configuration. In production, keep broker credentials and URLs outside the source code, configure time limits and retries where appropriate, make tasks idempotent, and choose result retention and Redis persistence policies for your workload.
+> [!important] Production checklist
+> This intentionally small example is a starting point, not a complete production configuration. In production, keep broker credentials and URLs outside the source code, configure time limits and retries where appropriate, make tasks idempotent, and choose result retention and Redis persistence policies for your workload.
 
 
 ## Monitoring and optimization with Flower
@@ -162,7 +163,8 @@ We can start Flower with:
 celery -A celery_app:celery_app flower
 ```
 
-By default, it runs on `http://localhost:5555`. Flower exposes operational data and remote-control features, so enable authentication and avoid exposing it directly to the public internet in production.
+> [!warning] Do not expose Flower publicly
+> By default, Flower runs on `http://localhost:5555`. It exposes operational data and remote-control features, so enable authentication and avoid exposing it directly to the public internet in production.
 
 The Flower documentation includes this example of its worker dashboard:
 

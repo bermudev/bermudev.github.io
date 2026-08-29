@@ -41,9 +41,8 @@ Some of the main features of Restic include:
 
 ## Setting up Backups with Restic
 
-So, let's get to work! In this case, it is assumed that the system already has Restic installed since in each system it is done in a different way, in case you do not know how to do it, you can check [the official documentation](https://restic.readthedocs.io/en/latest/020_installation.html).
-
-In addition, the example considers a **local copy**, however Restic stands out for its great compatibility with other **cloud systems** such as [AWS](https://aws.amazon.com/), [Azure](https://azure.microsoft.com/) or [GCP](https://cloud.google.com/). Again, consult the [documentation](https://restic.readthedocs.io/en/latest/030_preparing_a_new_repo.html)!
+> [!info] Before following the example
+> This guide assumes that [Restic is already installed](https://restic.readthedocs.io/en/latest/020_installation.html) and uses a local repository for simplicity. Restic also supports remote and cloud backends such as AWS, Azure, and GCP; consult the [repository preparation documentation](https://restic.readthedocs.io/en/latest/030_preparing_a_new_repo.html) for those configurations.
 
 1. Once you have [Restic](https://restic.net/) installed, you will need to create a new repository for your backups. This can be done by running the following command:
 
@@ -68,5 +67,8 @@ restic snapshots --repo /path/to/repo
 ```sh
 restic restore ID --target /path/to/restore --repo /path/to/repo
 ```
+
+> [!important] Test your restores
+> A backup is only useful if it can be restored. Test the restore process periodically and verify the recovered files instead of waiting for a real failure to discover a problem.
 
 That's the basics of Restic, if you want to know more... you know where to go, [right](https://restic.readthedocs.io/en/stable/)?

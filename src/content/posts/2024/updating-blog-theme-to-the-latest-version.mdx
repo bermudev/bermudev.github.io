@@ -64,6 +64,10 @@ At first I was trying a way to use `git merge` and apply those changes that I co
 So accepting that I would have to apply my changes manually, what I came up with was to incorporate the updated theme files, and manually apply the changes on them. In the end I didn't make too many changes to the theme, and it should be fast (and it was, although I did more changes than I thought).
 
 In summary, to make an update what we have to do is:
+
+> [!danger] Back up the repository first
+> The following procedure deletes and replaces most of the working tree. Use a disposable branch, make a verified backup, confirm that you are operating in the intended repository, and never remove its `.git` directory.
+
 1. Clone the **personal blog** repository (in case it is not already cloned for some reason).
 2. Make a new branch of the **personal blog** that we will use for the update.
 3. While in the new branch created, delete everything except the **.git** folder to keep the history.

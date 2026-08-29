@@ -57,6 +57,9 @@ This filter inverts the colors of the image only when the matching theme is acti
 
 The `hue-rotate(180deg)` part rotates the hue wheel after the inversion, which helps compensate the color shift a plain invert would introduce. In other words, it does not magically preserve the original colors, but it can produce a more natural-looking result than using only `invert(1)`.
 
+> [!warning] Use inversion selectively
+> Do not apply this treatment automatically to photographs, screenshots, or diagrams with meaningful colors. Check the image in both themes and enable inversion only when it improves visibility without distorting the content.
+
 Then in the article itself, the behavior can be enabled only where needed:
 
 ```html
@@ -148,4 +151,4 @@ And the fix is now reusable across the project and updates immediately when the 
   <Image src={picture_example} alt="Logo clearly visible after dark mode fix" width="680px" data-invert-on-dark data-transparent-border/>
 </div>
 
-This keeps logos readable in both themes while still allowing per-image control when needed — a small improvement that makes the blog feel much more polished!
+This keeps logos readable in both themes while still allowing per-image control when needed, a small improvement that makes the blog feel much more polished!

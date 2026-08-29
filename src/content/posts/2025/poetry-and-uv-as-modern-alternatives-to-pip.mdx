@@ -39,9 +39,8 @@ And the one that worries me the most and took more time for me and my team to fi
 
 ### Dependency confusion in pip
 
-This problem appears when we have **private dependencies** (for example in an internal registry or private index) that **do not exist on PyPI under the same name**.
-
-If someone publishes a package on PyPI with that exact name, `pip` **may install the public package first** instead of the private one, depending on how `index-url` and `extra-index-url` are configured.
+> [!danger] Dependency confusion
+> This problem appears when a private dependency does not exist on PyPI under the same name. If someone publishes a public package with that name, `pip` may install it instead of the private package, depending on how `index-url` and `extra-index-url` are configured.
 
 For example, imagine our company has an internal package:
 

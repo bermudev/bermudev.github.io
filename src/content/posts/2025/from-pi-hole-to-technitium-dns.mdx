@@ -96,6 +96,9 @@ It is not zero-impact, you do feel a small lag during an outage, but the network
 
 For completeness, Technitium itself is configured to forward to `freedns.controld.com` ([Control D](https://controld.com/free-dns)) and `dns.mullvad.net`, both over encrypted DNS. So when everything is healthy, the chain is: client → Technitium → Control D / Mullvad. Clean and consistent.
 
+> [!tip] Choosing another DNS provider
+> If you want to compare other privacy-focused DNS services, [Privacy Guides maintains a list of recommended providers](https://www.privacyguides.org/en/dns/#recommended-providers).
+
 ## How it ended up
 
 With all of this understood, the final setup is:
@@ -123,6 +126,6 @@ A small thing, but it helps a lot when a new [Raspberry Pi](https://www.raspberr
 
 The change itself (replacing Pi-hole with Technitium) is the least interesting part of this story. What I *really* take away is that DNS at home is not just about *which* server you run, but about making sure that **every query actually goes where you think it goes**, even when clients decide to be creative about it.
 
-The router-as-funnel trick, with `strictorder` doing the heavy lifting, is one of those small ideas that looks weird on paper (Technitium ends up referenced twice) but solves two problems at once: consistency when everything is up, and a graceful fallback when it is not. Exactly the kind of design I like in a homelab — boring on a good day, forgiving on a bad one.
+The router-as-funnel trick, with `strictorder` doing the heavy lifting, is one of those small ideas that looks weird on paper (Technitium ends up referenced twice) but solves two problems at once: consistency when everything is up, and a graceful fallback when it is not. Exactly the kind of design I like in a homelab, boring on a good day, forgiving on a bad one.
 
 If you are happy with Pi-hole, you do not need to change to anything. But if you feel like tinkering, having more control over what your DNS does, and learning a couple of things about how clients and routers really behave along the way, Technitium is well worth it. It is not as plug and play or pretty, but in exchange you learn quite a bit, which in the end is what this is all about.
