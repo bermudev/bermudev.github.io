@@ -181,7 +181,7 @@ sudo etherwake -i eth0 <PC_MAC_ADDRESS>
 
 Because the `ip link` command does not persist after a reboot, I also created a small systemd service to bring `eth0` up automatically:
 
-```ini
+```ini file="/etc/systemd/system/enable-eth0.service"
 [Unit]
 Description=Bring up eth0 for Wake-on-LAN
 After=network-online.target

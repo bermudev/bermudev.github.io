@@ -62,7 +62,7 @@ zellij setup --dump-config > ~/.config/zellij/config.kdl
 
 The config file is written in KDL. A small configuration can look like this:
 
-```kdl
+```kdl file="~/.config/zellij/config.kdl"
 pane_frames true
 mouse_mode true
 copy_on_select false
@@ -77,7 +77,7 @@ ui {
 
 And if we want a simple pane shortcut, we can add a keybind:
 
-```kdl
+```kdl file="~/.config/zellij/config.kdl"
 keybinds {
     normal {
         bind "Alt n" { NewPane; }
@@ -99,7 +99,7 @@ For example, this script opens one tab with three panes:
 
 Keep something like this as `~/bin/zj-project`:
 
-```bash
+```bash file="~/bin/zj-project"
 #!/usr/bin/env bash
 set -euo pipefail
 

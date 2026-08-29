@@ -41,7 +41,7 @@ The solution was to introduce small **opt-in attributes** that apply a CSS filte
 
 In `global.css` we added the following rules:
 
-```css
+```css file="src/styles/global.css"
 html[data-theme="dark"] img[data-invert-on-dark],
 html[data-theme="dark"] [data-invert-on-dark] img {
   filter: invert(1) hue-rotate(180deg);
@@ -115,7 +115,7 @@ While I was testing this, I also wanted a way to selectively hide image borders 
 
 For that, I added another optional attribute in `global.css`:
 
-```css
+```css file="src/styles/global.css"
 .app-prose img[data-transparent-border],
 .app-prose [data-transparent-border] img {
   border-color: transparent;

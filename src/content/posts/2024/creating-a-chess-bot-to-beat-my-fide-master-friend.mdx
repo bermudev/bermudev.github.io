@@ -93,7 +93,7 @@ Basically we write row by row separated by a ‘/’, assigning each piece its a
 
 Our code would look like this:
 
-```python
+```python file="main.py"
 def board_to_fen(self, board_pieces: list, color_to_move: str) -> str:
 	fen = ""
 	for row in range(8, 0, -1):
@@ -131,7 +131,7 @@ R1BK3R/1PP1P3/3P4/Pb4n1/4P3/ppB5/6pp/1k1r3r b - - 0 1
 
 Using the Stockfish engine in Python is quite easy, just **install** the package, **download the engine** from its website and invoke the service. In a very quick way we can indicate the position of the board using the FEN notation and get the result:
 
-```python
+```python file="main.py"
 def calculate_stockfish(self, fen: str):
 	if self.stockfish.is_fen_valid(fen):
 		self.stockfish.set_fen_position(fen)
@@ -155,7 +155,7 @@ To make the move we will use a python package called [pyautogui](https://github.
 
 Once we have the coordinates of the board, this calculation is quite trivial, since we know the dimensions of the board and that it contains 8 squares along its length and width:
 
-```python
+```python file="main.py"
 def calculate_centers(
 	self, upper_left_corner: Point, lower_right_corner: Point
 ) -> list:
@@ -177,7 +177,7 @@ def calculate_centers(
 
 In order to move the mouse, the first thing to do is to **translate the algebraic notation into a matrix**, the letter is easily translatable and the integer already corresponds as such:
 
-```python
+```python file="main.py"
 def make_move(self, board_coords: list, move: str) -> None:
 	origin_column = ord(move[0]) - ord("a")
 	origin_row = 8 - int(move[1])

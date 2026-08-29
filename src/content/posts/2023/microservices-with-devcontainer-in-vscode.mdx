@@ -47,7 +47,7 @@ Getting started with DevContainer is straightforward:
 
 2. **Define a DevContainer Configuration**: Inside the `.devcontainer` folder, create a `Dockerfile` and/or a `devcontainer.json` file to specify the development environment for the microservice. For example, the Docker file for a simple Flask python server installation could be:
 
-```dockerfile
+```dockerfile file=".devcontainer/Dockerfile"
 FROM python:3.11.4-bookworm
 
 WORKDIR /app
@@ -62,7 +62,7 @@ CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 
 4. **Customize as Needed**: Customize the DevContainer configuration to include the necessary tools, dependencies, extensions, and settings specific to each microservice. An example of this DevContainer configuration is:
 
-```json
+```json file=".devcontainer/devcontainer.json"
 {
     "name": "Flask app",
     "build": {

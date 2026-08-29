@@ -36,13 +36,13 @@ Mostly to have more control, to put more things into a single service and, to be
 
 My network runs on [OpenWrt](https://openwrt.org/), which handles DHCP and part of the DNS. The starting setup was the typical one: Pi-hole as the main DNS and the router as fallback, announced over DHCP with something like this:
 
-```sh
+```sh file="/etc/config/dhcp"
 list dhcp_option '6,192.168.0.12,192.168.0.1'
 ```
 
 When I added Technitium to the mix, I just changed the first IP to its own:
 
-```sh
+```sh file="/etc/config/dhcp"
 list dhcp_option '6,192.168.0.11,192.168.0.1'
 ```
 
@@ -52,7 +52,7 @@ Where `.11` is Technitium and `.1` is the router itself with [dnsmasq](https://t
 
 While going through the dnsmasq config in OpenWrt I found this line:
 
-```sh
+```sh file="/etc/config/dhcp"
 option allservers '1'
 ```
 
