@@ -29,13 +29,18 @@ Well, to nobody's surprise, I'm no match for her in puzzles either.
 
 So I decided to do what I like the most, programming. My idea was to make a bot ([link to the repository on GitHub](https://github.com/bermudev/chess-autoracer)) that could compete with her and even if I cheated, I could beat her in a puzzle race, even if it was just once.
 
+> [!warning] The repository is intentionally incomplete
+> The working implementations responsible for locating the chessboard and reading its pieces have been intentionally omitted from the public code to discourage its use as a ready-to-run cheating tool.
+>
+> However, the explanation is still here.
+>
+> I created this project as a joke with a friend and shared it for educational purposes only.
+
 ## Creating the bot
 
 The logic was simple, I had to make a bot that was able to **identify** the chessboard, **read** the position of the pieces, **pass** the position to an engine to find the best move, make the **move** with the keyboard on the screen, and **repeat**.
 
 It didn't seem too difficult, although during the process I encountered some difficulties that I had to overcome.
-
-Before I start explaining the code, I would like to clarify that **there are two functions that are not in the code**, although I am going to explain briefly how I have developed them, this is because I would not like this code to be used for cheating. In my case, it has been for a punctual moment, to update myself on certain techniques and to have a laugh with my friend. These functions are the first two that I am going to discuss: the identification of the chessboard and the reading of the pieces.
 
 ### Identifying the chessboard and reading the position of the chess pieces
 
