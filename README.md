@@ -13,6 +13,6 @@ Automatic deployment is set up using CI/CD pipelines. Any changes pushed to the 
 
 ### Acknowledgment
 
-This blog uses the [AstroPaper](https://github.com/satnaing/astro-paper) theme with some modifications and personal adaptations.
+This blog uses the [AstroPaper](https://github.com/satnaing/astro-paper) theme with [some modifications and personal adaptations](https://bermu.dev/posts/2025/changing-blog-theme-astro-cactus-to-astropaper/).
 
 The blog icon and the header photos in some posts are from [Flaticon](https://www.flaticon.es/) and [Pexels](https://www.pexels.com/) respectively.
