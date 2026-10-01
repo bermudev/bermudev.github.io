@@ -6,7 +6,9 @@ import config from "@/config";
 
 export async function GET() {
   const posts = await getCollection("posts");
-  const featuredPosts = getSortedPosts(posts).filter(({ data }) => data.featured);
+  const featuredPosts = getSortedPosts(posts).filter(
+    ({ data }) => data.featured
+  );
 
   return rss({
     title: `${config.site.title} · Featured`,
